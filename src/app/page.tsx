@@ -186,7 +186,7 @@ export default function LandingPage() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link href="/login" className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
+            <Link href="https://fahampesa-business-web-production.up.railway.app/" className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
               Login
             </Link>
             <button
@@ -263,7 +263,7 @@ export default function LandingPage() {
               {/* Mobile Menu Footer Actions */}
               <div className="p-4 flex flex-col gap-4 mb-4">
                 <Link 
-                  href="/login" 
+                  href="https://fahampesa-business-web-production.up.railway.app/" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="font-dm-sans font-bold text-[16px] text-[#001031] border border-[#001031] rounded-[12px] py-4 w-full text-center hover:bg-gray-50 transition-colors"
                 >
