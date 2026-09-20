@@ -43,6 +43,9 @@ const assets = {
   playIcon: 'https://www.figma.com/api/mcp/asset/8720f529-7764-486a-8aff-9b42c29a01fc',
 }
 
+const BUSINESS_LOGIN_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=login'
+const BUSINESS_SIGNUP_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=signup'
+
 const faqs = [
   {
     question: "What is Fahampesa?",
@@ -194,7 +197,7 @@ export default function LandingPage() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link href="/login" className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
+            <Link href={BUSINESS_LOGIN_URL} className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
               Login
             </Link>
             <button
@@ -204,10 +207,10 @@ export default function LandingPage() {
               Get Desktop App
             </button>
             <Link
-              href="/login"
+              href={BUSINESS_SIGNUP_URL}
               className="font-dm-sans font-semibold text-[14px] text-white bg-[#004AAD] rounded-[10px] px-6 py-3 hover:bg-[#003a8c] transition-colors flex items-center gap-2"
             >
-              Start a free trial
+              Sign Up
               <ArrowUpRight size={16} />
             </Link>
           </div>
@@ -277,18 +280,18 @@ export default function LandingPage() {
               {/* Mobile Menu Footer Actions */}
               <div className="p-4 flex flex-col gap-4 mb-4">
                 <Link 
-                  href="/login" 
+                  href={BUSINESS_LOGIN_URL}
                   onClick={() => setMobileMenuOpen(false)} 
                   className="font-dm-sans font-bold text-[16px] text-[#001031] border border-[#001031] rounded-[12px] py-4 w-full text-center hover:bg-gray-50 transition-colors"
                 >
                   Login
                 </Link>
                 <Link
-                  href="/login"
+                  href={BUSINESS_SIGNUP_URL}
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-dm-sans font-bold text-[16px] text-white bg-[#1D4ED8] rounded-[12px] py-4 w-full text-center hover:bg-[#1e40af] transition-colors"
                 >
-                  Start a free trial
+                  Sign Up
                 </Link>
               </div>
             </motion.div>
@@ -340,8 +343,8 @@ export default function LandingPage() {
                 <span className="font-dm-sans font-semibold text-[14px] lg:text-[18px] text-[#004AAD]">Download App</span>
                 <Image src={assets.download} alt="" width={16} height={16} className="lg:w-[22px] lg:h-[22px]" />
               </button>
-              <Link href="/login" className="flex items-center justify-center gap-[8px] lg:gap-[10px] bg-[#004AAD] rounded-[10px] px-[16px] lg:px-[32px] py-[12px] lg:py-[18px] hover:bg-[#003a8c] transition-colors">
-                <span className="font-dm-sans font-semibold text-[14px] lg:text-[18px] text-white">Start a free trial</span>
+              <Link href={BUSINESS_SIGNUP_URL} className="flex items-center justify-center gap-[8px] lg:gap-[10px] bg-[#004AAD] rounded-[10px] px-[16px] lg:px-[32px] py-[12px] lg:py-[18px] hover:bg-[#003a8c] transition-colors">
+                <span className="font-dm-sans font-semibold text-[14px] lg:text-[18px] text-white">Sign Up</span>
                 <Image src={assets.arrowForward} alt="" width={16} height={16} className="lg:w-[22px] lg:h-[22px]" />
               </Link>
             </motion.div>
@@ -938,10 +941,10 @@ export default function LandingPage() {
                 Whether you&apos;re a manufacturer, construction firm or a hardware store, we can help you pay employees or casual labourers in cash, into a mobile wallet or bank account.
               </p>
               <Link
-                href="/login"
+                href={BUSINESS_SIGNUP_URL}
                 className="flex bg-white text-[#001031] font-dm-sans font-semibold text-[20px] px-6 py-4 rounded-[16px] hover:bg-gray-100 transition-colors mt-4 items-center gap-2"
               >
-                Start a free trial
+                Sign Up
 
               </Link>
             </div>
