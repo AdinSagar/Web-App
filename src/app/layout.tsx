@@ -46,6 +46,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "FahamPesa POS Software | Cloud & Offline",
+  icons: {
+    icon: "/assets/fahampesa-business-logo.svg",
+    apple: "/assets/fahampesa-business-logo.svg",
+  },
   description: "Grow your business with confidence. FahamPesa is a powerful cloud and offline point of sale software that helps you manage sales, inventory, purchases, expenses, customers, and real time reports and business insights from one platform. Built for retailers, wholesalers, pharmacies, restaurants, and growing businesses.",
   keywords: "POS software, point of sale, inventory management, small business, Kenya, offline app, business tools",
   authors: [{ name: "FahamPesa Team" }],
