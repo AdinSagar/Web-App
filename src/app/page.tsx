@@ -300,9 +300,10 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-[80px] bg-[#DEE4FF] min-h-[600px] lg:min-h-[750px] relative overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[100px] pt-[60px] lg:pt-[60px] pb-[40px] lg:pb-[80px] relative z-10">
-          <div className="lg:w-[50%]">
+      <section className="pt-[80px] bg-[#DEE4FF] relative overflow-hidden">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[72px] xl:px-[100px] py-[48px] lg:py-[72px] relative z-10">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-12 xl:gap-16">
+            <div>
             {/* Floating Tag */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -364,39 +365,25 @@ export default function LandingPage() {
                 <span className="font-inter font-normal text-[12px] lg:text-[16px] text-[#001031] tracking-[-0.4px]">Real-time reports and insights</span>
               </div>
             </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="relative w-full overflow-hidden rounded-[18px] border border-white/70 bg-white/60 shadow-[0_24px_60px_rgba(0,16,49,0.16)] sm:rounded-[24px]"
+            >
+              <Image
+                src="/assets/figma/landing/fahampesa-business-showcase.webp"
+                alt="FahamPesa business dashboard and point of sale on desktop, tablet, and mobile"
+                width={1123}
+                height={1024}
+                sizes="(max-width: 1023px) 100vw, 58vw"
+                className="block h-auto w-full"
+                priority
+              />
+            </motion.div>
           </div>
-
-          {/* Hero mockup image - Mobile */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="lg:hidden relative -mr-20 ml-4 w-[calc(100%+80px)] h-[350px] mt-8"
-          >
-            <Image
-              src="/assets/figma/landing/hero-image.png"
-              alt="FahamPesa Dashboard Preview"
-              fill
-              className="object-contain object-right"
-              priority
-            />
-          </motion.div>
-
-          {/* Hero mockup image - Desktop */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="hidden lg:block absolute right-0 top-[50%] -translate-y-[50%] w-[52%] h-[70%] max-h-[450px]"
-          >
-            <Image
-              src="/assets/figma/landing/hero-image.png"
-              alt="FahamPesa Dashboard Preview"
-              fill
-              className="object-contain object-right"
-              priority
-            />
-          </motion.div>
         </div>
       </section>
 
