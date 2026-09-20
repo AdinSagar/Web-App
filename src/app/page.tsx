@@ -371,7 +371,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="relative w-full overflow-hidden rounded-[18px] border border-white/70 bg-white/60 shadow-[0_24px_60px_rgba(0,16,49,0.16)] sm:rounded-[24px]"
+              className="relative w-full max-w-[500px] justify-self-center lg:justify-self-end"
             >
               <Image
                 src="/assets/figma/landing/fahampesa-business-showcase.webp"
