@@ -7,8 +7,11 @@ import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const assets = {
-  logo: '/assets/figma/landing/logo-icon.svg',
+  logo: '/assets/fahampesa-business-logo.svg',
 }
+
+const BUSINESS_LOGIN_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=login'
+const BUSINESS_SIGNUP_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=signup'
 
 interface PublicHeaderProps {
   onOpenDownload?: () => void;
@@ -49,7 +52,7 @@ export default function PublicHeader({ onOpenDownload }: PublicHeaderProps) {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link href="https://fahampesa-business-web-production.up.railway.app/" className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
+            <Link href={BUSINESS_LOGIN_URL} className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
               Login
             </Link>
             <button
@@ -59,10 +62,10 @@ export default function PublicHeader({ onOpenDownload }: PublicHeaderProps) {
               Get Desktop App
             </button>
             <Link
-              href="/login"
+              href={BUSINESS_SIGNUP_URL}
               className="font-dm-sans font-semibold text-[14px] text-white bg-[#004AAD] rounded-[10px] px-6 py-3 hover:bg-[#003a8c] transition-colors flex items-center gap-2"
             >
-              Start a free trial
+              Sign Up
               <ArrowUpRight size={16} />
             </Link>
           </div>
@@ -139,18 +142,18 @@ export default function PublicHeader({ onOpenDownload }: PublicHeaderProps) {
               {/* Mobile Menu Footer Actions */}
               <div className="p-4 flex flex-col gap-4 mb-4">
                 <Link 
-                  href="https://fahampesa-business-web-production.up.railway.app/" 
+                  href={BUSINESS_LOGIN_URL}
                   onClick={() => setMobileMenuOpen(false)} 
                   className="font-dm-sans font-bold text-[16px] text-[#001031] border border-[#001031] rounded-[12px] py-4 w-full text-center hover:bg-gray-50 transition-colors"
                 >
                   Login
                 </Link>
                 <Link
-                  href="/login"
+                  href={BUSINESS_SIGNUP_URL}
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-dm-sans font-bold text-[16px] text-white bg-[#1D4ED8] rounded-[12px] py-4 w-full text-center hover:bg-[#1e40af] transition-colors"
                 >
-                  Start a free trial
+                  Sign Up
                 </Link>
               </div>
             </motion.div>
