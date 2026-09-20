@@ -575,7 +575,7 @@ function PricingPageContent() {
                         <p className="text-xs md:text-sm leading-[22.75px] font-segoe text-[#99A1AF] text-center md:text-left">
                             © 2024 FahamPesa. Built with ❤️ for small business owners in Kenya and beyond.
                         </p>
-                        <Link href="/login" className="text-xs md:text-sm leading-5 font-segoe text-[#99A1AF] hover:text-white transition-colors">
+                        <Link href="https://fahampesa-business-web-production.up.railway.app/?intent=login" className="text-xs md:text-sm leading-5 font-segoe text-[#99A1AF] hover:text-white transition-colors">
                             Business Login
                         </Link>
                     </div>
