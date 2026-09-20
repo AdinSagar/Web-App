@@ -14,7 +14,7 @@ import { DownloadModal } from '@/components/DownloadModal'
 import Footer from '@/components/footer'
 
 const assets = {
-  logo: '/assets/figma/landing/logo-icon.svg',
+  logo: '/assets/fahampesa-business-logo.svg',
   facebook: '/assets/figma/landing/facebook.svg',
   instagram: '/assets/figma/landing/instagram.svg',
   googlePlay: '/google_play.png',
@@ -22,6 +22,9 @@ const assets = {
   arrowUpDuotone: '/assets/figma/landing/arrow-up-duotone.svg',
   arrowUpDuotone1: '/assets/figma/landing/arrow-up-duotone-1.svg',
 }
+
+const BUSINESS_LOGIN_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=login'
+const BUSINESS_SIGNUP_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=signup'
 
 const faqs = [
   {
@@ -309,7 +312,7 @@ export default function SubscriptionPage() {
 
                     {/* Desktop Actions */}
                     <div className="hidden lg:flex items-center gap-4">
-                        <Link href="/login" className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
+                        <Link href={BUSINESS_LOGIN_URL} className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
                             Login
                         </Link>
                         <button
@@ -319,10 +322,10 @@ export default function SubscriptionPage() {
                             Get Desktop App
                         </button>
                         <Link
-                            href="/login"
+                            href={BUSINESS_SIGNUP_URL}
                             className="font-dm-sans font-semibold text-[14px] text-white bg-[#004AAD] rounded-[10px] px-6 py-3 hover:bg-[#003a8c] transition-colors flex items-center gap-2"
                         >
-                            Start a free trial
+                            Sign Up
                             <ArrowUpRight size={16} />
                         </Link>
                     </div>
@@ -389,7 +392,7 @@ export default function SubscriptionPage() {
                             {/* Mobile Menu Footer Actions */}
                             <div className="border-t border-gray-100 p-4 sm:p-6 flex flex-col gap-3 shrink-0">
                                 <Link
-                                    href="/login"
+                                    href={BUSINESS_LOGIN_URL}
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors text-center border border-gray-200"
                                 >
@@ -405,11 +408,11 @@ export default function SubscriptionPage() {
                                     Get Desktop App
                                 </button>
                                 <Link
-                                    href="/login"
+                                    href={BUSINESS_SIGNUP_URL}
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="font-dm-sans font-semibold text-[14px] text-white bg-[#004AAD] rounded-[10px] px-6 py-3 hover:bg-[#003a8c] transition-colors flex items-center justify-center gap-2"
                                 >
-                                    Start a free trial
+                                    Sign Up
                                     <ArrowUpRight size={16} />
                                 </Link>
                             </div>
@@ -797,10 +800,10 @@ export default function SubscriptionPage() {
                                 Whether you&apos;re a manufacturer, construction firm or a hardware store, we can help you pay employees or casual labourers in cash, into a mobile wallet or bank account.
                             </p>
                             <Link
-                                href="/login"
+                                href={BUSINESS_SIGNUP_URL}
                                 className="flex bg-white text-[#001031] font-dm-sans font-semibold text-[20px] px-6 py-4 rounded-[16px] hover:bg-gray-100 transition-colors mt-4 items-center gap-2"
                             >
-                                Start a free trial
+                                Sign Up
                             </Link>
                         </div>
                     </div>
