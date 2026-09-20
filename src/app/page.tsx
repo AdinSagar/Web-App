@@ -395,7 +395,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="hidden lg:block absolute right-0 top-[50%] -translate-y-[50%] w-[52%] h-[70%] max-h-[450px]"
+            className="hidden lg:block absolute right-[2%] top-[50%] -translate-y-[50%] w-[52%] h-[70%] max-h-[450px]"
           >
             <Image
               src="/assets/figma/landing/fahampesa-business-showcase.webp"
