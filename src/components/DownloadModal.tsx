@@ -40,13 +40,8 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
     document.body.removeChild(link)
   }
 
-  const handleMacDownload = () => {
-    const link = document.createElement('a')
-    link.href = '/fahampesa.dmg'
-    link.download = 'fahampesa.dmg'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const handleAndroidDownload = () => {
+    alert("Android download will be connected after approval.")
   }
 
   const handleLinuxDownload = () => {
@@ -116,20 +111,26 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
               </div>
             </div>
 
-            {/* Mac Card */}
+            {/* Android Card */}
             <div className="border border-[#001031] rounded-[16px] p-[14px] flex flex-col items-center justify-center gap-[19px] w-full md:w-[186px] h-[228px] shrink-0">
-              <div className="bg-[#001031] rounded-full w-[100px] h-[100px] flex items-center justify-center">
-                <div className="flex flex-col items-center text-white font-inter font-normal leading-none">
-                  <span className="text-[20px]">mac</span>
-                  <span className="text-[40px]">OS</span>
-                </div>
+              <div className="relative w-[100px] h-[100px] flex items-center justify-center">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M28 36H72V72C72 77.5228 67.5228 82 62 82H38C32.4772 82 28 77.5228 28 72V36Z" fill="#001031" />
+                  <path d="M26 34C27.2 23.8 35.3 16 45.5 14.7L40.5 7.5C39.9 6.6 40.1 5.4 41 4.8C41.9 4.2 43.1 4.4 43.7 5.3L49.7 14H50.3L56.3 5.3C56.9 4.4 58.1 4.2 59 4.8C59.9 5.4 60.1 6.6 59.5 7.5L54.5 14.7C64.7 16 72.8 23.8 74 34H26Z" fill="#001031" />
+                  <circle cx="39" cy="25" r="2.5" fill="white" />
+                  <circle cx="61" cy="25" r="2.5" fill="white" />
+                  <rect x="18" y="38" width="7" height="34" rx="3.5" fill="#001031" />
+                  <rect x="75" y="38" width="7" height="34" rx="3.5" fill="#001031" />
+                  <rect x="36" y="78" width="8" height="17" rx="4" fill="#001031" />
+                  <rect x="56" y="78" width="8" height="17" rx="4" fill="#001031" />
+                </svg>
               </div>
               <div className="flex flex-col items-center gap-[10px] w-full">
                 <p className="font-inter font-medium text-[24px] text-[#001031] text-center leading-none">
-                  MacOS
+                  Android
                 </p>
                 <button
-                  onClick={handleMacDownload}
+                  onClick={handleAndroidDownload}
                   className="bg-[#004aad] text-white font-dm-sans font-semibold text-[16px] px-[24px] py-[10px] rounded-[12px] w-full hover:bg-[#003a8c] transition-colors"
                 >
                   Download
@@ -168,12 +169,12 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
 
           <div className="flex flex-col gap-[10px] w-full">
             <p className="font-inter font-medium text-[18px] text-[#001031] leading-none">
-              Quick install (macOS)
+              Quick install (Android)
             </p>
             <ol className="list-decimal pl-5 font-inter text-[16px] text-[#001031] space-y-2">
-              <li>Double-click fahampesa.dmg</li>
-              <li>Drag fahampesa.app to the Applications folder</li>
-              <li>Open it from Applications</li>
+              <li>Download FahamPesa-Subscription-Test.apk</li>
+              <li>Allow installation from your browser when prompted</li>
+              <li>Open the APK and tap Install</li>
             </ol>
           </div>
         </div>
