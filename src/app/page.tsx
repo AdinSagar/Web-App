@@ -300,10 +300,9 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-[80px] bg-[#DEE4FF] relative overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[72px] xl:px-[100px] py-[48px] lg:py-[72px] relative z-10">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-12 xl:gap-16">
-            <div>
+      <section className="pt-[80px] bg-[#DEE4FF] min-h-[600px] lg:min-h-[750px] relative overflow-hidden">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[100px] pt-[60px] lg:pt-[60px] pb-[40px] lg:pb-[80px] relative z-10">
+          <div className="lg:w-[50%]">
             {/* Floating Tag */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -365,25 +364,55 @@ export default function LandingPage() {
                 <span className="font-inter font-normal text-[12px] lg:text-[16px] text-[#001031] tracking-[-0.4px]">Real-time reports and insights</span>
               </div>
             </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="relative w-full max-w-[500px] justify-self-center lg:justify-self-end"
-            >
-              <Image
-                src="/assets/figma/landing/fahampesa-business-showcase.webp"
-                alt="FahamPesa business dashboard and point of sale on desktop, tablet, and mobile"
-                width={1123}
-                height={1024}
-                sizes="(max-width: 1023px) 100vw, 58vw"
-                className="block h-auto w-full"
-                priority
-              />
-            </motion.div>
           </div>
+
+          {/* Hero visual - Mobile */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="lg:hidden relative h-[350px] mt-8"
+          >
+            <Image
+              src="/assets/figma/landing/fahampesa-business-showcase.webp"
+              alt="FahamPesa business dashboard and point of sale on desktop, tablet, and mobile"
+              fill
+              sizes="100vw"
+              className="object-contain object-center scale-[0.9]"
+              priority
+            />
+            <div className="absolute bottom-3 right-0 w-[72%] rounded-[14px] bg-white/90 px-4 py-3 shadow-[0_14px_34px_rgba(0,16,49,0.14)] backdrop-blur-sm">
+              <div className="flex items-baseline justify-between gap-2">
+                <p className="font-inter text-[14px] font-medium text-[#001031]">Sale #7c77 - Xiaomi A7</p>
+                <span className="shrink-0 font-inter text-[11px] text-[#6B7280]">1 item</span>
+              </div>
+              <p className="mt-1 font-inter text-[11px] text-[#6B7280]">12/25/2025 · 10:40:02 AM</p>
+            </div>
+          </motion.div>
+
+          {/* Hero visual - Desktop */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="hidden lg:block absolute right-0 top-[50%] -translate-y-[50%] w-[52%] h-[70%] max-h-[450px]"
+          >
+            <Image
+              src="/assets/figma/landing/fahampesa-business-showcase.webp"
+              alt="FahamPesa business dashboard and point of sale on desktop, tablet, and mobile"
+              fill
+              sizes="52vw"
+              className="object-contain object-right scale-[0.9] origin-right"
+              priority
+            />
+            <div className="absolute bottom-[-22px] right-[4%] w-[58%] rounded-[18px] bg-white/88 px-6 py-5 shadow-[0_18px_45px_rgba(0,16,49,0.16)] backdrop-blur-md">
+              <div className="flex items-baseline justify-between gap-4">
+                <p className="font-inter text-[21px] font-medium text-[#001031]">Sale #7c77 - Xiaomi A7</p>
+                <span className="shrink-0 font-inter text-[14px] text-[#6B7280]">1 item</span>
+              </div>
+              <p className="mt-2 font-inter text-[15px] text-[#6B7280]">12/25/2025 · 10:40:02 AM</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
