@@ -41,8 +41,8 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
 
   const handleAndroidDownload = () => {
     const link = document.createElement('a')
-    link.href = '/FahamPesa-1.0.8-Android-MPesa.apk'
-    link.download = 'FahamPesa-1.0.8-Android-MPesa.apk'
+    link.href = '/FahamPesa-1.0.10-Android-MPesa.apk'
+    link.download = 'FahamPesa-1.0.10-Android-MPesa.apk'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -176,7 +176,7 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
               Quick install (Android)
             </p>
             <ol className="list-decimal pl-5 font-inter text-[16px] text-[#001031] space-y-2">
-              <li>Download FahamPesa-1.0.8-Android-MPesa.apk</li>
+              <li>Download FahamPesa-1.0.10-Android-MPesa.apk</li>
               <li>Allow installation from your browser when prompted</li>
               <li>Open the APK and tap Install</li>
             </ol>
