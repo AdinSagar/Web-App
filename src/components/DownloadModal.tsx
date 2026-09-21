@@ -32,12 +32,11 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
   }, [open])
 
   const handleWindowsDownload = () => {
-    const link = document.createElement('a')
-    link.href = 'https://f005.backblazeb2.com/file/myapp-downloads/FahamPesa.exe'
-    link.download = 'FahamPesa.exe'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    window.open(
+      'https://fahampesa-business-web-production.up.railway.app',
+      '_blank',
+      'noopener,noreferrer'
+    )
   }
 
   const handleAndroidDownload = () => {
@@ -111,7 +110,7 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
                   onClick={handleWindowsDownload}
                   className="bg-[#004aad] text-white font-dm-sans font-semibold text-[16px] px-[24px] py-[10px] rounded-[12px] w-full hover:bg-[#003a8c] transition-colors"
                 >
-                  Download
+                  Install
                 </button>
               </div>
             </div>
