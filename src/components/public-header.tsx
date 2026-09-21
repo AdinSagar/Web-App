@@ -10,8 +10,8 @@ const assets = {
   logo: '/assets/figma/landing/logo-icon.svg',
 }
 
-const BUSINESS_LOGIN_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=login'
-const BUSINESS_SIGNUP_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=signup'
+const BUSINESS_LOGIN_URL = '/login'
+const BUSINESS_SIGNUP_URL = '/signup'
 
 interface PublicHeaderProps {
   onOpenDownload?: () => void;

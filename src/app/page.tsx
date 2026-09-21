@@ -43,8 +43,8 @@ const assets = {
   playIcon: 'https://www.figma.com/api/mcp/asset/8720f529-7764-486a-8aff-9b42c29a01fc',
 }
 
-const BUSINESS_LOGIN_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=login'
-const BUSINESS_SIGNUP_URL = 'https://fahampesa-business-web-production.up.railway.app/?intent=signup'
+const BUSINESS_LOGIN_URL = '/login'
+const BUSINESS_SIGNUP_URL = '/signup'
 
 const faqs = [
   {

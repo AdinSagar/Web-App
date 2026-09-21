@@ -33,7 +33,7 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
 
   const handleWindowsDownload = () => {
     window.open(
-      'https://fahampesa-business-web-production.up.railway.app',
+      '/login',
       '_blank',
       'noopener,noreferrer'
     )
