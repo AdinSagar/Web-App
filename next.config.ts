@@ -50,6 +50,7 @@ const nextConfig: NextConfig = {
         { source: "/src/:path*", destination: `${businessWebOrigin}/src/:path*` },
         { source: "/packages/:path*", destination: `${businessWebOrigin}/packages/:path*` },
         { source: "/assets/fahampesa-business-logo.svg", destination: `${businessWebOrigin}/assets/fahampesa-business-logo.svg` },
+        { source: "/assets/fahampesa-business-logo.png", destination: `${businessWebOrigin}/assets/fahampesa-business-logo.png` },
         { source: "/assets/access-approved-reference.webp", destination: `${businessWebOrigin}/assets/access-approved-reference.webp` },
         { source: "/assets/icon-192.png", destination: `${businessWebOrigin}/assets/icon-192.png` },
         { source: "/assets/icon-512.png", destination: `${businessWebOrigin}/assets/icon-512.png` },
