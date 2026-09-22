@@ -85,17 +85,13 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
             {/* Windows Card */}
             <div className="border border-[#001031] rounded-[16px] p-[14px] flex flex-col items-center justify-center gap-[19px] w-full md:w-[186px] h-[228px] shrink-0">
               <div className="relative w-[100px] h-[100px]">
-                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_594_4779)">
-                    <path d="M40.9688 8.59375L0 13.9812V48.0437H40.9688V8.59375ZM0 86.2188L40.9688 92.05V51.9562H0V86.2188ZM45.4875 52.4688L45.65 92.3312L100 100V52.4688H45.4875ZM100 0L45.8125 7.775V47.8625H100V0Z" fill="#001031" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_594_4779">
-                      <rect width="100" height="100" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                <Image
+                  src="/assets/brand/fahampesa-logo-512.png"
+                  alt="FahamPesa app icon"
+                  fill
+                  sizes="100px"
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col items-center gap-[10px] w-full">
                 <p className="font-inter font-medium text-[24px] text-[#001031] text-center leading-none">
