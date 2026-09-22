@@ -490,7 +490,7 @@ export default function LoginPage() {
             <div className="flex items-center gap-[7px]">
                 {/* Logo */}
                 <div className="w-[32px] h-[32px] relative shrink-0">
-                    <Image src="/assets/figma/landing/logo-icon.svg" alt="FahamPesa" fill className="object-contain" />
+                    <Image src="/assets/brand/fahampesa-logo-512.png" alt="FahamPesa" fill className="rounded-[8px] object-contain" />
                 </div>
                 <div className="flex flex-col">
                     <span className="font-roboto font-bold text-[20px] text-[#001223] leading-none">Fahampesa</span>

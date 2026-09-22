@@ -334,7 +334,7 @@ export default function VerifyPhonePage() {
       <header className="bg-white h-20 flex items-center px-6 lg:px-[103px]">
         <div className="flex gap-2 items-center">
           <Image
-            src="/assets/about/logo.svg"
+            src="/assets/brand/fahampesa-logo-512.png"
             alt="Fahampesa"
             width={40}
             height={40}

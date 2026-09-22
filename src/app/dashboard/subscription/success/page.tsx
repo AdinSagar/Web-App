@@ -50,7 +50,7 @@ function SuccessContent() {
                 <div className="absolute left-[40px] top-[20px] flex gap-[7px] items-center">
                     <div className="w-[40px] h-[40px]">
                         <Image
-                            src="/assets/figma/subscription/logo-vector.svg"
+                            src="/assets/brand/fahampesa-logo-512.png"
                             alt="Fahampesa"
                             width={40}
                             height={40}

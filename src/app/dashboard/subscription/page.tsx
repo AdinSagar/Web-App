@@ -11,7 +11,7 @@ import { DownloadModal } from '@/components/DownloadModal'
 import Footer from '@/components/footer'
 
 const assets = {
-  logo: '/assets/figma/landing/logo-icon.svg',
+  logo: '/assets/brand/fahampesa-logo-512.png',
   facebook: '/assets/figma/landing/facebook.svg',
   instagram: '/assets/figma/landing/instagram.svg',
   googlePlay: '/google_play.png',
@@ -270,7 +270,7 @@ export default function SubscriptionPage() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-[7px]">
                         <div className="w-[32px] h-[32px] relative">
-                            <Image src={assets.logo} alt="FahamPesa" fill className="object-contain" />
+                            <Image src={assets.logo} alt="FahamPesa" fill className="rounded-[8px] object-contain" />
                         </div>
                         <div className="flex flex-col">
                             <span className="font-roboto font-bold text-[20px] text-[#001223] leading-none">Fahampesa</span>
@@ -327,7 +327,7 @@ export default function SubscriptionPage() {
                             <div className="h-[80px] flex items-center justify-between px-4 sm:px-6 border-b border-gray-100 shrink-0">
                                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-[7px]">
                                     <div className="w-[32px] h-[32px] relative">
-                                        <Image src={assets.logo} alt="FahamPesa" fill className="object-contain" />
+                                        <Image src={assets.logo} alt="FahamPesa" fill className="rounded-[8px] object-contain" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="font-roboto font-bold text-[20px] text-[#001223] leading-none">Fahampesa</span>
