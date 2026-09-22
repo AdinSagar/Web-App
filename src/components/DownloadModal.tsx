@@ -48,11 +48,6 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
     document.body.removeChild(link)
   }
 
-  const handleLinuxDownload = () => {
-    // Placeholder for Linux download
-    alert("Linux download coming soon!")
-  }
-
   if (!mounted) return null
   if (!open) return null
 
@@ -162,10 +157,12 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
                   Linux
                 </p>
                 <button
-                  onClick={handleLinuxDownload}
-                  className="bg-[#004aad] text-white font-dm-sans font-semibold text-[16px] px-[24px] py-[10px] rounded-[12px] w-full hover:bg-[#003a8c] transition-colors"
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  className="bg-[#e8edf4] text-[#5f6f86] font-dm-sans font-semibold text-[16px] px-[24px] py-[10px] rounded-[12px] w-full cursor-not-allowed"
                 >
-                  Download
+                  Coming soon
                 </button>
               </div>
             </div>
