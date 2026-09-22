@@ -47,6 +47,7 @@ const nextConfig: NextConfig = {
         { source: "/manifest.webmanifest", destination: `${businessWebOrigin}/manifest.webmanifest` },
         { source: "/sw.js", destination: `${businessWebOrigin}/sw.js` },
         { source: "/index.html", destination: `${businessWebOrigin}/index.html` },
+        { source: "/app.bundle.v1.js", destination: `${businessWebOrigin}/app.bundle.v1.js` },
         { source: "/src/:path*", destination: `${businessWebOrigin}/src/:path*` },
         { source: "/packages/:path*", destination: `${businessWebOrigin}/packages/:path*` },
         { source: "/assets/fahampesa-business-logo.svg", destination: `${businessWebOrigin}/assets/fahampesa-business-logo.svg` },
