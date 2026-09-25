@@ -2,6 +2,7 @@ import { X } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
+import { BUSINESS_INSTALL_URL } from "@/lib/business-app"
 
 // Asset URLs from Figma
 const imgBiWindows = "https://www.figma.com/api/mcp/asset/d9361664-08e7-4c01-a7f9-942c8d370f42";
@@ -42,7 +43,7 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
   }
 
   const handleWindowsDownload = () => {
-    triggerDownload('/FahamPesa.zip', 'FahamPesa.zip')
+    window.location.assign(BUSINESS_INSTALL_URL)
   }
 
   const handleAndroidDownload = () => {
@@ -102,7 +103,7 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
                   onClick={handleWindowsDownload}
                   className="bg-[#004aad] text-white font-dm-sans font-semibold text-[16px] px-[24px] py-[10px] rounded-[12px] w-full hover:bg-[#003a8c] transition-colors"
                 >
-                  Download
+                  Install
                 </button>
               </div>
             </div>
@@ -170,9 +171,9 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
               Windows install
             </p>
             <ol className="list-decimal pl-5 font-inter text-[16px] text-[#001031] space-y-2">
-              <li>Download FahamPesa.zip</li>
-              <li>Open the downloaded ZIP and extract it</li>
-              <li>Open FahamPesa from the extracted folder</li>
+              <li>Open the current FahamPesa Windows installer</li>
+              <li>Click Install FahamPesa in Edge or Chrome</li>
+              <li>Launch FahamPesa from the Windows Start menu</li>
             </ol>
           </div>
 
