@@ -5,13 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { BUSINESS_LOGIN_URL, BUSINESS_SIGNUP_URL } from '@/lib/business-app'
 
 const assets = {
   logo: '/assets/brand/fahampesa-logo-512.png',
 }
 
-const BUSINESS_LOGIN_URL = '/login'
-const BUSINESS_SIGNUP_URL = '/signup'
 
 interface PublicHeaderProps {
   onOpenDownload?: () => void;
