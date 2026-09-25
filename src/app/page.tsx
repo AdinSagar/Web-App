@@ -8,6 +8,7 @@ import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { DownloadModal } from '@/components/DownloadModal'
 import { ProductCard, StockDashboardMockup, InventoryCardMockup } from '@/components/ProductMockup'
 import Footer from '@/components/footer'
+import { BUSINESS_LOGIN_URL, BUSINESS_SIGNUP_URL } from '@/lib/business-app'
 
 const assets = {
   logo: '/assets/brand/fahampesa-logo-512.png',
@@ -43,8 +44,6 @@ const assets = {
   playIcon: 'https://www.figma.com/api/mcp/asset/8720f529-7764-486a-8aff-9b42c29a01fc',
 }
 
-const BUSINESS_LOGIN_URL = '/login'
-const BUSINESS_SIGNUP_URL = '/signup'
 
 const faqs = [
   {
@@ -816,23 +815,18 @@ export default function LandingPage() {
             <div className="flex flex-col items-center">
               <div className="w-[400px] h-[380px] bg-[#001223] rounded-[40px] relative mb-6 shrink-0 overflow-hidden">
                 <div className="absolute top-[30px] left-[30px] w-[340px] bg-white rounded-[24px] p-[40px] flex flex-col gap-[29px]">
-                  <h3 className="font-dm-sans font-bold text-[24px] text-[#191D23]">Set up your account</h3>
+                  <h3 className="font-dm-sans font-bold text-[24px] text-[#191D23]">Create your owner account</h3>
                   <div className="w-full flex flex-col gap-[10px]">
                     <div>
-                      <label className="block font-dm-sans text-[16px] text-black mb-[10px]">Business Name</label>
+                      <label className="block font-dm-sans text-[16px] text-black mb-[10px]">Email address</label>
                       <div className="border border-[#BFC4CB] rounded-[8px] p-[16px] w-full">
-                        <p className="font-dm-sans text-[16px] text-[#64748B]">Enter your business name</p>
+                        <p className="font-dm-sans text-[16px] text-[#64748B]">owner@example.com</p>
                       </div>
                     </div>
                     <div>
-                      <label className="block font-dm-sans text-[16px] text-black mb-[10px]">Phone Number</label>
-                      <div className="border border-[#BFC4CB] rounded-[8px] p-[8px] flex gap-[10px] items-center w-full">
-                        <div className="bg-[#F0F2F5] rounded-[8px] p-[8px] flex items-center gap-[2px] shrink-0">
-                          <Image src={assets.avatar5} alt="" width={24} height={24} />
-                          <span className="text-[#64748B] text-[16px] font-dm-sans">+254</span>
-                          <Image src={assets.arrowDown} alt="" width={20} height={20} />
-                        </div>
-                        <p className="text-[#64748B] text-[16px] font-dm-sans flex-1">123 4567...</p>
+                      <label className="block font-dm-sans text-[16px] text-black mb-[10px]">Password</label>
+                      <div className="border border-[#BFC4CB] rounded-[8px] p-[16px] w-full">
+                        <p className="font-dm-sans text-[16px] text-[#64748B]">••••••••••</p>
                       </div>
                     </div>
                   </div>
@@ -843,7 +837,7 @@ export default function LandingPage() {
               </div>
               <h3 className="font-inter font-normal text-[30px] text-[#001031] mb-3 text-center">Create account</h3>
               <p className="font-inter font-normal text-[18px] text-[#001031] text-center max-w-[340px] leading-[24px]">
-                Create your Fahampesa account with your phone number to get started.
+                Create your owner account with email and password, then verify your email once.
               </p>
             </div>
 
