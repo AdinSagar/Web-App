@@ -31,21 +31,22 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
     }
   }, [open])
 
-  const handleWindowsDownload = () => {
-    window.open(
-      '/login',
-      '_blank',
-      'noopener,noreferrer'
-    )
-  }
-
-  const handleAndroidDownload = () => {
+  const triggerDownload = (href: string, filename: string) => {
     const link = document.createElement('a')
-    link.href = '/FahamPesa-1.0.10-Android-MPesa.apk'
-    link.download = 'FahamPesa-1.0.10-Android-MPesa.apk'
+    link.href = href
+    link.download = filename
+    link.rel = 'noopener'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  const handleWindowsDownload = () => {
+    triggerDownload('/FahamPesa.zip', 'FahamPesa.zip')
+  }
+
+  const handleAndroidDownload = () => {
+    triggerDownload('/FahamPesa-1.0.10-Android-MPesa.apk', 'FahamPesa-1.0.10-Android-MPesa.apk')
   }
 
   if (!mounted) return null
@@ -101,7 +102,7 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
                   onClick={handleWindowsDownload}
                   className="bg-[#004aad] text-white font-dm-sans font-semibold text-[16px] px-[24px] py-[10px] rounded-[12px] w-full hover:bg-[#003a8c] transition-colors"
                 >
-                  Install
+                  Download
                 </button>
               </div>
             </div>
@@ -162,6 +163,17 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
                 </button>
               </div>
             </div>
+          </div>
+
+          <div className="flex flex-col gap-[10px] w-full">
+            <p className="font-inter font-medium text-[18px] text-[#001031] leading-none">
+              Windows install
+            </p>
+            <ol className="list-decimal pl-5 font-inter text-[16px] text-[#001031] space-y-2">
+              <li>Download FahamPesa.zip</li>
+              <li>Open the downloaded ZIP and extract it</li>
+              <li>Open FahamPesa from the extracted folder</li>
+            </ol>
           </div>
 
           <div className="flex flex-col gap-[10px] w-full">
