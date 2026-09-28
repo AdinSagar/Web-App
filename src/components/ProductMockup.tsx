@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { BUSINESS_SIGNUP_URL } from "@/lib/business-app";
 
 // Asset URLs from Figma
 const imgAdd = "https://www.figma.com/api/mcp/asset/a1f513a2-6b8d-4742-8b0e-1fdf058a69f7";
@@ -417,7 +418,7 @@ export function ProductCard({ title, description, children, imageSrc, mobileImag
               {description}
             </p>
           </div>
-          <Link href="/login" className="flex items-center gap-1 text-[#004aad] font-inter font-semibold text-[16px] tracking-[-0.4px] cursor-pointer hover:gap-2 transition-all mt-2">
+          <Link href={BUSINESS_SIGNUP_URL} className="flex items-center gap-1 text-[#004aad] font-inter font-semibold text-[16px] tracking-[-0.4px] cursor-pointer hover:gap-2 transition-all mt-2">
             Get Started
             <ArrowRight className="w-5 h-5" />
           </Link>

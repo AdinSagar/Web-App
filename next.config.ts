@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const businessWebOrigin = "https://fahampesa-business-web-production.up.railway.app";
+const businessWebOrigin = "https://app.fahampesa.com";
 
 const businessAppRoutes = [
   "/access-unavailable",
@@ -33,11 +33,17 @@ const businessAppRoutes = [
 const nextConfig: NextConfig = {
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
+  async redirects() {
+    return [
+      { source: "/login", destination: `${businessWebOrigin}/?intent=login`, permanent: false },
+      { source: "/signup", destination: `${businessWebOrigin}/?intent=signup`, permanent: false },
+      { source: "/onboarding", destination: `${businessWebOrigin}/?intent=signup`, permanent: false },
+      { source: "/forgot-password", destination: `${businessWebOrigin}/?intent=login`, permanent: false },
+    ];
+  },
   async rewrites() {
     return {
       beforeFiles: [
-        { source: "/login", destination: `${businessWebOrigin}/?intent=login` },
-        { source: "/signup", destination: `${businessWebOrigin}/?intent=signup` },
         ...businessAppRoutes.map((source) => ({
           source,
           destination: `${businessWebOrigin}${source}`,
