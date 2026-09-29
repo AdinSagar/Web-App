@@ -35,6 +35,12 @@ const nextConfig: NextConfig = {
   eslint: { ignoreDuringBuilds: true },
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.fahampesa.com" }],
+        destination: "https://fahampesa.com/:path*",
+        permanent: true,
+      },
       { source: "/login", destination: `${businessWebOrigin}/?intent=login`, permanent: false },
       { source: "/signup", destination: `${businessWebOrigin}/?intent=signup`, permanent: false },
       { source: "/onboarding", destination: `${businessWebOrigin}/?intent=signup`, permanent: false },
