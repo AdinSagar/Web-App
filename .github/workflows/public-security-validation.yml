@@ -1,0 +1,333 @@
+name: Public website security validation
+
+on:
+  push:
+    branches:
+      - security/public-nextjs-20261002
+    paths-ignore:
+      - validation-results/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-security-validation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEXT_PUBLIC_API_BASE_URL: "http://127.0.0.1:9"
+      NEXT_PUBLIC_APP_URL: "http://127.0.0.1:9"
+      NEXT_PUBLIC_BASE_URL: "http://127.0.0.1:9"
+      FIREBASE_PROJECT_ID: "test-only-no-production"
+      FIREBASE_STORAGE_BUCKET: "test-only-no-production.appspot.com"
+      STRIPE_PUBLIC_KEY: "pk_test_validation_only"
+      STRIPE_SECRET_KEY: "sk_test_validation_only"
+      STRIPE_WEBHOOK_SECRET: "whsec_validation_only"
+      MPESA_ENVIRONMENT: "sandbox"
+      MPESA_CALLBACK_URL: "http://127.0.0.1:9/mpesa-callback"
+      MPESA_CONSUMER_KEY: "test-only"
+      MPESA_CONSUMER_SECRET: "test-only"
+      MPESA_PASSKEY: "test-only"
+      MPESA_SHORTCODE: "000000"
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: security/public-nextjs-20261002
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Prepare reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf validation-results
+          mkdir -p validation-results/logs
+          {
+            echo "branch=${GITHUB_REF_NAME}"
+            echo "run_commit=${GITHUB_SHA}"
+            echo "runner_os=${RUNNER_OS}"
+            node --version
+            npm --version
+          } > validation-results/runner.txt
+
+      - name: Verify deployment protection before validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE' > validation-results/deployment-protection.txt
+          const fs = require('fs');
+          const vercel = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
+          const disabled = vercel.git?.deploymentEnabled?.['security/public-nextjs-20261002'] === false;
+          const railwayBranch = 'main';
+          const result = {
+            vercelDeploymentDisabledForBranch: disabled,
+            railwayPublicServiceSourceBranchFromInspection: railwayBranch,
+            branchUnderTest: process.env.GITHUB_REF_NAME,
+            willTriggerRailwayPublicDeploy: process.env.GITHUB_REF_NAME === railwayBranch,
+          };
+          console.log(JSON.stringify(result, null, 2));
+          if (!disabled) process.exit(10);
+          if (process.env.GITHUB_REF_NAME === railwayBranch) process.exit(11);
+          NODE
+
+      - name: Record committed dependency files
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp package.json validation-results/package.current.json
+          cp package-lock.json validation-results/package-lock.current.json
+          git show 08e0a674ebd7f0818445523bdd0ba754ba72a498:package.json > validation-results/package.baseline.json
+          git show 08e0a674ebd7f0818445523bdd0ba754ba72a498:package-lock.json > validation-results/package-lock.baseline.json
+          sha256sum package.json package-lock.json > validation-results/dependency-file-hashes.txt
+          node <<'NODE' > validation-results/dependency-diff.json
+          const fs = require('fs');
+          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const lock = JSON.parse(fs.readFileSync('package-lock.json', 'utf8'));
+          const afterPackages = lock.packages || {};
+          const baselinePkg = JSON.parse(fs.readFileSync('validation-results/package.baseline.json', 'utf8'));
+          const baselineLock = JSON.parse(fs.readFileSync('validation-results/package-lock.baseline.json', 'utf8'));
+          const required = {
+            next: pkg.dependencies?.next,
+            eslintConfigNext: pkg.devDependencies?.['eslint-config-next'],
+            lockNext: afterPackages['node_modules/next']?.version,
+            lockEslintConfigNext: afterPackages['node_modules/eslint-config-next']?.version,
+          };
+          if (required.next !== '15.5.27') process.exit(20);
+          if (required.eslintConfigNext !== '15.5.27') process.exit(21);
+          if (required.lockNext !== '15.5.27') process.exit(22);
+          if (required.lockEslintConfigNext !== '15.5.27') process.exit(23);
+          const beforePackages = baselineLock.packages || {};
+          const names = new Set([...Object.keys(beforePackages), ...Object.keys(afterPackages)]);
+          const changed = [];
+          for (const name of names) {
+            const before = beforePackages[name];
+            const after = afterPackages[name];
+            if (!before || !after || before.version !== after.version || before.resolved !== after.resolved || before.integrity !== after.integrity) {
+              changed.push({ package: name || '.', before: before?.version || null, after: after?.version || null });
+            }
+          }
+          console.log(JSON.stringify({
+            committedVersions: required,
+            packageJsonChanges: {
+              next: { before: baselinePkg.dependencies?.next, after: required.next },
+              eslintConfigNext: { before: baselinePkg.devDependencies?.['eslint-config-next'], after: required.eslintConfigNext },
+            },
+            changedLockPackages: changed,
+          }, null, 2));
+          NODE
+          git diff --no-index validation-results/package.baseline.json package.json > validation-results/package.diff || true
+          git diff --no-index validation-results/package-lock.baseline.json package-lock.json > validation-results/package-lock.diff || true
+
+      - name: Clean install from committed lockfile
+        shell: bash
+        run: |
+          set +e
+          rm -rf node_modules
+          npm ci > validation-results/logs/npm-ci.log 2>&1
+          code=$?
+          echo "npm_ci=$code" >> validation-results/current-exit-codes.txt
+          exit "$code"
+
+      - name: Record installed versions
+        shell: bash
+        run: |
+          set +e
+          npm ls next eslint-config-next react react-dom --depth=0 > validation-results/installed-versions.txt 2>&1
+          echo "exit_code=$?" >> validation-results/installed-versions.txt
+
+      - name: Baseline validation on unchanged production parent
+        shell: bash
+        run: |
+          set +e
+          git worktree remove ../baseline-public --force >/dev/null 2>&1
+          git worktree add ../baseline-public 08e0a674ebd7f0818445523bdd0ba754ba72a498 > validation-results/logs/baseline-worktree.log 2>&1
+          cd ../baseline-public
+          export CI=true NEXT_TELEMETRY_DISABLED=1
+          export NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:9 NEXT_PUBLIC_APP_URL=http://127.0.0.1:9 NEXT_PUBLIC_BASE_URL=http://127.0.0.1:9
+          export FIREBASE_PROJECT_ID=test-only-no-production FIREBASE_STORAGE_BUCKET=test-only-no-production.appspot.com
+          export STRIPE_PUBLIC_KEY=pk_test_validation_only STRIPE_SECRET_KEY=sk_test_validation_only STRIPE_WEBHOOK_SECRET=whsec_validation_only
+          export MPESA_ENVIRONMENT=sandbox MPESA_CALLBACK_URL=http://127.0.0.1:9/mpesa-callback MPESA_CONSUMER_KEY=test-only MPESA_CONSUMER_SECRET=test-only MPESA_PASSKEY=test-only MPESA_SHORTCODE=000000
+          npm ci > "$GITHUB_WORKSPACE/validation-results/logs/baseline-npm-ci.log" 2>&1
+          echo "baseline_npm_ci=$?" > "$GITHUB_WORKSPACE/validation-results/baseline-exit-codes.txt"
+          export NODE_ENV=production
+          npx tsc --noEmit --pretty false > "$GITHUB_WORKSPACE/validation-results/logs/baseline-tsc.log" 2>&1
+          echo "baseline_tsc=$?" >> "$GITHUB_WORKSPACE/validation-results/baseline-exit-codes.txt"
+          npm run lint > "$GITHUB_WORKSPACE/validation-results/logs/baseline-lint.log" 2>&1
+          echo "baseline_lint=$?" >> "$GITHUB_WORKSPACE/validation-results/baseline-exit-codes.txt"
+          npm run build > "$GITHUB_WORKSPACE/validation-results/logs/baseline-build.log" 2>&1
+          echo "baseline_build=$?" >> "$GITHUB_WORKSPACE/validation-results/baseline-exit-codes.txt"
+
+      - name: TypeScript check
+        shell: bash
+        run: |
+          set +e
+          npx tsc --noEmit --pretty false > validation-results/logs/tsc.log 2>&1
+          echo "tsc=$?" >> validation-results/current-exit-codes.txt
+
+      - name: Lint check
+        shell: bash
+        run: |
+          set +e
+          npm run lint > validation-results/logs/lint.log 2>&1
+          echo "lint=$?" >> validation-results/current-exit-codes.txt
+
+      - name: Production build
+        shell: bash
+        run: |
+          set +e
+          npm run build > validation-results/logs/build.log 2>&1
+          code=$?
+          echo "build=$code" >> validation-results/current-exit-codes.txt
+          exit "$code"
+
+      - name: Relevant test script check
+        shell: bash
+        run: |
+          set +e
+          node <<'NODE' > validation-results/test-script.txt
+          const pkg = require('./package.json');
+          if (pkg.scripts && pkg.scripts.test) {
+            console.log('test_script=present');
+            process.exit(0);
+          }
+          console.log('test_script=missing');
+          console.log('status=not_run');
+          NODE
+          if node -e "process.exit(require('./package.json').scripts?.test ? 0 : 1)"; then
+            npm test > validation-results/logs/test.log 2>&1
+            code=$?
+            echo "test=$code" >> validation-results/current-exit-codes.txt
+            exit "$code"
+          else
+            echo "test=not_run_missing_script" >> validation-results/current-exit-codes.txt
+          fi
+
+      - name: Block live services for isolated runtime checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo tee -a /etc/hosts >/dev/null <<'HOSTS'
+          127.0.0.1 app.fahampesa.com
+          127.0.0.1 api.fahampesa.com
+          127.0.0.1 identitytoolkit.googleapis.com
+          127.0.0.1 securetoken.googleapis.com
+          127.0.0.1 firestore.googleapis.com
+          127.0.0.1 firebasestorage.googleapis.com
+          127.0.0.1 firebase.googleapis.com
+          127.0.0.1 api.stripe.com
+          127.0.0.1 checkout.stripe.com
+          HOSTS
+          echo "blocked_live_service_hosts=true" > validation-results/network-blocks.txt
+
+      - name: Isolated production runtime checks
+        shell: bash
+        run: |
+          set -u
+          PORT=4173
+          npm run start -- --hostname 127.0.0.1 --port "$PORT" > validation-results/logs/next-start.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" >/dev/null 2>&1 || true; wait "$SERVER_PID" >/dev/null 2>&1 || true' EXIT
+          echo "server_pid=$SERVER_PID" > validation-results/runtime-checks.txt
+          ready=0
+          for i in $(seq 1 40); do
+            if curl -fsS "http://127.0.0.1:$PORT/" >/tmp/homepage.html 2>> validation-results/logs/runtime-curl-errors.log; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          echo "server_ready=$ready" >> validation-results/runtime-checks.txt
+          if [ "$ready" != "1" ]; then
+            exit 30
+          fi
+          wc -c /tmp/homepage.html >> validation-results/runtime-checks.txt
+          curl -sS -D validation-results/homepage.headers "http://127.0.0.1:$PORT/" -o validation-results/homepage.html
+          login_code=$(curl -sS -D validation-results/login.headers --max-redirs 0 -o /tmp/login.body -w "%{http_code}" "http://127.0.0.1:$PORT/login")
+          echo "login_http=$login_code" >> validation-results/runtime-checks.txt
+          signup_code=$(curl -sS -D validation-results/signup.headers --max-redirs 0 -o /tmp/signup.body -w "%{http_code}" "http://127.0.0.1:$PORT/signup")
+          echo "signup_http=$signup_code" >> validation-results/runtime-checks.txt
+          grep -qi '^location: https://app.fahampesa.com/?intent=login' validation-results/login.headers || exit 31
+          grep -qi '^location: https://app.fahampesa.com/?intent=signup' validation-results/signup.headers || exit 32
+          [ "$login_code" = "307" ] || exit 33
+          [ "$signup_code" = "307" ] || exit 34
+          node <<'NODE' > validation-results/page-metadata.txt
+          const fs = require('fs');
+          const html = fs.readFileSync('validation-results/homepage.html', 'utf8');
+          const title = html.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1] || null;
+          const description = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i)?.[1] || null;
+          const nextAssets = [...html.matchAll(/\/_next\/static\/[^"']+/g)].slice(0, 10).map((m) => m[0]);
+          if (!title || !description || nextAssets.length === 0) process.exit(35);
+          console.log(JSON.stringify({ title, description, nextAssetSampleCount: nextAssets.length, nextAssets }, null, 2));
+          NODE
+          metadata_code=$?
+          [ "$metadata_code" = "0" ] || exit "$metadata_code"
+          asset=$(node -e "const m=require('fs').readFileSync('validation-results/page-metadata.txt','utf8').match(/\\/_next\\/static\\/[^\"']+/); if (!m) process.exit(1); console.log(m[0])")
+          [ -n "$asset" ] || exit 35
+          echo "asset_sample=$asset" >> validation-results/runtime-checks.txt
+          curl -fsS -D validation-results/asset.headers "http://127.0.0.1:$PORT$asset" -o /tmp/asset.body 2>> validation-results/logs/runtime-curl-errors.log || exit 36
+          printf "path\tstatus\tbytes\n" > validation-results/public-pages.tsv
+          for path in / /about /privacy /terms /installation /pricingpage /contact-information /home; do
+            status=$(curl -sS -o /tmp/page.body -w "%{http_code}" "http://127.0.0.1:$PORT$path" 2>> validation-results/logs/runtime-pages-curl-errors.log)
+            bytes=$(wc -c < /tmp/page.body)
+            printf "%s\t%s\t%s\n" "$path" "$status" "$bytes" >> validation-results/public-pages.tsv
+            [ "$status" = "200" ] || exit 37
+          done
+          malformed_code=$(curl -sS -D validation-results/malformed-server-action.headers -X POST "http://127.0.0.1:$PORT/" -H 'Next-Action: malformed-action-id' -H 'Content-Type: text/plain;charset=UTF-8' --data 'malformed-action-body' -o validation-results/malformed-server-action.body -w "%{http_code}")
+          echo "malformed_action_http=$malformed_code" >> validation-results/runtime-checks.txt
+          [ "$malformed_code" = "404" ] || exit 38
+          grep -qi '^x-nextjs-action-not-found: 1' validation-results/malformed-server-action.headers || exit 39
+          curl -fsS "http://127.0.0.1:$PORT/" >/dev/null 2>> validation-results/logs/runtime-curl-errors.log
+          responsive_code=$?
+          echo "responsive_after_malformed_action=$responsive_code" >> validation-results/runtime-checks.txt
+          [ "$responsive_code" = "0" ] || exit 40
+          kill "$SERVER_PID" >/dev/null 2>&1 || true
+          wait "$SERVER_PID" >/dev/null 2>&1 || true
+          echo "server_stopped=true" >> validation-results/runtime-checks.txt
+
+      - name: Summarize results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p validation-results
+          node <<'NODE' > validation-results/summary.json
+          const fs = require('fs');
+          function read(path) { return fs.existsSync(path) ? fs.readFileSync(path, 'utf8') : ''; }
+          function parseCodes(text) {
+            return Object.fromEntries(text.trim().split(/\n/).filter(Boolean).map(line => {
+              const idx = line.indexOf('=');
+              return [line.slice(0, idx), line.slice(idx + 1)];
+            }));
+          }
+          const summary = {
+            commit: process.env.GITHUB_SHA,
+            branch: process.env.GITHUB_REF_NAME,
+            baseline: parseCodes(read('validation-results/baseline-exit-codes.txt')),
+            current: parseCodes(read('validation-results/current-exit-codes.txt')),
+            runtime: parseCodes(read('validation-results/runtime-checks.txt')),
+            typeScriptAndLintPolicy: 'Recorded separately. Existing TypeScript and lint failures are not labelled as passed.',
+            note: 'Malformed Server Action handling was tested only against the isolated local production build. This is not a complete security audit.',
+          };
+          console.log(JSON.stringify(summary, null, 2));
+          NODE
+
+      - name: Upload validation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-security-validation-${{ github.sha }}
+          path: validation-results
+          retention-days: 14

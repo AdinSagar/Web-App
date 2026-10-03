@@ -1,0 +1,201 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fahampesa@0.1.0 build
+> next build
+
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+   ▲ Next.js 15.5.27
+
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Browserslist: browsers data (caniuse-lite) is 12 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Found 1 warning while optimizing generated CSS:
+
+[2m│   }[22m
+[2m│ }[22m
+[2m│[22m @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&family=Architects+Daughter&family=Roboto:wght@300;400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+[2m┆[22m        [33m[2m^--[22m @import rules must precede all rules aside from @charset and @layer statements[39m
+[2m┆[22m
+[2m│ :root {[22m
+[2m│   --background: 0 0% 100%;[22m
+
+ ✓ Compiled successfully in 23.3s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin initialization error: Error: Service account object must contain a string "private_key" property.
+    at <unknown> (.next/server/app/api/imagekit-upload/route.js:1:7150) {
+  errorInfo: [Object],
+  codePrefix: 'app'
+}
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin SDK credentials not found in environment variables
+   Generating static pages (0/108) ...
+Firebase Admin SDK credentials not found in environment variables
+Metrics calculation - Period: Last 7 Days Days: 7 Filtered sales: 0 Total all sales: 0
+inventoryData - Products count: 0
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin SDK credentials not found in environment variables
+   Generating static pages (27/108) 
+   Generating static pages (54/108) 
+   Generating static pages (81/108) 
+Firebase Admin initialization error: Error: Service account object must contain a string "private_key" property.
+    at <unknown> (.next/server/app/api/imagekit-upload/route.js:1:7150) {
+  errorInfo: [Object],
+  codePrefix: 'app'
+}
+ ✓ Generating static pages (108/108)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                     Size  First Load JS
+┌ ○ /                                        10.6 kB         178 kB
+├ ○ /_not-found                              1.01 kB         103 kB
+├ ○ /about                                   5.57 kB         173 kB
+├ ○ /admin/dashboard                         1.79 kB         281 kB
+├ ƒ /api/admin/auth-users                      311 B         103 kB
+├ ƒ /api/admin/check-branches                  311 B         103 kB
+├ ƒ /api/admin/check-security-alerts           311 B         103 kB
+├ ƒ /api/admin/crashlytics                     311 B         103 kB
+├ ƒ /api/admin/firebase-auth-users             311 B         103 kB
+├ ƒ /api/admin/settings/admin-users            311 B         103 kB
+├ ƒ /api/admin/settings/integrations           311 B         103 kB
+├ ƒ /api/admin/settings/notifications          311 B         103 kB
+├ ƒ /api/admin/settings/platform               311 B         103 kB
+├ ƒ /api/admin/settings/test                   311 B         103 kB
+├ ƒ /api/admin/staff                           311 B         103 kB
+├ ƒ /api/admin/staff/[id]                      311 B         103 kB
+├ ƒ /api/admin/staff/[id]/reset-password       311 B         103 kB
+├ ƒ /api/admin/subscriptions                   311 B         103 kB
+├ ƒ /api/admin/subscriptions/activate          311 B         103 kB
+├ ƒ /api/admin/subscriptions/extend            311 B         103 kB
+├ ƒ /api/admin/subscriptions/revoke            311 B         103 kB
+├ ƒ /api/admin/subscriptions/seed              311 B         103 kB
+├ ƒ /api/admin/subscriptions/set-subscribed    311 B         103 kB
+├ ƒ /api/admin/user-stats                      311 B         103 kB
+├ ƒ /api/admin/users/[id]/disable              311 B         103 kB
+├ ƒ /api/auth/phone-exists                     311 B         103 kB
+├ ƒ /api/branches                              311 B         103 kB
+├ ƒ /api/branches/[id]                         311 B         103 kB
+├ ƒ /api/branches/[id]/inventory               311 B         103 kB
+├ ƒ /api/branches/dashboard                    311 B         103 kB
+├ ƒ /api/create-super-admin                    311 B         103 kB
+├ ƒ /api/get-client-ip                         311 B         103 kB
+├ ƒ /api/imagekit-auth                         311 B         103 kB
+├ ƒ /api/imagekit-upload                       311 B         103 kB
+├ ƒ /api/inventory/alerts                      311 B         103 kB
+├ ƒ /api/inventory/audits                      311 B         103 kB
+├ ƒ /api/inventory/audits/reconcile            311 B         103 kB
+├ ƒ /api/inventory/branches                    311 B         103 kB
+├ ƒ /api/inventory/dashboard                   311 B         103 kB
+├ ƒ /api/inventory/initialize                  311 B         103 kB
+├ ƒ /api/inventory/movements                   311 B         103 kB
+├ ƒ /api/inventory/stock                       311 B         103 kB
+├ ƒ /api/inventory/stock/adjust                311 B         103 kB
+├ ƒ /api/inventory/transfers                   311 B         103 kB
+├ ƒ /api/inventory/transfers/approve           311 B         103 kB
+├ ƒ /api/inventory/transfers/receive           311 B         103 kB
+├ ƒ /api/mpesa/callback                        311 B         103 kB
+├ ƒ /api/mpesa/status                          311 B         103 kB
+├ ƒ /api/mpesa/stk-push                        311 B         103 kB
+├ ƒ /api/mpesa/token                           311 B         103 kB
+├ ƒ /api/notifications/recipients              311 B         103 kB
+├ ƒ /api/notifications/send                    311 B         103 kB
+├ ƒ /api/purchase-orders                       311 B         103 kB
+├ ƒ /api/purchase-orders/[id]                  311 B         103 kB
+├ ƒ /api/purchase-orders/[id]/approve          311 B         103 kB
+├ ƒ /api/purchase-orders/[id]/receive          311 B         103 kB
+├ ƒ /api/purchase-orders/[id]/send             311 B         103 kB
+├ ƒ /api/purchase-orders/dashboard             311 B         103 kB
+├ ƒ /api/staff                                 311 B         103 kB
+├ ƒ /api/staff/[id]                            311 B         103 kB
+├ ƒ /api/staff/[id]/activate                   311 B         103 kB
+├ ƒ /api/staff/2fa/disable                     311 B         103 kB
+├ ƒ /api/staff/2fa/setup                       311 B         103 kB
+├ ƒ /api/staff/2fa/verify                      311 B         103 kB
+├ ƒ /api/staff/logs                            311 B         103 kB
+├ ƒ /api/stripe/checkout-session               311 B         103 kB
+├ ƒ /api/stripe/status                         311 B         103 kB
+├ ƒ /api/stripe/webhook                        311 B         103 kB
+├ ƒ /api/suppliers                             311 B         103 kB
+├ ƒ /api/suppliers/[id]                        311 B         103 kB
+├ ƒ /api/suppliers/[id]/performance            311 B         103 kB
+├ ƒ /api/suppliers/dashboard                   311 B         103 kB
+├ ƒ /api/transfers                             311 B         103 kB
+├ ƒ /api/transfers/[id]                        311 B         103 kB
+├ ƒ /api/transfers/[id]/approve                311 B         103 kB
+├ ƒ /api/transfers/[id]/receive                311 B         103 kB
+├ ƒ /api/transfers/[id]/ship                   311 B         103 kB
+├ ○ /contact-information                     4.19 kB         163 kB
+├ ○ /dashboard                                8.6 kB         261 kB
+├ ○ /dashboard/branches                      10.6 kB         326 kB
+├ ƒ /dashboard/branches/[id]                 9.11 kB         295 kB
+├ ○ /dashboard/debtors                       12.4 kB         322 kB
+├ ƒ /dashboard/debtors/[id]                  7.31 kB         291 kB
+├ ○ /dashboard/expenses                      7.38 kB         294 kB
+├ ƒ /dashboard/expenses/[id]                 7.75 kB         294 kB
+├ ○ /dashboard/inventory                     10.2 kB         310 kB
+├ ƒ /dashboard/inventory/[id]                5.63 kB         297 kB
+├ ○ /dashboard/inventory/browse              6.88 kB         296 kB
+├ ○ /dashboard/notifications                 5.84 kB         290 kB
+├ ○ /dashboard/payments                      5.78 kB         258 kB
+├ ○ /dashboard/pricing                       6.82 kB         245 kB
+├ ○ /dashboard/pricing-taxes                   416 B         103 kB
+├ ○ /dashboard/products                      15.7 kB         339 kB
+├ ƒ /dashboard/products/[id]                 7.29 kB         262 kB
+├ ○ /dashboard/products/browse                7.2 kB         302 kB
+├ ○ /dashboard/reports                       79.4 kB         389 kB
+├ ○ /dashboard/sales                         10.6 kB         323 kB
+├ ƒ /dashboard/sales/[id]                    9.12 kB         293 kB
+├ ƒ /dashboard/sales/edit/[id]               7.65 kB         291 kB
+├ ○ /dashboard/sales/history                 8.12 kB         292 kB
+├ ○ /dashboard/settings                      17.9 kB         320 kB
+├ ○ /dashboard/staff                         7.09 kB         322 kB
+├ ƒ /dashboard/staff/[id]                    7.74 kB         294 kB
+├ ○ /dashboard/staff/add                     8.92 kB         300 kB
+├ ○ /dashboard/subscription                  10.4 kB         296 kB
+├ ○ /dashboard/subscription/checkout         9.09 kB         244 kB
+├ ○ /dashboard/subscription/success          4.63 kB         243 kB
+├ ○ /dashboard/suppliers                     9.71 kB         325 kB
+├ ○ /dashboard/support                       10.9 kB         303 kB
+├ ○ /dashboard/verify-phone                  6.21 kB         241 kB
+├ ○ /home                                     3.8 kB         151 kB
+├ ○ /installation                            6.48 kB         166 kB
+├ ○ /login                                     311 B         103 kB
+├ ○ /onboarding                                311 B         103 kB
+├ ○ /pricingpage                             3.63 kB         126 kB
+├ ○ /privacy                                 4.84 kB         164 kB
+├ ○ /sales/dashboard                         1.94 kB         281 kB
+├ ○ /signup                                    311 B         103 kB
+├ ○ /staff-dashboard                         8.13 kB         282 kB
+├ ○ /super-admin                             10.3 kB         297 kB
+├ ○ /super-admin/alerts                      6.55 kB         296 kB
+├ ○ /super-admin/audit-logs                  2.95 kB         292 kB
+├ ○ /super-admin/broadcast                   5.65 kB         295 kB
+├ ○ /super-admin/payments                    15.4 kB         380 kB
+├ ○ /super-admin/reports                     32.3 kB         432 kB
+├ ○ /super-admin/settings                    6.32 kB         291 kB
+├ ○ /super-admin/staff                       8.43 kB         318 kB
+├ ƒ /super-admin/staff/[id]                  10.3 kB         320 kB
+├ ○ /super-admin/system-health               6.55 kB         292 kB
+├ ○ /super-admin/users                       16.9 kB         329 kB
+├ ○ /terms                                    6.2 kB         173 kB
+└ ○ /unauthorized                            4.95 kB         279 kB
++ First Load JS shared by all                 102 kB
+  ├ chunks/1255-8dc91b756d944555.js          46.2 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js      54.2 kB
+  └ other shared chunks (total)              2.04 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

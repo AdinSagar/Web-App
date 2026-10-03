@@ -1,0 +1,4 @@
+baseline_npm_ci=0
+baseline_tsc=2
+baseline_lint=1
+baseline_build=0

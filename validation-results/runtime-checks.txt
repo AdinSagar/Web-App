@@ -1,0 +1,11 @@
+server_pid=2535
+server_ready=1
+78516 /tmp/homepage.html
+login_exit=0
+signup_exit=0
+asset_sample=/_next/static/media/13971731025ec697-s.p.woff2
+asset_exit=0
+36980 /tmp/asset.body
+malformed_action_exit=0
+responsive_after_malformed_action=0
+server_stopped=true

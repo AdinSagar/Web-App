@@ -1,0 +1,10 @@
+release_review_base_commit=45686b98be50f639f3a404cbc35a675413f9225e
+source_dependency_status=unchanged_after_final_local_build
+workflow_status=nonmutating_artifact_only
+final_local_validation_logs=validation-results/logs/final-npm-ci.log,validation-results/logs/final-build.log
+note=Final npm ci and production build evidence was generated against 45686b98. This release-review commit changes workflow/evidence only; package.json and package-lock.json hashes match the tested files.
+dc86e2b9dedc2a84136aab73fb3feded4204d31e12f78c3875c24d7a428db4ae  package.json
+25cf8e4b2fa2f24d78503708746735e740c64340d524798b869695c3b0580653  package-lock.json
+be91a2e197826ef282336d372c018fe6047a19c9b9424e6ab451808feab893f8  .github/workflows/public-security-validation.yml
+2fb9dcdba70637dfd3ba39cd79ba4eb7ab918c909359a4afb5597c51f553fc01  validation-results/logs/final-npm-ci.log
+4fd3af56c2f85d8447aed0b92f3cd6c3b110d01f9b5e66f4701932c9779f0a9c  validation-results/logs/final-build.log

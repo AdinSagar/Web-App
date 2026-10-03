@@ -1,0 +1,17 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fahampesa@0.1.0 start
+> next start --hostname 127.0.0.1 --port 4174
+
+   ▲ Next.js 15.5.27
+   - Local:        http://127.0.0.1:4174
+   - Network:      http://127.0.0.1:4174
+
+ ✓ Starting...
+ ✓ Ready in 437ms
+Firebase Admin SDK credentials not found in environment variables
+Firebase Admin initialization error: Error: Service account object must contain a string "private_key" property.
+    at <unknown> (.next/server/app/api/imagekit-upload/route.js:1:7150) {
+  errorInfo: [Object],
+  codePrefix: 'app'
+}
