@@ -1,0 +1,4 @@
+tsc=2
+lint=1
+build=0
+test=not_run_missing_script

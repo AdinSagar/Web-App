@@ -1,0 +1,23 @@
+{
+  "railwayProject": "fahampesa-business-api",
+  "railwayProjectId": "d1b8f6e7-aed1-42bd-b10f-3d507f140585",
+  "service": "fahampesa-public-web",
+  "serviceId": "3ce0d025-7372-4a34-b64a-1d8f7b796fbf",
+  "environment": "production",
+  "sourceRepo": "AdinSagar/Web-App",
+  "sourceBranch": "main",
+  "customDomains": [
+    "www.fahampesa.com:8080",
+    "fahampesa.com:8080"
+  ],
+  "serviceDomain": "fahampesa-public-web-production.up.railway.app",
+  "currentDeployment": {
+    "id": "e94de02a-b1a6-4bea-b4b8-225c858b4d6b",
+    "commit": "08e0a674ebd7f0818445523bdd0ba754ba72a498",
+    "branch": "main",
+    "status": "SUCCESS",
+    "canRollback": true
+  },
+  "deploymentTriggerRisk": "Commits to security/public-nextjs-20261002 do not match Railway source branch main. Vercel deployment is disabled for this branch in vercel.json.",
+  "rollbackRisk": "Rolling back from e94de02a would restore an older public website deployment that predates the Next.js 15.5.27 security patch and should be treated as vulnerable until separately upgraded."
+}

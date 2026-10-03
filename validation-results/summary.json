@@ -1,0 +1,190 @@
+{
+  "branch": "security/public-nextjs-20261002",
+  "baselineCommit": "08e0a674ebd7f0818445523bdd0ba754ba72a498",
+  "localTestedCommitBeforeGeneratedResults": "0b8c534310d51e79f4407da26e7996d52a2277d5",
+  "advisoryTarget": "Next.js 15.5.27 maintenance LTS, per Next.js September 2026 security release",
+  "installedVersions": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\nfahampesa@0.1.0 /workspace/scratch/1fe0a29cb789/fahampesa-web-security\n├── eslint-config-next@15.5.27\n├── eslint@9.38.0\n├── next@15.5.27\n├── react-dom@19.1.2\n└── react@19.1.2\n\nexit_code=0",
+  "dependencyDiff": {
+    "packageJsonChanges": {
+      "next": {
+        "before": "15.5.27",
+        "after": "15.5.27"
+      },
+      "eslintConfigNext": {
+        "before": "15.5.27",
+        "after": "15.5.27"
+      }
+    },
+    "changedLockPackages": [
+      {
+        "package": "node_modules/@next/env",
+        "before": "15.4.10",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/eslint-plugin-next",
+        "before": "15.4.5",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/swc-darwin-arm64",
+        "before": "15.4.8",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/swc-darwin-x64",
+        "before": "15.4.8",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/swc-linux-arm64-gnu",
+        "before": "15.4.8",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/swc-linux-arm64-musl",
+        "before": "15.4.8",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/swc-linux-x64-gnu",
+        "before": "15.4.8",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/swc-linux-x64-musl",
+        "before": "15.4.8",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/swc-win32-arm64-msvc",
+        "before": "15.4.8",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/@next/swc-win32-x64-msvc",
+        "before": "15.4.8",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/eslint-config-next",
+        "before": "15.4.5",
+        "after": "15.5.27"
+      },
+      {
+        "package": "node_modules/next",
+        "before": "15.4.10",
+        "after": "15.5.27"
+      }
+    ]
+  },
+  "baseline": {
+    "baseline_npm_ci": "0",
+    "baseline_tsc": "2",
+    "baseline_lint": "1",
+    "baseline_build": "0"
+  },
+  "current": {
+    "tsc": "2",
+    "lint": "1",
+    "build": "0",
+    "test": "not_run_missing_script"
+  },
+  "runtime": {
+    "server_pid": "2535",
+    "server_ready": "1",
+    "78516 /tmp/homepage.htm": "78516 /tmp/homepage.html",
+    "login_exit": "0",
+    "signup_exit": "0",
+    "asset_sample": "/_next/static/media/13971731025ec697-s.p.woff2",
+    "asset_exit": "0",
+    "36980 /tmp/asset.bod": "36980 /tmp/asset.body",
+    "malformed_action_exit": "0",
+    "responsive_after_malformed_action": "0",
+    "server_stopped": "true"
+  },
+  "publicPages": [
+    {
+      "path": "/",
+      "status": "200",
+      "bytes": "78516"
+    },
+    {
+      "path": "/about",
+      "status": "200",
+      "bytes": "31274"
+    },
+    {
+      "path": "/privacy",
+      "status": "200",
+      "bytes": "30057"
+    },
+    {
+      "path": "/terms",
+      "status": "200",
+      "bytes": "34099"
+    },
+    {
+      "path": "/installation",
+      "status": "200",
+      "bytes": "42680"
+    },
+    {
+      "path": "/pricingpage",
+      "status": "200",
+      "bytes": "52991"
+    },
+    {
+      "path": "/contact-information",
+      "status": "200",
+      "bytes": "27617"
+    },
+    {
+      "path": "/home",
+      "status": "200",
+      "bytes": "21982"
+    }
+  ],
+  "redirects": {
+    "login": [
+      "HTTP/1.1 307 Temporary Redirect",
+      "location: https://app.fahampesa.com/?intent=login"
+    ],
+    "signup": [
+      "HTTP/1.1 307 Temporary Redirect",
+      "location: https://app.fahampesa.com/?intent=signup"
+    ]
+  },
+  "malformedServerAction": {
+    "headers": [
+      "HTTP/1.1 404 Not Found",
+      "x-nextjs-action-not-found: 1",
+      "content-type: text/plain"
+    ],
+    "responsiveAfter": "0",
+    "statement": "Tested only against isolated local production build. Not a complete security audit."
+  },
+  "hostingRecord": {
+    "railwayProject": "fahampesa-business-api",
+    "railwayProjectId": "d1b8f6e7-aed1-42bd-b10f-3d507f140585",
+    "service": "fahampesa-public-web",
+    "serviceId": "3ce0d025-7372-4a34-b64a-1d8f7b796fbf",
+    "environment": "production",
+    "sourceRepo": "AdinSagar/Web-App",
+    "sourceBranch": "main",
+    "customDomains": [
+      "www.fahampesa.com:8080",
+      "fahampesa.com:8080"
+    ],
+    "serviceDomain": "fahampesa-public-web-production.up.railway.app",
+    "currentDeployment": {
+      "id": "e94de02a-b1a6-4bea-b4b8-225c858b4d6b",
+      "commit": "08e0a674ebd7f0818445523bdd0ba754ba72a498",
+      "branch": "main",
+      "status": "SUCCESS",
+      "canRollback": true
+    },
+    "deploymentTriggerRisk": "Commits to security/public-nextjs-20261002 do not match Railway source branch main. Vercel deployment is disabled for this branch in vercel.json.",
+    "rollbackRisk": "Rolling back from e94de02a would restore an older public website deployment that predates the Next.js 15.5.27 security patch and should be treated as vulnerable until separately upgraded."
+  }
+}

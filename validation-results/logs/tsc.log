@@ -1,0 +1,232 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+src/app/api/admin/staff/[id]/reset-password/route.ts(22,26): error TS2345: Argument of type 'App | null' is not assignable to parameter of type 'App | undefined'.
+  Type 'null' is not assignable to type 'App | undefined'.
+src/app/api/get-client-ip/route.ts(21,20): error TS2339: Property 'ip' does not exist on type 'NextRequest'.
+src/app/api/stripe/checkout-session/route.ts(7,3): error TS2322: Type '"2025-05-28.basil"' is not assignable to type '"2025-11-17.clover"'.
+src/app/api/stripe/webhook/route.ts(6,3): error TS2322: Type '"2025-05-28.basil"' is not assignable to type '"2025-11-17.clover"'.
+src/app/dashboard/branches/[id]/page.tsx(624,31): error TS2322: Type 'OpeningHours[]' is not assignable to type '{ dayOfWeek: string; isOpen: boolean; openTime: string; closeTime: string; }[]'.
+  Type 'OpeningHours' is not assignable to type '{ dayOfWeek: string; isOpen: boolean; openTime: string; closeTime: string; }'.
+    Types of property 'openTime' are incompatible.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+src/app/dashboard/branches/[id]/page.tsx(1056,31): error TS2322: Type 'OpeningHours[]' is not assignable to type '{ dayOfWeek: string; isOpen: boolean; openTime: string; closeTime: string; }[]'.
+  Type 'OpeningHours' is not assignable to type '{ dayOfWeek: string; isOpen: boolean; openTime: string; closeTime: string; }'.
+    Types of property 'openTime' are incompatible.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+src/app/dashboard/branches/page.tsx(775,78): error TS2554: Expected 1 arguments, but got 2.
+src/app/dashboard/debtors/page.tsx(322,32): error TS2552: Cannot find name 'currencySymbol'. Did you mean 'getCurrencySymbol'?
+src/app/dashboard/inventory/page.tsx(181,19): error TS2345: Argument of type 'Product[]' is not assignable to parameter of type 'SetStateAction<Product[]>'.
+  Type 'import("/workspace/scratch/1fe0a29cb789/fahampesa-web-security/src/lib/firestore").Product[]' is not assignable to type 'Product[]'.
+    Type 'import("/workspace/scratch/1fe0a29cb789/fahampesa-web-security/src/lib/firestore").Product' is not assignable to type 'Product'.
+      Types of property 'sku' are incompatible.
+        Type 'string | null | undefined' is not assignable to type 'string | undefined'.
+          Type 'null' is not assignable to type 'string | undefined'.
+src/app/dashboard/inventory/page.tsx(449,78): error TS2554: Expected 1 arguments, but got 2.
+src/app/dashboard/inventory/page.tsx(599,76): error TS2554: Expected 1 arguments, but got 2.
+src/app/dashboard/page.tsx(16,60): error TS2724: '"@/lib/firestore"' has no exported member named 'MultiItemSale'. Did you mean 'getMultiItemSales'?
+src/app/dashboard/page.tsx(120,41): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+src/app/dashboard/page.tsx(120,46): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/dashboard/products/[id]/page.tsx(316,34): error TS2339: Property 'id' does not exist on type 'ProductImage'.
+src/app/dashboard/products/page.tsx(279,20): error TS2345: Argument of type '{ name: string; sku: string; category: string; description: string; costPrice: string; sellingPrice: string; quantity: string; minStockLevel: string; unitOfMeasure: string; supplier: string; location: string; ... 9 more ...; preferredSupplierId: string; }' is not assignable to parameter of type 'SetStateAction<ProductFormData>'.
+  Property 'branchId' is missing in type '{ name: string; sku: string; category: string; description: string; costPrice: string; sellingPrice: string; quantity: string; minStockLevel: string; unitOfMeasure: string; supplier: string; location: string; ... 9 more ...; preferredSupplierId: string; }' but required in type 'ProductFormData'.
+src/app/dashboard/products/page.tsx(471,48): error TS2345: Argument of type '{ updatedBy: string | null; name: string; sku: string; category: string; description: string; costPrice: number; sellingPrice: number; quantity: number; minStockLevel: number; unitOfMeasure: string; ... 17 more ...; createdBy: string | null; }' is not assignable to parameter of type 'Partial<Product>'.
+  Types of property 'preferredSupplierId' are incompatible.
+    Type 'string | null' is not assignable to type 'string | undefined'.
+      Type 'null' is not assignable to type 'string | undefined'.
+src/app/dashboard/products/page.tsx(478,46): error TS2345: Argument of type '{ id: string; name: string; sku: string; category: string; description: string; costPrice: number; sellingPrice: number; quantity: number; minStockLevel: number; unitOfMeasure: string; supplier: string; ... 16 more ...; createdBy: string | null; }' is not assignable to parameter of type 'Partial<Product>'.
+  Types of property 'preferredSupplierId' are incompatible.
+    Type 'string | null' is not assignable to type 'string | undefined'.
+      Type 'null' is not assignable to type 'string | undefined'.
+src/app/dashboard/sales/[id]/page.tsx(38,11): error TS2430: Interface 'SaleDetails' incorrectly extends interface 'Sale'.
+  Types of property 'saleType' are incompatible.
+    Type '"single-item" | "multi-item"' is not assignable to type 'SaleType'.
+      Type '"single-item"' is not assignable to type 'SaleType'.
+src/app/dashboard/sales/[id]/page.tsx(116,13): error TS2322: Type '"single-item"' is not assignable to type 'SaleType'.
+src/app/dashboard/sales/[id]/page.tsx(126,15): error TS2322: Type '"multi-item"' is not assignable to type 'SaleType'.
+src/app/dashboard/sales/[id]/page.tsx(129,15): error TS2322: Type 'string' is not assignable to type 'PaymentMethod'.
+src/app/dashboard/sales/[id]/page.tsx(135,17): error TS2345: Argument of type 'Sale | null' is not assignable to parameter of type 'SetStateAction<SaleDetails | null>'.
+  Type 'Sale' is not assignable to type 'SetStateAction<SaleDetails | null>'.
+    Type 'Sale' is missing the following properties from type 'SaleDetails': displayName, itemCount
+src/app/dashboard/sales/[id]/page.tsx(467,84): error TS2339: Property 'taxRate' does not exist on type 'SaleDetails'.
+src/app/dashboard/sales/[id]/page.tsx(467,102): error TS2339: Property 'taxRate' does not exist on type 'SaleDetails'.
+src/app/dashboard/sales/[id]/page.tsx(537,67): error TS2339: Property 'customerEmail' does not exist on type 'SaleDetails'.
+src/app/dashboard/sales/[id]/page.tsx(556,29): error TS2339: Property 'customerEmail' does not exist on type 'SaleDetails'.
+src/app/dashboard/sales/[id]/page.tsx(559,82): error TS2339: Property 'customerEmail' does not exist on type 'SaleDetails'.
+src/app/dashboard/sales/edit/[id]/page.tsx(102,44): error TS2339: Property 'itemCount' does not exist on type 'MultiItemSale'.
+src/app/dashboard/sales/edit/[id]/page.tsx(103,41): error TS2339: Property 'itemCount' does not exist on type 'MultiItemSale'.
+src/app/dashboard/sales/edit/[id]/page.tsx(103,101): error TS2339: Property 'itemCount' does not exist on type 'MultiItemSale'.
+src/app/dashboard/sales/edit/[id]/page.tsx(105,15): error TS2322: Type 'string' is not assignable to type 'PaymentMethod'.
+src/app/dashboard/sales/edit/[id]/page.tsx(161,11): error TS2322: Type 'string' is not assignable to type 'import("/workspace/scratch/1fe0a29cb789/fahampesa-web-security/src/lib/multi-item-sales-types").PaymentMethod'.
+  Type 'string' is not assignable to type 'PaymentMethod'.
+src/app/dashboard/sales/edit/[id]/page.tsx(210,17): error TS2345: Argument of type '(prev: { productName: string; saleType: SaleType; quantitySold: number; unitPrice: number; totalAmount: number; paymentMethod: PaymentMethod; customerName: string; customerPhone: string; notes: string; serviceDescription: string; items: SaleItem[]; }) => { ...; }' is not assignable to parameter of type 'SetStateAction<{ productName: string; saleType: SaleType; quantitySold: number; unitPrice: number; totalAmount: number; paymentMethod: PaymentMethod; customerName: string; customerPhone: string; notes: string; serviceDescription: string; items: SaleItem[]; }>'.
+  Type '(prev: { productName: string; saleType: SaleType; quantitySold: number; unitPrice: number; totalAmount: number; paymentMethod: PaymentMethod; customerName: string; customerPhone: string; notes: string; serviceDescription: string; items: SaleItem[]; }) => { ...; }' is not assignable to type '(prevState: { productName: string; saleType: SaleType; quantitySold: number; unitPrice: number; totalAmount: number; paymentMethod: PaymentMethod; customerName: string; customerPhone: string; notes: string; serviceDescription: string; items: SaleItem[]; }) => { ...; }'.
+    Call signature return types '{ items: (SaleItem | { productName: string; quantity: number; unitPrice: number; costPrice: number; profit: number; })[]; productName: string; saleType: SaleType; quantitySold: number; ... 6 more ...; serviceDescription: string; }' and '{ productName: string; saleType: SaleType; quantitySold: number; unitPrice: number; totalAmount: number; paymentMethod: PaymentMethod; customerName: string; customerPhone: string; notes: string; serviceDescription: string; items: SaleItem[]; }' are incompatible.
+      The types of 'items' are incompatible between these types.
+        Type '(SaleItem | { productName: string; quantity: number; unitPrice: number; costPrice: number; profit: number; })[]' is not assignable to type 'SaleItem[]'.
+          Type 'SaleItem | { productName: string; quantity: number; unitPrice: number; costPrice: number; profit: number; }' is not assignable to type 'SaleItem'.
+            Type '{ productName: string; quantity: number; unitPrice: number; costPrice: number; profit: number; }' is missing the following properties from type 'SaleItem': id, saleType, lineTotal
+src/app/dashboard/sales/edit/[id]/page.tsx(305,25): error TS2339: Property 'saleType' does not exist on type 'MultiItemSale | Sale'.
+  Property 'saleType' does not exist on type 'MultiItemSale'.
+src/app/dashboard/sales/edit/[id]/page.tsx(336,25): error TS2339: Property 'saleType' does not exist on type 'MultiItemSale | Sale'.
+  Property 'saleType' does not exist on type 'MultiItemSale'.
+src/app/dashboard/sales/edit/[id]/page.tsx(359,23): error TS2339: Property 'saleType' does not exist on type 'MultiItemSale | Sale'.
+  Property 'saleType' does not exist on type 'MultiItemSale'.
+src/app/dashboard/sales/history/page.tsx(215,13): error TS2367: This comparison appears to be unintentional because the types '"multi-item"' and '"single-item"' have no overlap.
+src/app/dashboard/sales/history/page.tsx(232,73): error TS2339: Property 'unitPrice' does not exist on type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; } | { ...; }'.
+  Property 'unitPrice' does not exist on type '{ id: string; timestamp: number; totalAmount: number; customerName: string | null | undefined; customerPhone: string | null | undefined; paymentMethod: string | PaymentMethod; ... 7 more ...; saleNumber: string; }'.
+src/app/dashboard/sales/history/page.tsx(232,97): error TS2339: Property 'costPrice' does not exist on type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; } | { ...; }'.
+  Property 'costPrice' does not exist on type '{ id: string; timestamp: number; totalAmount: number; customerName: string | null | undefined; customerPhone: string | null | undefined; paymentMethod: string | PaymentMethod; ... 7 more ...; saleNumber: string; }'.
+src/app/dashboard/sales/history/page.tsx(232,122): error TS2339: Property 'quantitySold' does not exist on type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; } | { ...; }'.
+  Property 'quantitySold' does not exist on type '{ id: string; timestamp: number; totalAmount: number; customerName: string | null | undefined; customerPhone: string | null | undefined; paymentMethod: string | PaymentMethod; ... 7 more ...; saleNumber: string; }'.
+src/app/dashboard/sales/history/page.tsx(401,93): error TS2345: Argument of type 'string | PaymentMethod' is not assignable to parameter of type 'PaymentMethod'.
+  Type 'string' is not assignable to type 'PaymentMethod'.
+src/app/dashboard/sales/history/page.tsx(417,63): error TS2339: Property 'unitPrice' does not exist on type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; } | { ...; }'.
+  Property 'unitPrice' does not exist on type '{ id: string; timestamp: number; totalAmount: number; customerName: string | null | undefined; customerPhone: string | null | undefined; paymentMethod: string | PaymentMethod; ... 7 more ...; saleNumber: string; }'.
+src/app/dashboard/sales/history/page.tsx(417,87): error TS2339: Property 'costPrice' does not exist on type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; } | { ...; }'.
+  Property 'costPrice' does not exist on type '{ id: string; timestamp: number; totalAmount: number; customerName: string | null | undefined; customerPhone: string | null | undefined; paymentMethod: string | PaymentMethod; ... 7 more ...; saleNumber: string; }'.
+src/app/dashboard/sales/history/page.tsx(417,112): error TS2339: Property 'quantitySold' does not exist on type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; } | { ...; }'.
+  Property 'quantitySold' does not exist on type '{ id: string; timestamp: number; totalAmount: number; customerName: string | null | undefined; customerPhone: string | null | undefined; paymentMethod: string | PaymentMethod; ... 7 more ...; saleNumber: string; }'.
+src/app/dashboard/sales/history/page.tsx(437,61): error TS2345: Argument of type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; } | { ...; }' is not assignable to parameter of type 'Omit<MultiItemSale, "paymentMethod"> & { saleType: "multi-item"; displayName: string; itemCount: number; paymentMethod: string; saleNumber?: string | undefined; }'.
+  Type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null; productName: string; serviceDescription?: string | null; quantitySold: number; ... 13 more ...; userId: string; }' is not assignable to type 'Omit<MultiItemSale, "paymentMethod"> & { saleType: "multi-item"; displayName: string; itemCount: number; paymentMethod: string; saleNumber?: string | undefined; }'.
+    Type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; }' is missing the following properties from type 'Omit<MultiItemSale, "paymentMethod">': items, date, saleNumber, subtotal, and 2 more.
+src/app/dashboard/sales/page.tsx(132,26): error TS2339: Property 'profit' does not exist on type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; }'.
+src/app/dashboard/sales/page.tsx(415,46): error TS2339: Property 'profit' does not exist on type '{ saleType: "single-item"; displayName: string; itemCount: number; id: string; productId?: string | null | undefined; productName: string; serviceDescription?: string | null | undefined; ... 14 more ...; userId: string; }'.
+src/app/dashboard/sales/page.tsx(491,93): error TS2345: Argument of type 'string' is not assignable to parameter of type 'PaymentMethod'.
+src/app/dashboard/settings/page.tsx(961,31): error TS2322: Type '{ id: string; name: string; type: string; status: string; connectionType: string; }[]' is not assignable to type 'PairedDevice[]'.
+  Type '{ id: string; name: string; type: string; status: string; connectionType: string; }' is not assignable to type 'PairedDevice'.
+    Types of property 'type' are incompatible.
+      Type 'string' is not assignable to type 'DeviceType'.
+src/app/dashboard/settings/page.tsx(1210,24): error TS2532: Object is possibly 'undefined'.
+src/app/dashboard/settings/page.tsx(1212,28): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1228,38): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1246,44): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1247,46): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1260,36): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1277,24): error TS2532: Object is possibly 'undefined'.
+src/app/dashboard/settings/page.tsx(1279,28): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1295,38): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1313,44): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1314,46): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/dashboard/settings/page.tsx(1327,36): error TS18047: 'deviceSettings' is possibly 'null'.
+src/app/super-admin/alerts/page.tsx(99,25): error TS2345: Argument of type '{ totalCrashes: number; crashFreeUsers: number; crashRate: number; openIssues: number; criticalIssues: number; affectedUsers: number; totalEvents: number; }' is not assignable to parameter of type 'SetStateAction<CrashAnalytics | null>'.
+  Property 'trends' is missing in type '{ totalCrashes: number; crashFreeUsers: number; crashRate: number; openIssues: number; criticalIssues: number; affectedUsers: number; totalEvents: number; }' but required in type 'CrashAnalytics'.
+src/app/super-admin/alerts/page.tsx(380,20): error TS18048: 'errorAnalytics.crashFreeUsers' is possibly 'undefined'.
+src/app/super-admin/broadcast/page.tsx(222,7): error TS2322: Type '"critical" | "success" | "info" | "warning"' is not assignable to type '"info"'.
+  Type '"critical"' is not assignable to type '"info"'.
+src/app/super-admin/broadcast/page.tsx(223,7): error TS2322: Type '"email" | "all" | "app"' is not assignable to type '"email"'.
+  Type '"all"' is not assignable to type '"email"'.
+src/app/super-admin/broadcast/page.tsx(224,7): error TS2322: Type '"staff" | "all_users" | "active_users" | "admins"' is not assignable to type '"all_users"'.
+  Type '"staff"' is not assignable to type '"all_users"'.
+src/app/super-admin/broadcast/page.tsx(867,26): error TS2304: Cannot find name 'ChevronLeft'.
+src/app/super-admin/broadcast/page.tsx(880,26): error TS2304: Cannot find name 'ChevronRight'.
+src/app/super-admin/staff/[id]/page.tsx(236,11): error TS2353: Object literal may only specify known properties, and 'duration' does not exist in type 'Omit<Toast, "id">'.
+src/app/super-admin/staff/[id]/page.tsx(373,8): error TS2304: Cannot find name 'SuperAdminLayout'.
+src/app/super-admin/staff/[id]/page.tsx(385,9): error TS2304: Cannot find name 'SuperAdminLayout'.
+src/app/super-admin/staff/[id]/page.tsx(390,6): error TS2304: Cannot find name 'SuperAdminLayout'.
+src/app/super-admin/staff/[id]/page.tsx(771,7): error TS2304: Cannot find name 'SuperAdminLayout'.
+src/components/auth/StaffProtectedRoute.tsx(59,7): error TS18047: 'staff' is possibly 'null'.
+src/components/auth/StaffProtectedRoute.tsx(93,25): error TS18047: 'staff' is possibly 'null'.
+src/components/auth/StaffProtectedRoute.tsx(168,44): error TS2304: Cannot find name 'canViewBranch'.
+src/components/auth/TwoFactorSetup.tsx(8,10): error TS2305: Module '"@/components/ui/alert-dialog"' has no exported member 'Alert'.
+src/components/dashboard/DashboardLayout.tsx(230,31): error TS2322: Type 'boolean | null' is not assignable to type 'boolean'.
+  Type 'null' is not assignable to type 'boolean'.
+src/components/onboarding/OnboardingWizard.tsx(18,3): error TS2305: Module '"lucide-react"' has no exported member 'Skip'.
+src/components/onboarding/OnboardingWizard.tsx(226,25): error TS18047: 'user' is possibly 'null'.
+src/components/onboarding/OnboardingWizard.tsx(227,18): error TS18047: 'user' is possibly 'null'.
+src/components/onboarding/OnboardingWizard.tsx(272,72): error TS18047: 'user' is possibly 'null'.
+src/components/onboarding/OnboardingWizard.tsx(273,18): error TS18047: 'user' is possibly 'null'.
+src/components/sales/MultiItemSalesForm.tsx(25,26): error TS2304: Cannot find name 'MultiItemSale'.
+src/components/sales/MultiItemSalesForm.tsx(156,7): error TS18048: 'item.productName' is possibly 'undefined'.
+src/components/sales/MultiItemSalesForm.tsx(178,7): error TS18048: 'item.productName' is possibly 'undefined'.
+src/components/sales/MultiItemSalesForm.tsx(219,28): error TS2304: Cannot find name 'MultiItemSale'.
+src/components/sales/ReceiptModal.tsx(38,34): error TS2339: Property 'createdAt' does not exist on type 'MultiItemSale | Sale'.
+  Property 'createdAt' does not exist on type 'MultiItemSale'.
+src/components/sales/ReceiptModal.tsx(197,44): error TS2345: Argument of type 'PaymentMethod | PaymentMethod' is not assignable to parameter of type 'string'.
+  Type 'PaymentMethod' is not assignable to type 'string'.
+src/components/sales/ReceiptModal.tsx(221,69): error TS2339: Property 'productName' does not exist on type 'MultiItemSale | Sale'.
+  Property 'productName' does not exist on type 'MultiItemSale'.
+src/components/sales/ReceiptModal.tsx(224,35): error TS2339: Property 'quantitySold' does not exist on type 'MultiItemSale | Sale'.
+  Property 'quantitySold' does not exist on type 'MultiItemSale'.
+src/components/sales/ReceiptModal.tsx(224,72): error TS2339: Property 'unitPrice' does not exist on type 'MultiItemSale | Sale'.
+  Property 'unitPrice' does not exist on type 'MultiItemSale'.
+src/constants/categories.ts(25,71): error TS2769: No overload matches this call.
+  Overload 2 of 2, '(...items: ("All Categories" | "General Hardware" | "Plumbing" | "Electrical" | "Tools & Equipment" | "Building Materials" | "Paints & Finishes" | "Safety & Security" | "Garden & Outdoor" | ... 10 more ... | ConcatArray<...>)[]): ("All Categories" | ... 17 more ... | "Toys & Games")[]', gave the following error.
+    Argument of type '("Other" | "Office Supplies" | "Raw Materials" | "Packaging" | "Equipment" | "Services")[]' is not assignable to parameter of type '"All Categories" | "General Hardware" | "Plumbing" | "Electrical" | "Tools & Equipment" | "Building Materials" | "Paints & Finishes" | "Safety & Security" | "Garden & Outdoor" | ... 10 more ... | ConcatArray<...>'.
+      Type '("Other" | "Office Supplies" | "Raw Materials" | "Packaging" | "Equipment" | "Services")[]' is not assignable to type 'ConcatArray<"All Categories" | "General Hardware" | "Plumbing" | "Electrical" | "Tools & Equipment" | "Building Materials" | "Paints & Finishes" | "Safety & Security" | "Garden & Outdoor" | ... 9 more ... | "Toys & Games">'.
+        The types returned by 'slice(...)' are incompatible between these types.
+          Type '("Other" | "Office Supplies" | "Raw Materials" | "Packaging" | "Equipment" | "Services")[]' is not assignable to type '("All Categories" | "General Hardware" | "Plumbing" | "Electrical" | "Tools & Equipment" | "Building Materials" | "Paints & Finishes" | "Safety & Security" | "Garden & Outdoor" | ... 9 more ... | "Toys & Games")[]'.
+            Type '"Other" | "Office Supplies" | "Raw Materials" | "Packaging" | "Equipment" | "Services"' is not assignable to type '"All Categories" | "General Hardware" | "Plumbing" | "Electrical" | "Tools & Equipment" | "Building Materials" | "Paints & Finishes" | "Safety & Security" | "Garden & Outdoor" | ... 9 more ... | "Toys & Games"'.
+              Type '"Other"' is not assignable to type '"All Categories" | "General Hardware" | "Plumbing" | "Electrical" | "Tools & Equipment" | "Building Materials" | "Paints & Finishes" | "Safety & Security" | "Garden & Outdoor" | ... 9 more ... | "Toys & Games"'.
+src/contexts/AuthContext.tsx(139,5): error TS2304: Cannot find name 'setConfirmationResult'.
+src/contexts/StaffContext.tsx(65,15): error TS2739: Type '{ id: any; authId: string; userId: string; fullName: any; email: any; role: any; permissions: any; status: any; branchIds: never[]; createdAt: any; lastLogin: any; }' is missing the following properties from type 'Staff': phone, twoFactorEnabled, createdBy
+src/lib/backup-service.ts(416,11): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ products?: any[] | undefined; inventory?: any[] | undefined; sales?: any[] | undefined; expenses?: any[] | undefined; debtors?: any[] | undefined; suppliers?: any[] | undefined; branches?: any[] | undefined; staff?: any[] | undefined; settings?: any; }'.
+  No index signature with a parameter of type 'string' was found on type '{ products?: any[] | undefined; inventory?: any[] | undefined; sales?: any[] | undefined; expenses?: any[] | undefined; debtors?: any[] | undefined; suppliers?: any[] | undefined; branches?: any[] | undefined; staff?: any[] | undefined; settings?: any; }'.
+src/lib/backup-service.ts(426,28): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ products?: any[] | undefined; inventory?: any[] | undefined; sales?: any[] | undefined; expenses?: any[] | undefined; debtors?: any[] | undefined; suppliers?: any[] | undefined; branches?: any[] | undefined; staff?: any[] | undefined; settings?: any; }'.
+  No index signature with a parameter of type 'string' was found on type '{ products?: any[] | undefined; inventory?: any[] | undefined; sales?: any[] | undefined; expenses?: any[] | undefined; debtors?: any[] | undefined; suppliers?: any[] | undefined; branches?: any[] | undefined; staff?: any[] | undefined; settings?: any; }'.
+src/lib/backup-service.ts(533,13): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/lib/branches-service.ts(627,5): error TS2322: Type 'string | undefined' is not assignable to type '"OTHER" | "INTERNAL_DELIVERY" | "COURIER" | "PICKUP" | undefined'.
+  Type 'string' is not assignable to type '"OTHER" | "INTERNAL_DELIVERY" | "COURIER" | "PICKUP" | undefined'.
+src/lib/firebase-admin-server.ts(94,13): error TS2322: Type 'string | null | undefined' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+src/lib/firebase-admin-server.ts(132,9): error TS2322: Type 'string | null | undefined' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+src/lib/firestore.ts(497,5): error TS2322: Type 'string | null' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+src/lib/firestore.ts(498,5): error TS2322: Type 'string | null' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+src/lib/firestore.ts(499,5): error TS2322: Type 'number | null' is not assignable to type 'number | undefined'.
+  Type 'null' is not assignable to type 'number | undefined'.
+src/lib/firestore.ts(500,5): error TS2322: Type 'number | null' is not assignable to type 'number | undefined'.
+  Type 'null' is not assignable to type 'number | undefined'.
+src/lib/firestore.ts(501,5): error TS2322: Type 'Date | null' is not assignable to type 'Date | undefined'.
+  Type 'null' is not assignable to type 'Date | undefined'.
+src/lib/firestore.ts(829,64): error TS2339: Property 'companyLegalName' does not exist on type '{}'.
+src/lib/firestore.ts(830,82): error TS2339: Property 'companyRegistrationNumber' does not exist on type '{}'.
+src/lib/firestore.ts(831,60): error TS2339: Property 'companyLogoUrl' does not exist on type '{}'.
+src/lib/firestore.ts(832,66): error TS2339: Property 'receiptHeaderText' does not exist on type '{}'.
+src/lib/firestore.ts(833,66): error TS2339: Property 'receiptFooterText' does not exist on type '{}'.
+src/lib/firestore.ts(834,76): error TS2339: Property 'receiptThankYouMessage' does not exist on type '{}'.
+src/lib/firestore.ts(835,60): error TS2339: Property 'receiptLogoUrl' does not exist on type '{}'.
+src/lib/firestore.ts(837,49): error TS2339: Property 'createdAt' does not exist on type '{}'.
+src/lib/firestore.ts(855,69): error TS2339: Property 'emailNotifications' does not exist on type '{}'.
+src/lib/firestore.ts(856,65): error TS2339: Property 'smsNotifications' does not exist on type '{}'.
+src/lib/firestore.ts(857,65): error TS2339: Property 'appNotifications' does not exist on type '{}'.
+src/lib/firestore.ts(858,61): error TS2339: Property 'lowStockAlerts' does not exist on type '{}'.
+src/lib/firestore.ts(859,55): error TS2339: Property 'salesAlerts' does not exist on type '{}'.
+src/lib/firestore.ts(860,77): error TS2339: Property 'debtorPaymentReminders' does not exist on type '{}'.
+src/lib/firestore.ts(862,49): error TS2339: Property 'createdAt' does not exist on type '{}'.
+src/lib/firestore.ts(878,9): error TS2741: Property 'scannerSettings' is missing in type '{ uid: string; pairedDevices: any; printerSettings: any; barcodeSettings: any; bluetoothEnabled: any; lastUpdated: number; createdAt: any; }' but required in type 'DeviceSettings'.
+src/lib/firestore.ts(880,59): error TS2339: Property 'pairedDevices' does not exist on type '{}'.
+src/lib/firestore.ts(881,63): error TS2339: Property 'printerSettings' does not exist on type '{}'.
+src/lib/firestore.ts(882,63): error TS2339: Property 'barcodeSettings' does not exist on type '{}'.
+src/lib/firestore.ts(883,65): error TS2339: Property 'bluetoothEnabled' does not exist on type '{}'.
+src/lib/firestore.ts(885,49): error TS2339: Property 'createdAt' does not exist on type '{}'.
+src/lib/firestore.ts(903,69): error TS2339: Property 'offlineSyncEnabled' does not exist on type '{}'.
+src/lib/firestore.ts(904,65): error TS2339: Property 'autoSyncInterval' does not exist on type '{}'.
+src/lib/firestore.ts(905,61): error TS2339: Property 'backupSettings' does not exist on type '{}'.
+src/lib/firestore.ts(911,49): error TS2339: Property 'createdAt' does not exist on type '{}'.
+src/lib/firestore.ts(915,63): error TS2339: Property 'lastSyncTimestamp' does not exist on type '{}'.
+src/lib/inventory-service.ts(210,7): error TS2353: Object literal may only specify known properties, and 'productName' does not exist in type 'InventoryItem'.
+src/lib/inventory-service.ts(487,5): error TS2322: Type '{ approvedQuantity: number; receivedQuantity: number; productId: string; quantity: number; batchNumber?: string | undefined; }[]' is not assignable to type 'TransferItem[]'.
+  Property 'requestedQuantity' is missing in type '{ approvedQuantity: number; receivedQuantity: number; productId: string; quantity: number; batchNumber?: string; }' but required in type 'TransferItem'.
+src/lib/product-enhancements.ts(303,46): error TS2304: Cannot find name 'BranchStockInfo'.
+src/lib/product-enhancements.ts(304,25): error TS2304: Cannot find name 'ExpiryAlert'.
+src/lib/product-enhancements.ts(305,27): error TS2304: Cannot find name 'LowStockAlert'.
+src/lib/product-enhancements.ts(311,31): error TS2339: Property 'inTransitStock' does not exist on type 'StockLevel'.
+src/lib/product-enhancements.ts(341,41): error TS2339: Property 'lastUpdated' does not exist on type 'StockLevel'.
+src/lib/suppliers-service.ts(643,61): error TS2345: Argument of type '{ onTimeDelivery: boolean; deliveryDays: number; }' is not assignable to parameter of type 'UpdateSupplierPerformanceRequest'.
+  Property 'supplierId' is missing in type '{ onTimeDelivery: boolean; deliveryDays: number; }' but required in type 'UpdateSupplierPerformanceRequest'.
+src/lib/two-factor-auth-service.ts(85,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'Uint8Array<ArrayBufferLike>' is not assignable to parameter of type 'BufferSource'.
+      Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'ArrayBufferView<ArrayBuffer>'.
+        Types of property 'buffer' are incompatible.
+          Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+            Type 'SharedArrayBuffer' is missing the following properties from type 'ArrayBuffer': resizable, resize, detached, transfer, transferToFixedLength
+src/lib/two-factor-auth-service.ts(91,67): error TS2345: Argument of type 'Uint8Array<ArrayBufferLike>' is not assignable to parameter of type 'BufferSource'.
+  Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'ArrayBufferView<ArrayBuffer>'.
+    Types of property 'buffer' are incompatible.
+      Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+        Type 'SharedArrayBuffer' is missing the following properties from type 'ArrayBuffer': resizable, resize, detached, transfer, transferToFixedLength

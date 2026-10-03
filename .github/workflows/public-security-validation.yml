@@ -21,7 +21,6 @@ jobs:
     timeout-minutes: 45
     env:
       CI: "true"
-      NODE_ENV: "production"
       NEXT_TELEMETRY_DISABLED: "1"
       NEXT_PUBLIC_API_BASE_URL: "http://127.0.0.1:9"
       NEXT_PUBLIC_APP_URL: "http://127.0.0.1:9"
@@ -143,13 +142,14 @@ jobs:
           git worktree remove ../baseline-public --force >/dev/null 2>&1
           git worktree add ../baseline-public 08e0a674ebd7f0818445523bdd0ba754ba72a498 > validation-results/logs/baseline-worktree.log 2>&1
           cd ../baseline-public
-          export CI=true NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production
+          export CI=true NEXT_TELEMETRY_DISABLED=1
           export NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:9 NEXT_PUBLIC_APP_URL=http://127.0.0.1:9 NEXT_PUBLIC_BASE_URL=http://127.0.0.1:9
           export FIREBASE_PROJECT_ID=test-only-no-production FIREBASE_STORAGE_BUCKET=test-only-no-production.appspot.com
           export STRIPE_PUBLIC_KEY=pk_test_validation_only STRIPE_SECRET_KEY=sk_test_validation_only STRIPE_WEBHOOK_SECRET=whsec_validation_only
           export MPESA_ENVIRONMENT=sandbox MPESA_CALLBACK_URL=http://127.0.0.1:9/mpesa-callback MPESA_CONSUMER_KEY=test-only MPESA_CONSUMER_SECRET=test-only MPESA_PASSKEY=test-only MPESA_SHORTCODE=000000
           npm ci > ../Web-App/validation-results/logs/baseline-npm-ci.log 2>&1
           echo "baseline_npm_ci=$?" > ../Web-App/validation-results/baseline-exit-codes.txt
+          export NODE_ENV=production
           npx tsc --noEmit --pretty false > ../Web-App/validation-results/logs/baseline-tsc.log 2>&1
           echo "baseline_tsc=$?" >> ../Web-App/validation-results/baseline-exit-codes.txt
           npm run lint > ../Web-App/validation-results/logs/baseline-lint.log 2>&1

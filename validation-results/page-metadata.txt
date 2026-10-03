@@ -1,0 +1,17 @@
+{
+  "title": "FahamPesa - Lightweight Sales &amp; Inventory App for Small Business",
+  "description": "A native Android app designed for small business owners in Kenya. Track inventory, record sales, and manage your business with sunlight-optimized design and offline-first functionality.",
+  "nextAssetSampleCount": 10,
+  "nextAssets": [
+    "/_next/static/media/13971731025ec697-s.p.woff2",
+    "/_next/static/media/1a4aa50920b5315c-s.p.woff2",
+    "/_next/static/media/1e41be92c43b3255-s.p.woff2",
+    "/_next/static/media/22a5144ee8d83bca-s.p.woff2",
+    "/_next/static/media/4c9affa5bc8f420e-s.p.woff2",
+    "/_next/static/media/7d4881bb7e1bf84d-s.p.woff2",
+    "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+    "/_next/static/css/772188b05b671cc4.css",
+    "/_next/static/css/32d766f3bbfc8be3.css",
+    "/_next/static/chunks/webpack-c3123af760f75834.js"
+  ]
+}

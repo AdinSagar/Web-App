@@ -1,0 +1,74 @@
+{
+  "packageJsonChanges": {
+    "next": {
+      "before": "15.5.27",
+      "after": "15.5.27"
+    },
+    "eslintConfigNext": {
+      "before": "15.5.27",
+      "after": "15.5.27"
+    }
+  },
+  "changedLockPackages": [
+    {
+      "package": "node_modules/@next/env",
+      "before": "15.4.10",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/eslint-plugin-next",
+      "before": "15.4.5",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/swc-darwin-arm64",
+      "before": "15.4.8",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/swc-darwin-x64",
+      "before": "15.4.8",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/swc-linux-arm64-gnu",
+      "before": "15.4.8",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/swc-linux-arm64-musl",
+      "before": "15.4.8",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/swc-linux-x64-gnu",
+      "before": "15.4.8",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/swc-linux-x64-musl",
+      "before": "15.4.8",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/swc-win32-arm64-msvc",
+      "before": "15.4.8",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/@next/swc-win32-x64-msvc",
+      "before": "15.4.8",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/eslint-config-next",
+      "before": "15.4.5",
+      "after": "15.5.27"
+    },
+    {
+      "package": "node_modules/next",
+      "before": "15.4.10",
+      "after": "15.5.27"
+    }
+  ]
+}
