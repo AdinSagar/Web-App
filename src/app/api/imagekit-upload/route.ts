@@ -1,35 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { initializeApp, getApps, cert } from 'firebase-admin/app'
 import { getStorage } from 'firebase-admin/storage'
-
-const STORAGE_BUCKET = process.env.FIREBASE_STORAGE_BUCKET || 'fahampesa-8c514.firebasestorage.app'
-
-// Initialize Firebase Admin if not already initialized
-if (!getApps().length) {
-  try {
-    initializeApp({
-      credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID || 'fahampesa-8c514',
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-      }),
-      storageBucket: STORAGE_BUCKET
-    })
-  } catch (error) {
-    console.error('Firebase Admin initialization error:', error)
-  }
-}
+import { randomUUID } from 'node:crypto'
+import { requireUploadAuth } from '@/lib/require-upload-auth'
+import { adminApp } from '@/lib/firebase-admin-server'
 
 export async function POST(request: NextRequest) {
-  try {
-    const formData = await request.formData()
-    const file = formData.get('file') as File
-    const fileName = formData.get('fileName') as string
-    const folder = formData.get('folder') as string || 'products'
+  const denied = await requireUploadAuth(request)
+  if (denied) return denied
+  if (!adminApp || !process.env.FIREBASE_STORAGE_BUCKET) {
+    return NextResponse.json({ success: false, error: 'Upload service unavailable' }, { status: 503 })
+  }
 
-    if (!file) {
+  try {
+    const contentLength = Number(request.headers.get('content-length'))
+    if (contentLength > 5 * 1024 * 1024 + 64 * 1024) {
+      return NextResponse.json({ success: false, error: 'Image must be 5 MB or smaller' }, { status: 413 })
+    }
+    const formData = await request.formData()
+    const file = formData.get('file')
+
+    if (!(file instanceof File)) {
       return NextResponse.json(
         { success: false, error: 'No file provided' },
+        { status: 400 }
+      )
+    }
+
+    const allowedTypes: Record<string, string> = {
+      'image/jpeg': '.jpg',
+      'image/png': '.png',
+      'image/webp': '.webp'
+    }
+    if (!allowedTypes[file.type] || file.size === 0 || file.size > 5 * 1024 * 1024) {
+      return NextResponse.json(
+        { success: false, error: 'Upload a JPEG, PNG or WebP image up to 5 MB' },
         { status: 400 }
       )
     }
@@ -38,12 +42,12 @@ export async function POST(request: NextRequest) {
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
     
-    const finalFileName = fileName || `${Date.now()}_${file.name}`
-    const filePath = `${folder}/${finalFileName}`
+    const finalFileName = `${randomUUID()}${allowedTypes[file.type]}`
+    const filePath = `products/${finalFileName}`
 
     try {
       // Explicitly pass bucket name to avoid "bucket not specified" error
-      const bucket = getStorage().bucket(STORAGE_BUCKET)
+      const bucket = getStorage(adminApp).bucket(process.env.FIREBASE_STORAGE_BUCKET)
       const fileRef = bucket.file(filePath)
       
       await fileRef.save(buffer, {
