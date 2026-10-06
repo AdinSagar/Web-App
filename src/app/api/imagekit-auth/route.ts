@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import ImageKit from 'imagekit'
+import { requireUploadAuth } from '@/lib/require-upload-auth'
 
 // Get ImageKit credentials from environment
 const privateKey = process.env.IMAGEKIT_PRIVATE_KEY
@@ -17,11 +18,16 @@ const getImageKit = () => {
   })
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const denied = await requireUploadAuth(request)
+  if (denied) return denied
+
   try {
     const imagekit = getImageKit()
     const authenticationParameters = imagekit.getAuthenticationParameters()
-    return NextResponse.json(authenticationParameters)
+    return NextResponse.json(authenticationParameters, {
+      headers: { 'Cache-Control': 'no-store' }
+    })
   } catch (error) {
     console.error('ImageKit auth error:', error)
     return NextResponse.json(

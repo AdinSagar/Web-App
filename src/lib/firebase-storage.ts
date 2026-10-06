@@ -1,4 +1,5 @@
 import { storage } from './firebase'
+import { auth } from './firebase'
 import { 
   ref, 
   deleteObject
@@ -34,8 +35,11 @@ export const uploadProductImage = async (
   onProgress?.(30)
   
   try {
+    const token = await auth.currentUser?.getIdToken()
+    if (!token) throw new Error('Sign in before uploading an image')
     const response = await fetch('/api/imagekit-upload', {
       method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
       body: formData,
     })
     
@@ -140,8 +144,11 @@ export const uploadFile = async (
   onProgress?.(30)
   
   try {
+    const token = await auth.currentUser?.getIdToken()
+    if (!token) throw new Error('Sign in before uploading an image')
     const response = await fetch('/api/imagekit-upload', {
       method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
       body: formData,
     })
     
