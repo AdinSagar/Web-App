@@ -1,0 +1,29 @@
+name: Production dependency audit 2026-10-06
+on:
+  push:
+    branches: [audit/runtime-dependencies-20261006]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit production dependency lockfile
+        run: |
+          printf 'SOURCE_PARENT=%s\n' "$(git rev-parse HEAD^)"
+          npm audit --omit=dev --json > audit.json || true
+          node - <<'NODE'
+          const fs=require('fs');
+          const data=JSON.parse(fs.readFileSync('audit.json','utf8'));
+          if(data.error||data.message) { console.log('AUDIT_ERROR', data.message||data.error); process.exitCode=2; }
+          else {
+            console.log('COUNTS',JSON.stringify(data.metadata?.vulnerabilities));
+            for(const [name,v] of Object.entries(data.vulnerabilities||{})) {
+              console.log('FINDING',JSON.stringify({name,severity:v.severity,range:v.range,isDirect:v.isDirect,via:v.via.map(x=>typeof x==='string'?x:{name:x.name,title:x.title,range:x.range,url:x.url}),effects:v.effects,fixAvailable:v.fixAvailable}));
+            }
+          }
+          NODE
