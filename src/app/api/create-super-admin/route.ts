@@ -8,9 +8,9 @@ export async function POST(request: NextRequest) {
     const secretKey = searchParams.get('secret')
     
     // Use a secret key for security (you can set this in environment variables)
-    const expectedSecret = process.env.SUPER_ADMIN_SECRET || 'fahampesa-super-admin-secret-2024'
+    const expectedSecret = process.env.SUPER_ADMIN_SECRET
     
-    if (secretKey !== expectedSecret) {
+    if (!expectedSecret || secretKey !== expectedSecret) {
       return NextResponse.json(
         { error: 'Unauthorized - Invalid secret key' },
         { status: 401 }
