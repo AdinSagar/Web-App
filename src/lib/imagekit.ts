@@ -1,4 +1,5 @@
 import { IKImage, IKUpload } from 'imagekitio-react'
+import { auth } from './firebase'
 
 // ImageKit configuration using real credentials [[memory:3797573]]
 export const imagekitConfig = {
@@ -70,8 +71,16 @@ export const uploadProductImage = async (
       reject(new Error('Upload request failed'))
     }
     
-    xhr.open('POST', '/api/imagekit-upload')
-    xhr.send(formData)
+    const user = auth.currentUser
+    if (!user) {
+      reject(new Error('Sign in before uploading an image'))
+      return
+    }
+    user.getIdToken().then(token => {
+      xhr.open('POST', '/api/imagekit-upload')
+      xhr.setRequestHeader('Authorization', `Bearer ${token}`)
+      xhr.send(formData)
+    }).catch(reject)
   })
 }
 
@@ -121,5 +130,3 @@ export const uploadMultipleProductImages = async (
   
   return Promise.all(uploadPromises)
 }
-
-
