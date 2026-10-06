@@ -528,7 +528,7 @@ export default function LandingPage() {
               Trusted by businesses <br className="hidden lg:block" /> from various industries
             </h2>
             <p className="font-inter font-normal text-[16px] text-[#001031] leading-[28px] tracking-[-0.4px]">
-              Here are some of the Business can that benefit&apos;s from our solution
+              See how businesses across different industries use Fahampesa.
             </p>
           </div>
 
@@ -948,7 +948,7 @@ export default function LandingPage() {
             <div className="relative z-10 flex flex-col items-center gap-4 max-w-[675px]">
               <h3 className="font-inter font-semibold text-[32px] sm:text-[48px] leading-tight">Ready to take full control?</h3>
               <p className="font-inter font-normal text-[16px] leading-[24px]">
-                Whether you&apos;re a manufacturer, construction firm or a hardware store, we can help you pay employees or casual labourers in cash, into a mobile wallet or bank account.
+                Keep your sales, inventory, appointments, and daily operations together in one place.
               </p>
               <Link
                 href={BUSINESS_SIGNUP_URL}
