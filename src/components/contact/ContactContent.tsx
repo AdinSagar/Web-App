@@ -19,12 +19,12 @@ export const ContactContent = () => {
           
           <div className="space-y-1">
             <p className="font-bold mb-0">Business Name</p>
-            <p className="mb-0">Fahampesa</p>
+            <p className="mb-0">FahamPesa Limited</p>
           </div>
 
           <div className="space-y-1">
             <p className="font-bold mb-0">Business Category</p>
-            <p className="mb-0">Financial Services</p>
+            <p className="mb-0">Software company</p>
           </div>
 
           <div className="space-y-1">
@@ -36,8 +36,14 @@ export const ContactContent = () => {
 
           <div className="space-y-1">
             <p className="font-bold mb-0">Business Hours</p>
-            <p className="mb-0">Sunday to Saturday</p>
-            <p className="mb-0">9:00 AM to 6:00 PM</p>
+            <p className="mb-0">Monday to Friday: 8:00 AM to 5:00 PM</p>
+            <p className="mb-0">Saturday: 9:00 AM to 5:00 PM</p>
+            <p className="mb-0">Sunday: Closed</p>
+          </div>
+
+          <div className="space-y-1">
+            <p className="font-bold mb-0">Showroom</p>
+            <p className="mb-0">Diamond Plaza Annex, 4th Floor, Masari Road, Parklands, Nairobi, Kenya</p>
           </div>
 
           <div className="space-y-1">
