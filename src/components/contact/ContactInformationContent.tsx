@@ -12,12 +12,12 @@ export function ContactInformationContent() {
       <div className="font-archivo text-[16px] text-[#191d23] leading-[24px] max-w-[946px] space-y-8">
         <div>
           <p className="font-bold mb-1">Business Name</p>
-          <p>Fahampesa</p>
+          <p>FahamPesa Limited</p>
         </div>
 
         <div>
           <p className="font-bold mb-1">Business Category</p>
-          <p>Financial Services</p>
+          <p>Software company</p>
         </div>
 
         <div>
@@ -27,8 +27,14 @@ export function ContactInformationContent() {
 
         <div>
           <p className="font-bold mb-1">Business Hours</p>
-          <p>Sunday to Saturday</p>
-          <p>9:00 AM to 6:00 PM</p>
+          <p>Monday to Friday: 8:00 AM to 5:00 PM</p>
+          <p>Saturday: 9:00 AM to 5:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+
+        <div>
+          <p className="font-bold mb-1">Showroom</p>
+          <p>Diamond Plaza Annex, 4th Floor, Masari Road, Parklands, Nairobi, Kenya</p>
         </div>
 
         <div>
