@@ -251,8 +251,9 @@ export default function KenyaPosPage() {
               </div>
               <p className="mt-5 font-inter text-sm leading-6 text-[#C8D9EF]">On Windows, the current install guide uses Edge or Chrome to add the business app. Internet access is needed for first setup. Ask us about offline work and syncing on your chosen device.</p>
             </div>
-            <div className="rounded-[24px] border border-white/20 bg-white/10 p-5">
-              <Image src="/dashboard-screenshot.png" alt="Fahampesa business dashboard shown on a laptop" width={576} height={384} sizes="(max-width: 1024px) 100vw, 40vw" className="h-auto w-full" />
+            <div className="overflow-hidden rounded-[24px] border border-white/20 bg-white/10 p-2.5">
+              <Image src="/assets/marketing/fahampesa-devices-retail.webp" alt="Illustrative retail owner using a tablet with a phone at the counter" width={1448} height={1086} sizes="(max-width: 1024px) 100vw, 40vw" className="aspect-[4/3] w-full rounded-[16px] object-cover" />
+              <p className="px-3 py-3 font-inter text-xs leading-5 text-[#C8D9EF]">Illustrative business scene. Fahampesa interface screens are shown above.</p>
             </div>
           </div>
         </section>
