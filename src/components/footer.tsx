@@ -25,6 +25,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/pos-system-kenya" className="text-[14px] font-medium text-white hover:text-[#004AAD] transition-colors font-dm-sans">
+                  POS System in Kenya
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy" className="text-[14px] font-medium text-white hover:text-[#004AAD] transition-colors font-dm-sans">
                   Privacy
                 </Link>
