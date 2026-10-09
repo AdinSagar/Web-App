@@ -21,14 +21,14 @@ export const metadata: Metadata = {
 }
 
 const industries = [
-  { name: "Retail shops", detail: "Keep everyday sales and products together, from a single counter to a growing shop.", example: "Clothing · electronics · general stores" },
-  { name: "Supermarkets", detail: "Follow the products moving through a busy checkout and review your daily sales.", example: "Minimarts · groceries · convenience" },
-  { name: "Wholesale", detail: "Record bulk quantities and see sales and stock in one business view.", example: "Distributors · bulk suppliers" },
-  { name: "Restaurants & cafes", detail: "Record food and drink sales and keep track of the items you sell.", example: "Cafes · takeaways · restaurants" },
-  { name: "Hotels", detail: "Bring goods and service sales into your business records and reporting.", example: "Hotels · lodges · guest houses" },
-  { name: "Bars", detail: "Follow counter sales, products and business performance across the day.", example: "Bars · lounges · clubs" },
-  { name: "Salons & spas", detail: "Record treatments alongside the products your team sells.", example: "Hair · beauty · barbershops" },
-  { name: "Service businesses", detail: "Capture a service as a sale, whether it is a massage, repair or another appointment.", example: "Massage therapy · repairs · wellness" },
+  { name: "Retail shops", detail: "Keep everyday sales and products together, from a single counter to a growing shop.", example: "Clothing · electronics · general stores", sample: "Example items: cooking oil and bread" },
+  { name: "Supermarkets", detail: "Follow the products moving through a busy checkout and review your daily sales.", example: "Minimarts · groceries · convenience", sample: "Example items: milk and rice" },
+  { name: "Wholesale", detail: "Record bulk quantities and see sales and stock in one business view.", example: "Distributors · bulk suppliers", sample: "Example items: rice bags and cooking oil 5L" },
+  { name: "Restaurants & cafes", detail: "Record food and drink sales and keep track of the items you sell.", example: "Cafes · takeaways · restaurants", sample: "Example items: cappuccino and samosa" },
+  { name: "Hotels", detail: "Bring goods and service sales into your business records and reporting.", example: "Hotels · lodges · guest houses", sample: "Example items: room night and breakfast" },
+  { name: "Bars", detail: "Follow counter sales, products and business performance across the day.", example: "Bars · lounges · clubs", sample: "Example items: water and soda" },
+  { name: "Salons & spas", detail: "Record treatments alongside the products your team sells.", example: "Hair · beauty · barbershops", sample: "Example items: haircut and shampoo" },
+  { name: "Service businesses", detail: "Capture a service as a sale, whether it is a massage, repair or another appointment.", example: "Massage therapy · repairs · wellness", sample: "Example items: massage and aromatherapy" },
 ]
 
 const productViews = [
@@ -173,6 +173,7 @@ export default function KenyaPosPage() {
                 <h3 className="mt-6 font-inter text-xl font-semibold">{industry.name}</h3>
                 <p className="mt-3 min-h-[84px] font-inter text-sm leading-6 text-[#42526A]">{industry.detail}</p>
                 <p className="mt-5 border-t border-[#E6ECF5] pt-4 font-dm-sans text-xs font-semibold uppercase tracking-wide text-[#67809E]">{industry.example}</p>
+                <p className="mt-3 font-inter text-xs leading-5 text-[#52637A]">{industry.sample}</p>
               </article>
             ))}
           </div>
