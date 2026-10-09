@@ -76,6 +76,10 @@ const faqs = [
     question: "How does M-Pesa work with Fahampesa?",
     answer: "M-Pesa integration is listed for the Desktop Pro offering. Contact us to see the exact payment and confirmation flow available for your business before choosing a plan.",
   },
+  {
+    question: "What does it cost to get started?",
+    answer: "There is a free option for testing and onboarding. Features differ by plan and device. See the current pricing page, then ask our team to confirm the right setup for your business.",
+  },
 ]
 
 const primary = "inline-flex items-center justify-center rounded-[10px] bg-[#004AAD] px-6 py-3.5 font-dm-sans text-base font-semibold text-white transition-colors hover:bg-[#003a8c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004AAD]"
@@ -204,6 +208,34 @@ export default function KenyaPosPage() {
           </div>
         </section>
 
+        <section className="border-y border-[#DEE6F2] bg-[#F8FAFE]">
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr] lg:px-[100px]">
+            <div>
+              <p className="font-dm-sans text-sm font-bold uppercase tracking-[0.16em] text-[#004AAD]">Getting started</p>
+              <h2 className="mt-4 font-inter text-3xl font-semibold leading-tight md:text-4xl">From your first item to your first report</h2>
+              <p className="mt-5 font-inter text-base leading-7 text-[#42526A]">See the actual sales, stock and reporting screens above. Your business type determines the items and services you set up.</p>
+              <Link href={BUSINESS_SIGNUP_URL} className={`${primary} mt-7`}>Create your owner account</Link>
+            </div>
+            <ol className="grid gap-4 sm:grid-cols-3">
+              <li className="rounded-2xl border border-[#DDE5F2] bg-white p-6">
+                <span className="font-inter text-sm font-bold text-[#004AAD]">01</span>
+                <h3 className="mt-4 font-inter text-lg font-semibold">Set up your business</h3>
+                <p className="mt-3 font-inter text-sm leading-6 text-[#42526A]">Create an owner account, choose your business type and branch, then add the products or services you sell.</p>
+              </li>
+              <li className="rounded-2xl border border-[#DDE5F2] bg-white p-6">
+                <span className="font-inter text-sm font-bold text-[#004AAD]">02</span>
+                <h3 className="mt-4 font-inter text-lg font-semibold">Record sales</h3>
+                <p className="mt-3 font-inter text-sm leading-6 text-[#42526A]">Select the item or service, enter its quantity and price, and save the sale in your business record.</p>
+              </li>
+              <li className="rounded-2xl border border-[#DDE5F2] bg-white p-6">
+                <span className="font-inter text-sm font-bold text-[#004AAD]">03</span>
+                <h3 className="mt-4 font-inter text-lg font-semibold">Review the day</h3>
+                <p className="mt-3 font-inter text-sm leading-6 text-[#42526A]">Check sales and inventory reports so you know what moved and what needs attention.</p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
         <section className="bg-[#001F45] text-white">
           <div className="mx-auto grid max-w-7xl items-center gap-9 px-6 py-16 lg:grid-cols-[1fr_0.8fr] lg:px-[100px]">
             <div>
@@ -216,6 +248,7 @@ export default function KenyaPosPage() {
                 <Link href="https://play.google.com/store/apps/details?id=com.fahampesa.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-[10px] bg-white px-6 py-3 font-dm-sans font-semibold text-[#001F45] hover:bg-[#EDF3FF]">Get the Android app</Link>
                 <Link href="/installation" className="inline-flex items-center rounded-[10px] border border-white/70 px-6 py-3 font-dm-sans font-semibold text-white hover:bg-white/10">Desktop installation</Link>
               </div>
+              <p className="mt-5 font-inter text-sm leading-6 text-[#C8D9EF]">On Windows, the current install guide uses Edge or Chrome to add the business app. Internet access is needed for first setup. Ask us about offline work and syncing on your chosen device.</p>
             </div>
             <div className="rounded-[24px] border border-white/20 bg-white/10 p-5">
               <Image src="/dashboard-screenshot.png" alt="Fahampesa business dashboard shown on a laptop" width={576} height={384} sizes="(max-width: 1024px) 100vw, 40vw" className="h-auto w-full" />
@@ -234,6 +267,9 @@ export default function KenyaPosPage() {
               </div>
             ))}
           </div>
+          <p className="mt-8 max-w-4xl rounded-xl border border-[#DDE5F2] bg-[#F8FAFE] p-5 font-inter text-sm leading-6 text-[#42526A]">
+            Comparing systems? Check the exact plan limits, payment flow, hardware and offline setup before deciding. <Link href="/pricingpage" className="font-semibold text-[#004AAD] underline underline-offset-2">See Fahampesa plans</Link> or <Link href="/contact-information" className="font-semibold text-[#004AAD] underline underline-offset-2">ask for a walkthrough</Link> with your real products and services.
+          </p>
         </section>
 
         <section className="bg-[#DEE4FF]">
