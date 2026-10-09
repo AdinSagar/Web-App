@@ -9,9 +9,9 @@ import ErrorHandler from "@/components/ErrorHandler";
 import ChatwootWidget from "@/components/ChatwootWidget";
 
 export const metadata: Metadata = {
-  title: "POS System in Kenya for Shops | Fahampesa",
-  description: "Fahampesa helps Kenyan shops track sales, inventory, and reports. Use the POS in a browser or on Windows, with offline support. Request a demo in Nairobi.",
-  keywords: "POS system Kenya, retail POS software Kenya, inventory software for shops, Nairobi POS",
+  title: "FahamPesa - Lightweight Sales & Inventory App for Small Business",
+  description: "A native Android app designed for small business owners in Kenya. Track inventory, record sales, and manage your business with sunlight-optimized design and offline-first functionality.",
+  keywords: "sales app, inventory management, small business, Kenya, offline app, business tools",
   authors: [{ name: "FahamPesa Team" }],
   icons: {
     icon: "/favicon.ico",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     apple: "/assets/brand/fahampesa-logo-180.png",
   },
   openGraph: {
-    title: "POS System in Kenya for Shops | Fahampesa",
-    description: "Track shop sales, inventory, and reports with Fahampesa. Use it in a browser or on Windows, with offline support.",
+    title: "FahamPesa - Lightweight Sales & Inventory App",
+    description: "Track inventory, record sales, and manage your business with our sunlight-optimized mobile app.",
     type: "website",
   },
 };
