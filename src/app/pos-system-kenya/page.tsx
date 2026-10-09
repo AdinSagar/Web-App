@@ -21,14 +21,14 @@ export const metadata: Metadata = {
 }
 
 const industries = [
-  { name: "Retail shops", detail: "Keep everyday sales and products together, from a single counter to a growing shop.", example: "Clothing · electronics · general stores", sample: "Example items: cooking oil and bread" },
-  { name: "Supermarkets", detail: "Follow the products moving through a busy checkout and review your daily sales.", example: "Minimarts · groceries · convenience", sample: "Example items: milk and rice" },
-  { name: "Wholesale", detail: "Record bulk quantities and see sales and stock in one business view.", example: "Distributors · bulk suppliers", sample: "Example items: rice bags and cooking oil 5L" },
-  { name: "Restaurants & cafes", detail: "Record food and drink sales and keep track of the items you sell.", example: "Cafes · takeaways · restaurants", sample: "Example items: cappuccino and samosa" },
-  { name: "Hotels", detail: "Bring goods and service sales into your business records and reporting.", example: "Hotels · lodges · guest houses", sample: "Example items: room night and breakfast" },
-  { name: "Bars", detail: "Follow counter sales, products and business performance across the day.", example: "Bars · lounges · clubs", sample: "Example items: water and soda" },
-  { name: "Salons & spas", detail: "Record treatments alongside the products your team sells.", example: "Hair · beauty · barbershops", sample: "Example items: haircut and shampoo" },
-  { name: "Service businesses", detail: "Capture a service as a sale, whether it is a massage, repair or another appointment.", example: "Massage therapy · repairs · wellness", sample: "Example items: massage and aromatherapy" },
+  { name: "Retail shops", detail: "Record counter sales and keep products and stock visible.", example: "Clothing · electronics · general stores", items: ["Cooking oil 1L", "Bread 400g"] },
+  { name: "Supermarkets", detail: "Follow a busy checkout and review daily sales.", example: "Minimarts · groceries · convenience", items: ["Milk 1L", "Rice 2kg"] },
+  { name: "Wholesale", detail: "Record bulk quantities alongside sales and stock.", example: "Distributors · bulk suppliers", items: ["Rice bag 25kg", "Cooking oil 5L"] },
+  { name: "Restaurants & cafes", detail: "Record food and drink sales in one business view.", example: "Cafes · takeaways · restaurants", items: ["Cappuccino", "Samosa"] },
+  { name: "Hotels", detail: "Bring goods and service sales into your daily records.", example: "Hotels · lodges · guest houses", items: ["Room night", "Breakfast"] },
+  { name: "Bars", detail: "Follow counter sales and business performance.", example: "Bars · lounges · clubs", items: ["Bottled water", "Soda"] },
+  { name: "Salons & spas", detail: "Record treatments alongside products your team sells.", example: "Hair · beauty · barbershops", items: ["Haircut", "Shampoo"] },
+  { name: "Service businesses", detail: "Capture a service as a sale, from massage to repairs.", example: "Massage therapy · repairs · wellness", items: ["Swedish massage", "Aromatherapy add-on"] },
 ]
 
 const productViews = [
@@ -164,19 +164,33 @@ export default function KenyaPosPage() {
             </h2>
             <p className="max-w-sm font-inter text-base leading-7 text-[#52637A]">One business system, with a sale that looks different for every team.</p>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <p className="mt-8 font-dm-sans text-sm font-semibold text-[#52637A] sm:hidden">Swipe to explore eight business types</p>
+          <div className="-mx-6 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-5 sm:mx-0 sm:mt-10 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4" aria-label="Business types">
             {industries.map((industry, index) => (
-              <article key={industry.name} className="group rounded-2xl border border-[#DDE5F2] bg-white p-6 transition-shadow hover:shadow-[0_18px_45px_rgba(0,28,85,0.10)]">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#EAF0FF] font-inter text-sm font-bold text-[#004AAD]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-6 font-inter text-xl font-semibold">{industry.name}</h3>
-                <p className="mt-3 min-h-[84px] font-inter text-sm leading-6 text-[#42526A]">{industry.detail}</p>
-                <p className="mt-5 border-t border-[#E6ECF5] pt-4 font-dm-sans text-xs font-semibold uppercase tracking-wide text-[#67809E]">{industry.example}</p>
-                <p className="mt-3 font-inter text-xs leading-5 text-[#52637A]">{industry.sample}</p>
+              <article key={industry.name} className="w-[82vw] max-w-[340px] shrink-0 snap-start overflow-hidden rounded-[22px] border border-[#DDE5F2] bg-white shadow-[0_12px_32px_rgba(0,28,85,0.06)] sm:w-auto sm:max-w-none">
+                <div className="bg-[#EDF3FC] p-4">
+                  <div className="rounded-[14px] border border-[#D8E3F2] bg-white p-3 shadow-sm">
+                    <div className="flex items-center justify-between border-b border-[#E9EFF7] pb-2 font-dm-sans text-[10px] font-bold uppercase tracking-[0.13em] text-[#557196]">
+                      <span>Sample sale items</span><span>{String(index + 1).padStart(2, "0")} / 08</span>
+                    </div>
+                    {industry.items.map((item) => (
+                      <div key={item} className="flex items-center gap-2.5 border-b border-[#EFF3F8] py-2.5 last:border-0 last:pb-0">
+                        <span className="h-7 w-7 shrink-0 rounded-lg bg-[#E8EFFF]" aria-hidden="true" />
+                        <span className="truncate font-inter text-xs font-medium text-[#173557]">{item}</span>
+                        <span className="ml-auto font-dm-sans text-xs text-[#7790AB]">× 1</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-inter text-xl font-semibold">{industry.name}</h3>
+                  <p className="mt-2 font-inter text-sm leading-6 text-[#42526A]">{industry.detail}</p>
+                  <p className="mt-4 border-t border-[#E6ECF5] pt-3 font-dm-sans text-xs font-medium leading-5 text-[#67809E]">{industry.example}</p>
+                </div>
               </article>
             ))}
           </div>
+          <p className="mt-3 font-inter text-xs leading-5 text-[#67809E]">The items shown are illustrative examples. Explore a full sample sale below.</p>
         </section>
 
         <section className="bg-[#F5F8FF]">
