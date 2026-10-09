@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     question: "Which devices are supported?",
-    answer: "Fahampesa runs in a web browser and installs on Windows. Ask our team about mobile availability."
+    answer: "Windows, macOS, Linux, Android, and iOS are supported."
   },
   {
     question: "Does Fahampesa support M-Pesa?",
@@ -318,7 +318,7 @@ export default function LandingPage() {
               animate={{ opacity: 1, y: 0 }}
               className="font-inter font-medium text-[32px] sm:text-[48px] lg:text-[72px] text-[#001031] leading-[1.1] tracking-[-1px] lg:tracking-[-2px] mb-6 lg:mb-8"
             >
-              POS System for Kenyan Shops
+              POS System built for your Business
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -326,7 +326,7 @@ export default function LandingPage() {
               transition={{ delay: 0.1 }}
               className="font-inter font-normal text-[14px] lg:text-[18px] text-[#001031] leading-[22px] lg:leading-[30px] tracking-[-0.4px] mb-8 lg:mb-12 max-w-[600px]"
             >
-              Run your shop with clear sales, stock, and reports. Fahampesa works in your browser and on Windows, with offline support for busy days. Ask our Nairobi team for a demo.
+              Fahampesa gives your business the tools to sell faster, track stock in real time, and stay in control anywhere. Secure, offline-first, and built to scale with you.
             </motion.p>
 
             <motion.div
