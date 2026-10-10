@@ -20,6 +20,24 @@ function writeConsent(granted: boolean) {
   document.cookie = CONSENT_COOKIE + "=" + encodeURIComponent(value) + "; Path=/; Max-Age=31536000; SameSite=Lax; Secure" + domain;
 }
 
+function persistFirstTouch() {
+  const params = new URLSearchParams(window.location.search);
+  const domain = window.location.hostname.endsWith("fahampesa.com") ? "; Domain=.fahampesa.com" : "";
+  const write = (name: string, value: string) => {
+    document.cookie = name + "=" + encodeURIComponent(value) + "; Path=/; Max-Age=7776000; SameSite=Lax; Secure" + domain;
+  };
+  const fbclid = params.get("fbclid");
+  if (fbclid && !document.cookie.split("; ").some((part) => part.startsWith("_fbc=")) && /^[A-Za-z0-9_-]{1,300}$/.test(fbclid)) {
+    write("_fbc", "fb.1." + Date.now() + "." + fbclid);
+  }
+  for (const key of ["campaign_id", "adset_id", "ad_id"]) {
+    const value = params.get(key);
+    if (value && !document.cookie.split("; ").some((part) => part.startsWith("fp_" + key + "=")) && /^[A-Za-z0-9_.-]{1,100}$/.test(value)) {
+      write("fp_" + key, value);
+    }
+  }
+}
+
 function enablePixel() {
   if (!PIXEL_ID || window.fbq) return;
   const fbq = function (...args: unknown[]) {
@@ -37,7 +55,7 @@ function enablePixel() {
 export default function MetaMeasurementConsent() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    if (readConsent()) enablePixel(); else setVisible(true);
+    if (readConsent()) { persistFirstTouch(); enablePixel(); } else setVisible(true);
     const openSettings = () => setVisible(true);
     window.addEventListener("fahampesa:privacy-settings", openSettings);
     return () => window.removeEventListener("fahampesa:privacy-settings", openSettings);
@@ -45,7 +63,7 @@ export default function MetaMeasurementConsent() {
 
   function choose(granted: boolean) {
     writeConsent(granted); setVisible(false);
-    if (granted) enablePixel();
+    if (granted) { persistFirstTouch(); enablePixel(); }
     else if (window.fbq) window.fbq("consent", "revoke");
   }
 
