@@ -39,7 +39,12 @@ function persistFirstTouch() {
 }
 
 function enablePixel() {
-  if (!PIXEL_ID || window.fbq) return;
+  if (!PIXEL_ID) return;
+  if (window.fbq) {
+    window.fbq("consent", "grant");
+    window.fbq("track", "PageView");
+    return;
+  }
   const fbq = function (...args: unknown[]) {
     if (fbq.callMethod) fbq.callMethod.apply(fbq, args);
     else fbq.queue.push(args);
