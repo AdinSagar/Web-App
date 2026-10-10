@@ -7,13 +7,15 @@ const CONSENT_VALUE = "v1:granted";
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 function readConsent() {
-  return typeof document !== "undefined" && document.cookie.split("; ").some((cookie) => cookie === CONSENT_COOKIE + "=" + CONSENT_VALUE);
+  if (typeof document === "undefined") return false;
+  const value = document.cookie.split("; ").find((cookie) => cookie.startsWith(CONSENT_COOKIE + "="))?.slice(CONSENT_COOKIE.length + 1);
+  try { return decodeURIComponent(value || "") === CONSENT_VALUE; } catch { return false; }
 }
 
 function writeConsent(granted: boolean) {
   const value = granted ? CONSENT_VALUE : "v1:denied";
   const domain = window.location.hostname.endsWith("fahampesa.com") ? "; Domain=.fahampesa.com" : "";
-  document.cookie = CONSENT_COOKIE + "=" + value + "; Path=/; Max-Age=31536000; SameSite=Lax; Secure" + domain;
+  document.cookie = CONSENT_COOKIE + "=" + encodeURIComponent(value) + "; Path=/; Max-Age=31536000; SameSite=Lax; Secure" + domain;
 }
 
 function enablePixel() {
