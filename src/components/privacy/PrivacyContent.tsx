@@ -49,8 +49,17 @@ export const PrivacyContent = () => {
               <ul className="list-none space-y-2 pl-0">
                 <li>• Data is stored on secure infrastructure.</li>
                 <li>• Access is restricted to authorized systems and personnel.</li>
-                <li>• User data is not sold, rented, or shared for advertising.</li>
+                <li>• Fahampesa does not sell or rent user data. Optional Meta advertising measurement runs only after consent.</li>
                 <li>• Fahampesa follows applicable data protection laws in its operating regions.</li>
+              </ul>
+            </div>
+
+            <div id="advertising-measurement" className="pt-4 scroll-mt-24">
+              <h2 className="font-bold uppercase mb-4">Optional advertising measurement</h2>
+              <ul className="list-none space-y-2 pl-0">
+                <li>• If you allow it, Meta may receive page activity, ad click identifiers, and the amount and currency of a confirmed subscription payment to measure advertising.</li>
+                <li>• Fahampesa does not send account contact details, M-Pesa receipts, payment credentials, or business records for this advertising measurement.</li>
+                <li>• You can choose essential-only use or allow measurement, and change your choice later through Privacy choices.</li>
               </ul>
             </div>
 
