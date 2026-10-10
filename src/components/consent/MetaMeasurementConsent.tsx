@@ -55,7 +55,8 @@ function enablePixel() {
 export default function MetaMeasurementConsent() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    if (readConsent()) { persistFirstTouch(); enablePixel(); } else setVisible(true);
+    if (readConsent()) { persistFirstTouch(); enablePixel(); }
+    else if (!hasConsentChoice()) setVisible(true);
     const openSettings = () => setVisible(true);
     window.addEventListener("fahampesa:privacy-settings", openSettings);
     return () => window.removeEventListener("fahampesa:privacy-settings", openSettings);
