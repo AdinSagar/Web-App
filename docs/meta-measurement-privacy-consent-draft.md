@@ -6,9 +6,7 @@ Status: draft for product and privacy review. Do not publish or enable Meta trac
 
 Fahampesa uses Meta advertising measurement tools, including the Meta Pixel and Conversions API, only when you allow advertising measurement cookies. These tools help us measure whether Fahampesa advertisements lead to website visits, registrations, and paid subscriptions.
 
-If you allow this use, Fahampesa may share page and registration events, advertising identifiers such as Meta click and browser IDs, and a subscription purchase event containing its amount and currency. For event matching, Fahampesa may also send a one-way SHA-256 hash of your normalized email address or phone number. A hash remains personal data and is not a password.
-
-Fahampesa does not send your business inventory, sales records, customer transaction records, M-Pesa receipt number, or payment credentials to Meta. A subscription purchase is reported only after the payment provider confirms payment and Fahampesa activates the subscription.
+If you allow this use, Fahampesa may share page and registration events, Meta click and browser IDs, and a subscription purchase event containing its amount and currency. Fahampesa does not send your name, phone number, email address, M-Pesa receipt number, payment credentials, inventory, sales records, or customer transaction data to Meta. A subscription purchase is reported only after the payment provider confirms payment and Fahampesa activates the subscription.
 
 You may decline advertising measurement and still use Fahampesa. You may change your choice through Cookie Settings. Declining or withdrawing consent stops future optional tracking. It does not reverse events already sent to Meta.
 
