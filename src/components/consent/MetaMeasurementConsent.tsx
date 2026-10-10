@@ -6,11 +6,13 @@ const CONSENT_COOKIE = "fp_ad_measurement_consent";
 const CONSENT_VALUE = "v1:granted";
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
-function readConsent() {
-  if (typeof document === "undefined") return false;
+function readConsentValue() {
+  if (typeof document === "undefined") return "";
   const value = document.cookie.split("; ").find((cookie) => cookie.startsWith(CONSENT_COOKIE + "="))?.slice(CONSENT_COOKIE.length + 1);
-  try { return decodeURIComponent(value || "") === CONSENT_VALUE; } catch { return false; }
+  try { return decodeURIComponent(value || ""); } catch { return ""; }
 }
+function readConsent() { return readConsentValue() === CONSENT_VALUE; }
+function hasConsentChoice() { return readConsentValue() === CONSENT_VALUE || readConsentValue() === "v1:denied"; }
 
 function writeConsent(granted: boolean) {
   const value = granted ? CONSENT_VALUE : "v1:denied";
