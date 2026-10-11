@@ -10,12 +10,37 @@ import ChatwootWidget from "@/components/ChatwootWidget";
 import MetaMeasurementConsent from "@/components/consent/MetaMeasurementConsent";
 
 export const metadata: Metadata = {
-  title: "FahamPesa - Lightweight Sales & Inventory App for Small Business",
-  description: "A native Android app designed for small business owners in Kenya. Track inventory, record sales, and manage your business with sunlight-optimized design and offline-first functionality.",
-  keywords: "sales app, inventory management, small business, Kenya, offline app, business tools",
-  authors: [{ name: "FahamPesa Team" }],
+  metadataBase: new URL("https://fahampesa.com"),
+  title: "Fahampesa | Business Management & POS Software in Kenya",
+  description:
+    "Manage sales, inventory, expenses, staff, and reports in one system. Fahampesa supports retail, wholesale, restaurants, hotels, salons, and service businesses in Kenya.",
+  applicationName: "Fahampesa",
+  alternates: {
+    canonical: "/",
+  },
   icons: { icon: "/favicon.ico", shortcut: "/favicon.ico", apple: "/assets/brand/fahampesa-logo-180.png" },
-  openGraph: { title: "FahamPesa - Lightweight Sales & Inventory App", description: "Track inventory, record sales, and manage your business with our sunlight-optimized mobile app.", type: "website" },
+  openGraph: {
+    title: "Fahampesa | Business Management & POS Software in Kenya",
+    description:
+      "Manage sales, inventory, expenses, staff, and reports in one system for Kenyan retail, wholesale, hospitality, and service businesses.",
+    url: "/",
+    siteName: "Fahampesa",
+    locale: "en_KE",
+    type: "website",
+    images: [
+      {
+        url: "/assets/figma/landing/fahampesa-business-showcase.webp",
+        alt: "Fahampesa business management and point of sale product screens",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fahampesa | Business Management & POS Software in Kenya",
+    description:
+      "Manage sales, inventory, expenses, staff, and reports for your business in Kenya.",
+    images: ["/assets/figma/landing/fahampesa-business-showcase.webp"],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
