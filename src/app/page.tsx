@@ -60,11 +60,11 @@ const faqs = [
   },
   {
     question: "Which devices are supported?",
-    answer: "Windows, macOS, Linux, Android, and iOS are supported."
+    answer: "Use Fahampesa Business on a Windows PC with Microsoft Edge or Google Chrome. See the installation guide for current setup requirements."
   },
   {
     question: "Does Fahampesa support M-Pesa?",
-    answer: "Yes. M-Pesa integration is available in supported regions."
+    answer: "M-Pesa payment recording is available in supported workflows. Contact Fahampesa to confirm the setup for your business."
   },
   {
     question: "Is Fahampesa suitable for small businesses?",
@@ -87,12 +87,12 @@ const faqs = [
     answer: "You own your business data at all times."
   },
   {
-    question: "How much does Fahampesa cost?",
-    answer: "A free entry plan is available. Paid plans unlock advanced features."
+    question: "How do I check Fahampesa pricing?",
+    answer: "Review the current plan terms on the Fahampesa pricing page before signing up."
   },
   {
-    question: "Do I need a credit card to start?",
-    answer: "No. You can start without providing payment details."
+    question: "Where can I review plan terms?",
+    answer: "Visit the Fahampesa pricing page for the current subscription terms."
   },
   {
     question: "Can I export my data?",
