@@ -4,6 +4,7 @@ export const PrivacyContent = () => {
   const sections = [
     { id: 'data-collected', title: 'Data collected' },
     { id: 'use-of-data', title: 'Use of data' },
+    { id: 'analytics-measurement', title: 'Analytics and advertising measurement' },
     { id: 'data-security', title: 'Data security' },
     { id: 'payments', title: 'Payments' },
     { id: 'data-ownership', title: 'Data ownership and retention' },
@@ -31,6 +32,7 @@ export const PrivacyContent = () => {
                 <li>• Account information such as name, email, and phone number.</li>
                 <li>• Business records including sales, inventory, and transactions.</li>
                 <li>• Technical data used for security, reliability, and performance monitoring.</li>
+                <li>• If you opt in to analytics, a random first-party visitor and session identifier, page path without query parameters, broad device/browser category, referring domain, campaign labels, and fixed action categories.</li>
               </ul>
             </div>
 
@@ -40,7 +42,19 @@ export const PrivacyContent = () => {
                 <li>• Operate and maintain Fahampesa services.</li>
                 <li>• Sync business data across approved devices.</li>
                 <li>• Improve system reliability and platform performance.</li>
+                <li>• With your separate optional analytics choice, understand aggregate visit and signup journeys. Analytics data is retained for up to 180 days.</li>
                 <li>• Provide customer support and service communication.</li>
+              </ul>
+            </div>
+
+            <div id="analytics-measurement" className="pt-4 scroll-mt-24">
+              <h2 className="font-bold uppercase mb-4">Analytics and advertising measurement</h2>
+              <ul className="list-none space-y-2 pl-0">
+                <li>• First-party journey analytics and Meta advertising measurement are optional and controlled separately in Privacy choices.</li>
+                <li>• First-party analytics records page views, selected action categories, broad device/browser type, and safe campaign/referrer labels only after analytics consent. It does not record form contents, keystrokes, passwords, payment credentials, or session replays.</li>
+                <li>• Meta measurement uses ad and page activity only after ad measurement consent. A confirmed subscription payment may be reported with its amount and currency after consent; direct identifiers, M-Pesa receipts, and business records are excluded.</li>
+                <li>• Authorized Fahampesa administrators may review anonymized customer journey stages and verified payment outcomes for service improvement and conversion support.</li>
+                <li>• You can change or withdraw either optional choice through the Privacy choices control. First-party analytics events are automatically deleted within 180 days. If you withdraw analytics consent, Fahampesa requests deletion of the associated first-party journey events.</li>
               </ul>
             </div>
 
@@ -49,17 +63,8 @@ export const PrivacyContent = () => {
               <ul className="list-none space-y-2 pl-0">
                 <li>• Data is stored on secure infrastructure.</li>
                 <li>• Access is restricted to authorized systems and personnel.</li>
-                <li>• Fahampesa does not sell or rent user data. Optional Meta advertising measurement runs only after consent.</li>
+                <li>• Fahampesa does not sell customer contact or business records. Optional Meta advertising measurement is enabled only after a separate choice; limited ad identifiers and confirmed subscription value/currency may be sent to Meta. Contact details, passwords, payment credentials, M-Pesa receipts, and business records are not sent.</li>
                 <li>• Fahampesa follows applicable data protection laws in its operating regions.</li>
-              </ul>
-            </div>
-
-            <div id="advertising-measurement" className="pt-4 scroll-mt-24">
-              <h2 className="font-bold uppercase mb-4">Optional advertising measurement</h2>
-              <ul className="list-none space-y-2 pl-0">
-                <li>• If you allow it, Meta may receive page activity, ad click identifiers, and the amount and currency of a confirmed subscription payment to measure advertising.</li>
-                <li>• Fahampesa does not send account contact details, M-Pesa receipts, payment credentials, or business records for this advertising measurement.</li>
-                <li>• You can choose essential-only use or allow measurement, and change your choice later through Privacy choices.</li>
               </ul>
             </div>
 
