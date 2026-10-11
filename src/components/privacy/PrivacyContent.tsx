@@ -50,6 +50,7 @@ export const PrivacyContent = () => {
             <div id="analytics-measurement" className="pt-4 scroll-mt-24">
               <h2 className="font-bold uppercase mb-4">Analytics and advertising measurement</h2>
               <ul className="list-none space-y-2 pl-0">
+                <li>• Fahampesa also counts daily page loads by page category and broad referral source without cookies or visitor identifiers. These are aggregate page counts, not unique visitor counts.</li>
                 <li>• First-party journey analytics and Meta advertising measurement are optional and controlled separately in Privacy choices.</li>
                 <li>• First-party analytics records page views, selected action categories, broad device/browser type, and safe campaign/referrer labels only after analytics consent. It does not record form contents, keystrokes, passwords, payment credentials, or session replays.</li>
                 <li>• Meta measurement uses ad and page activity only after ad measurement consent. A confirmed subscription payment may be reported with its amount and currency after consent; direct identifiers, M-Pesa receipts, and business records are excluded.</li>

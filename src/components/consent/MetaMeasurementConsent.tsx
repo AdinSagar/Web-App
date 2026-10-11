@@ -89,10 +89,37 @@ function enablePixel() {
   fbq("init", PIXEL_ID); fbq("track", "PageView");
 }
 
+
+const aggregatePaths = new Set([
+  "/", "/home", "/pricing", "/pricingpage", "/features", "/industries",
+  "/pos-system-kenya", "/installation", "/contact", "/contact-information", "/about",
+  "/privacy", "/signup", "/login", "/onboarding", "/dashboard", "/subscription",
+  "/terms", "/faq", "/download"
+]);
+function recordAnonymousPageLoad(pathname: string | null) {
+  if (typeof window === "undefined") return;
+  const rawPath = pathname?.replace(/\/$/, "") || "/";
+  const pagePath = aggregatePaths.has(rawPath) ? rawPath : "/other";
+  // This count does not read or send cookies, personal identifiers, or query values.
+  let sourceCategory = "direct";
+  try {
+    const source = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : "";
+    if (/(^|\.)(facebook\.com|fb\.com|instagram\.com)$/.test(source) || new URLSearchParams(location.search).has("fbclid")) sourceCategory = "facebook";
+    else if (/(^|\.)google\./.test(source)) sourceCategory = "google";
+    else if (source) sourceCategory = "referral";
+  } catch { sourceCategory = "other"; }
+  fetch("https://app.fahampesa.com/api/v1/analytics/anonymous-page", {
+    method: "POST", mode: "cors", credentials: "omit", keepalive: true,
+    referrerPolicy: "no-referrer", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ pagePath, sourceCategory })
+  }).catch(() => {});
+}
+
 export default function MetaMeasurementConsent() {
   const [visible, setVisible] = useState(false);
   const pathname = usePathname();
   useEffect(() => {
+    recordAnonymousPageLoad(pathname);
     if (readConsent()) { persistFirstTouch(); enablePixel(); }
     if (readAnalyticsConsent()) startFirstPartyAnalytics(pathname);
     if (!hasConsentChoice() || !hasAnalyticsChoice()) setVisible(true);
