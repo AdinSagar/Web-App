@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
+import { industryLinks, industryHref } from "@/lib/industry-links"
 
 const examples = [
   {
@@ -74,6 +76,8 @@ const money = (value: number) => `KSh ${value.toLocaleString("en-KE")}`
 export default function IndustryDemo() {
   const [selected, setSelected] = useState(0)
   const example = examples[selected]
+  const pageOrder = [0, 1, 2, 3, 5, 4, 6, 7]
+  const industry = industryLinks[pageOrder[selected]]
   const total = example.lines.reduce((sum, line) => sum + line.quantity * line.price, 0)
 
   return (
@@ -106,6 +110,7 @@ export default function IndustryDemo() {
             </button>
           ))}
         </div>
+        <Link href={industryHref(industry.slug)} className="mt-6 inline-flex min-h-11 items-center gap-2 font-dm-sans text-sm font-semibold text-[#004AAD] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#004AAD]">Explore {industry.name.toLowerCase()} software <span aria-hidden="true">↗</span></Link>
       </div>
 
       <div className="rounded-[28px] border border-[#DCE5F4] bg-[#E9EFFB] p-3 shadow-[0_24px_65px_rgba(0,26,72,0.12)] sm:p-6">

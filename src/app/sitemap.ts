@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { industryLinks, industryHref } from "@/lib/industry-links"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const origin = "https://fahampesa.com"
@@ -10,5 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${origin}/about` },
     { url: `${origin}/contact-information` },
     { url: `${origin}/installation` },
+    ...industryLinks.map(({ slug }) => ({ url: `${origin}${industryHref(slug)}` })),
   ]
 }

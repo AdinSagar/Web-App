@@ -3,6 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/footer"
 import IndustryDemo from "./IndustryDemo"
+import IndustryBadges from "@/components/marketing/IndustryBadges"
+import { industryPages, industryHref } from "@/lib/industry-content"
+import { demoUrl } from "@/lib/marketing-contact"
 import { BUSINESS_SIGNUP_URL } from "@/lib/business-app"
 
 export const metadata: Metadata = {
@@ -74,11 +77,11 @@ const faqs = [
   },
   {
     question: "How does M-Pesa work with Fahampesa?",
-    answer: "M-Pesa integration is listed for the Desktop Pro offering. Contact us to see the exact payment and confirmation flow available for your business before choosing a plan.",
+    answer: "Supported checkout workflows can record M-Pesa, cash, card and bank payments. Recording a payment does not automatically process or verify it. Ask our team to demonstrate the payment and confirmation steps for your business.",
   },
   {
     question: "What does it cost to get started?",
-    answer: "There is a free option for testing and onboarding. Features differ by plan and device. See the current pricing page, then ask our team to confirm the right setup for your business.",
+    answer: "See the current pricing page for subscription terms. Software and hardware are separate. Ask our team for a demonstration to confirm the setup that fits your business.",
   },
 ]
 
@@ -138,7 +141,7 @@ export default function KenyaPosPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href={BUSINESS_SIGNUP_URL} className={primary}>Start with Fahampesa</Link>
-                <Link href="/contact-information" className={secondary}>Talk about your business</Link>
+                <a href={demoUrl()} target="_blank" rel="noopener noreferrer" className={secondary}>Request a Demo</a>
               </div>
               <p className="mt-7 font-dm-sans text-sm text-[#29466D]">Sales · Products and services · Stock · Reports</p>
             </div>
@@ -155,6 +158,8 @@ export default function KenyaPosPage() {
             </div>
           </div>
         </section>
+
+        <IndustryBadges />
 
         <section id="industries" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-[100px]">
           <p className="font-dm-sans text-sm font-bold uppercase tracking-[0.16em] text-[#004AAD]">Who we serve</p>
@@ -184,6 +189,7 @@ export default function KenyaPosPage() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-inter text-xl font-semibold">{industry.name}</h3>
+                  <Link href={industryHref(industryPages[index].slug)} className="mt-3 inline-flex items-center gap-1 font-dm-sans text-sm font-semibold text-[#004AAD] underline underline-offset-4">Explore {industry.name.toLowerCase()} software <span aria-hidden="true">↗</span></Link>
                   <p className="mt-2 font-inter text-sm leading-6 text-[#42526A]">{industry.detail}</p>
                   <p className="mt-4 border-t border-[#E6ECF5] pt-3 font-dm-sans text-xs font-medium leading-5 text-[#67809E]">{industry.example}</p>
                 </div>

@@ -34,7 +34,7 @@ export function ContactInformationContent() {
 
         <div>
           <p className="font-bold mb-1">Showroom</p>
-          <p>Diamond Plaza Annex, 4th Floor, Masari Road, Parklands, Nairobi, Kenya</p>
+          <p>Diamond Plaza 1, 4th floor, Parklands, Nairobi, Kenya</p>
         </div>
 
         <div>
@@ -52,7 +52,8 @@ export function ContactInformationContent() {
         <div>
           <p className="font-bold mb-1">Contact Details</p>
           <p>Email: <a href="mailto:info@fahampesa.com" className="hover:underline text-[#004aad]">info@fahampesa.com</a></p>
-          <p>Phone: +254 117 159 912</p>
+          <p>Call: <a href="tel:+254716908595" className="hover:underline text-[#004aad]">0716 908 595</a></p>
+          <p>WhatsApp: <a href="https://wa.me/254117154195" target="_blank" rel="noopener noreferrer" className="hover:underline text-[#004aad]">+254 117 154 195</a></p>
         </div>
 
         <div>

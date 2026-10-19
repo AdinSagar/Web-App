@@ -8,6 +8,8 @@ import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { DownloadModal } from '@/components/DownloadModal'
 import { ProductCard, StockDashboardMockup, InventoryCardMockup } from '@/components/ProductMockup'
 import Footer from '@/components/footer'
+import IndustryBadges from '@/components/marketing/IndustryBadges'
+import { demoUrl, WHATSAPP_NUMBER, WHATSAPP_URL, CALL_NUMBER, CALL_URL } from '@/lib/marketing-contact'
 import { BUSINESS_LOGIN_URL, BUSINESS_SIGNUP_URL } from '@/lib/business-app'
 
 const assets = {
@@ -195,7 +197,7 @@ export default function LandingPage() {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
             <Link href={BUSINESS_LOGIN_URL} className="font-dm-sans font-semibold text-[14px] text-[#001031] px-6 py-3 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">
               Login
             </Link>
@@ -278,6 +280,7 @@ export default function LandingPage() {
 
               {/* Mobile Menu Footer Actions */}
               <div className="p-4 flex flex-col gap-4 mb-4">
+                <a href={demoUrl()} target="_blank" rel="noopener noreferrer" className="w-full rounded-xl border border-[#004AAD] py-3 text-center font-dm-sans font-semibold text-[#004AAD]">Request a Demo on WhatsApp</a>
                 <Link 
                   href={BUSINESS_LOGIN_URL}
                   onClick={() => setMobileMenuOpen(false)} 
@@ -333,8 +336,9 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="flex flex-row gap-3 lg:gap-5 mb-8 lg:mb-12"
+              className="flex flex-wrap gap-3 lg:gap-5 mb-6 lg:mb-8"
             >
+              <a href={demoUrl()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#004AAD] px-4 py-3 font-dm-sans text-sm font-semibold text-white transition-colors hover:bg-[#003a8c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004AAD] lg:px-6 lg:py-[18px] lg:text-lg">Request a Demo <ArrowUpRight size={18} aria-hidden="true" /></a>
               <button
                 onClick={() => setDownloadModalOpen(true)}
                 className="flex items-center justify-center gap-[8px] lg:gap-[10px] border border-[#004AAD] rounded-[10px] px-[16px] lg:px-[32px] py-[12px] lg:py-[18px] hover:bg-[#004AAD]/5 transition-colors"
@@ -347,6 +351,10 @@ export default function LandingPage() {
                 <Image src={assets.arrowForward} alt="" width={16} height={16} className="lg:w-[22px] lg:h-[22px]" />
               </Link>
             </motion.div>
+            <div className="mb-7 flex flex-wrap gap-x-5 gap-y-2 font-dm-sans text-sm font-medium text-[#29466D]">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-[#004AAD]">WhatsApp {WHATSAPP_NUMBER}</a>
+              <a href={CALL_URL} className="underline underline-offset-4 hover:text-[#004AAD]">Call {CALL_NUMBER}</a>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -414,6 +422,8 @@ export default function LandingPage() {
           </motion.div>
         </div>
       </section>
+
+      <IndustryBadges />
 
       {/* Product Section */}
       <section id="product" className="py-[80px] bg-white relative">

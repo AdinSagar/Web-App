@@ -8,6 +8,7 @@ import { OnboardingProvider } from "@/components/onboarding/OnboardingProvider";
 import ErrorHandler from "@/components/ErrorHandler";
 import ChatwootWidget from "@/components/ChatwootWidget";
 import MetaMeasurementConsent from "@/components/consent/MetaMeasurementConsent";
+import WhatsAppContact from "@/components/marketing/WhatsAppContact";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fahampesa.com"),
@@ -50,7 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning={true}>
-        <ErrorHandler /><ChatwootWidget /><MetaMeasurementConsent />
+        <ErrorHandler /><ChatwootWidget /><MetaMeasurementConsent /><WhatsAppContact />
         <AuthProvider><StaffProvider><AdminAccessProvider><NotificationsProvider><OnboardingProvider>{children}</OnboardingProvider></NotificationsProvider></AdminAccessProvider></StaffProvider></AuthProvider>
       </body>
     </html>
