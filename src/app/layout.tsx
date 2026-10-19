@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description:
     "Manage sales, inventory, expenses, staff, and reports in one system. Fahampesa supports retail, wholesale, restaurants, hotels, salons, and service businesses in Kenya.",
   applicationName: "Fahampesa",
+  verification: {
+    google: "_AdKkqlOgla5oUdDrE-t0OEE1av9CFEUvC24Fnb-BOg",
+  },
   alternates: {
     canonical: "/",
   },
