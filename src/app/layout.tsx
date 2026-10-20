@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   applicationName: "Fahampesa",
   verification: {
     google: "_AdKkqlOgla5oUdDrE-t0OEE1av9CFEUvC24Fnb-BOg",
+    other: { "msvalidate.01": "FFDDA27B1C8D5C0D6681293A62D030ED" },
   },
   alternates: {
     canonical: "/",
