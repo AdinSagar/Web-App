@@ -18,9 +18,9 @@ export const PrivacyContent = () => {
         
         {/* Main Text Content */}
         <div className="flex-1 max-w-[690px]">
-          <h1 className="font-archivo font-semibold text-[#191d23] text-[36px] leading-normal mb-8 text-center lg:text-left">
+          <h2 className="font-archivo font-semibold text-[#191d23] text-[36px] leading-normal mb-8 text-center lg:text-left">
             Privacy Policy
-          </h1>
+          </h2>
           
           <div className="font-archivo text-[#191d23] text-[16px] leading-[20px] space-y-6">
             <p className="leading-[20px] mb-0">Fahampesa values data protection and trust.</p>
