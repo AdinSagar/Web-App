@@ -54,9 +54,9 @@ export function TermsContent() {
 
   return (
     <div className="relative w-full max-w-[1440px] mx-auto bg-white py-16 px-6 lg:px-[100px]">
-      <h1 className="font-archivo font-semibold text-[36px] text-[#191d23] mb-12 lg:mb-[60px]">
+      <h2 className="font-archivo font-semibold text-[36px] text-[#191d23] mb-12 lg:mb-[60px]">
         Terms of Service
-      </h1>
+      </h2>
 
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
         {/* Main Content */}

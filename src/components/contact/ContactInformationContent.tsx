@@ -5,9 +5,9 @@ import React from 'react';
 export function ContactInformationContent() {
   return (
     <div className="relative w-full max-w-[1440px] mx-auto bg-white py-16 px-6 lg:px-[100px] min-h-[60vh]">
-      <h1 className="font-archivo font-semibold text-[36px] text-[#191d23] mb-12 lg:mb-[60px]">
+      <h2 className="font-archivo font-semibold text-[36px] text-[#191d23] mb-12 lg:mb-[60px]">
         Contact Information
-      </h1>
+      </h2>
 
       <div className="font-archivo text-[16px] text-[#191d23] leading-[24px] max-w-[946px] space-y-8">
         <div>
