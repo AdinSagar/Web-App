@@ -6,8 +6,8 @@ const businessSchema = {
     {
       "@type": "Organization",
       "@id": "https://fahampesa.com/#organization",
-      name: "Fahampesa Limited",
-      alternateName: "Fahampesa",
+      name: "Fahampesa",
+      legalName: "Fahampesa Limited",
       url: "https://fahampesa.com/",
       logo: "https://fahampesa.com/assets/brand/fahampesa-logo-512.png",
       description: "POS and business management software for businesses in Kenya.",
