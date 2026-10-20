@@ -181,7 +181,7 @@ export default function LandingPage() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-[7px]">
             <div className="w-[32px] h-[32px] relative">
-              <Image src={assets.logo} alt="FahamPesa" fill className="rounded-[8px] object-contain" />
+              <Image src={assets.logo} alt="Fahampesa" fill className="rounded-[8px] object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="font-roboto font-bold text-[20px] text-[#001223] leading-none">Fahampesa</span>
@@ -238,7 +238,7 @@ export default function LandingPage() {
               <div className="h-[80px] flex items-center justify-between px-4 sm:px-6 border-b border-gray-100 shrink-0">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-[7px]">
                   <div className="w-[32px] h-[32px] relative">
-                    <Image src={assets.logo} alt="FahamPesa" fill className="rounded-[8px] object-contain" />
+                    <Image src={assets.logo} alt="Fahampesa" fill className="rounded-[8px] object-contain" />
                   </div>
                   <div className="flex flex-col">
                     <span className="font-roboto font-bold text-[20px] text-[#001223] leading-none">Fahampesa</span>
@@ -382,7 +382,7 @@ export default function LandingPage() {
           >
             <Image
               src="/assets/figma/landing/fahampesa-business-showcase.webp"
-              alt="FahamPesa business dashboard and point of sale on desktop, tablet, and mobile"
+              alt="Fahampesa business dashboard and point of sale on desktop, tablet, and mobile"
               fill
               sizes="100vw"
               className="object-contain object-center scale-[0.9]"
@@ -406,7 +406,7 @@ export default function LandingPage() {
           >
             <Image
               src="/assets/figma/landing/fahampesa-business-showcase.webp"
-              alt="FahamPesa business dashboard and point of sale on desktop, tablet, and mobile"
+              alt="Fahampesa business dashboard and point of sale on desktop, tablet, and mobile"
               fill
               sizes="52vw"
               className="object-contain object-right scale-[0.9] origin-right"
@@ -471,7 +471,7 @@ export default function LandingPage() {
         <div className="w-full relative min-h-[600px] lg:h-[884px] lg:min-h-0">
           <Image
             src={assets.visualSection}
-            alt="FahamPesa Dashboard Preview"
+            alt="Fahampesa Dashboard Preview"
             fill
             className="object-cover object-center z-0"
             priority
@@ -775,7 +775,7 @@ export default function LandingPage() {
             Customer&apos;s Review
           </h2>
           <p className="font-inter font-normal text-[16px] text-[#001031] mb-[60px]">
-            Real business owners sharing their success stories with FahamPesa
+            Real business owners sharing their success stories with Fahampesa
           </p>
 
           <div

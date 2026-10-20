@@ -12,7 +12,7 @@ export function ContactInformationContent() {
       <div className="font-archivo text-[16px] text-[#191d23] leading-[24px] max-w-[946px] space-y-8">
         <div>
           <p className="font-bold mb-1">Business Name</p>
-          <p>FahamPesa Limited</p>
+          <p>Fahampesa</p>
         </div>
 
         <div>

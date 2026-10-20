@@ -12,26 +12,26 @@ const steps = [
   {
     number: 1,
     icon: Monitor,
-    title: 'Open the FahamPesa installer',
-    description: 'Use the Install FahamPesa button below. It opens the current FahamPesa Business app on its secure app domain.',
+    title: 'Open the Fahampesa installer',
+    description: 'Use the Install Fahampesa button below. It opens the current Fahampesa Business app on its secure app domain.',
   },
   {
     number: 2,
     icon: Download,
-    title: 'Click Install FahamPesa',
-    description: 'In Microsoft Edge or Google Chrome, click Install FahamPesa. If the button is not ready yet, wait a few seconds or use the browser menu and choose Install app.',
+    title: 'Click Install Fahampesa',
+    description: 'In Microsoft Edge or Google Chrome, click Install Fahampesa. If the button is not ready yet, wait a few seconds or use the browser menu and choose Install app.',
   },
   {
     number: 3,
     icon: ShieldCheck,
     title: 'Approve the browser install',
-    description: 'Confirm the install prompt. FahamPesa is added to Windows as a standalone app and keeps its offline workspace on this computer.',
+    description: 'Confirm the install prompt. Fahampesa is added to Windows as a standalone app and keeps its offline workspace on this computer.',
   },
   {
     number: 4,
     icon: Rocket,
     title: 'Launch from Windows',
-    description: 'Open FahamPesa from the Start menu or taskbar. The first setup lets an owner connect the business, then staff can use their saved profile and PIN.',
+    description: 'Open Fahampesa from the Start menu or taskbar. The first setup lets an owner connect the business, then staff can use their saved profile and PIN.',
   },
 ]
 
@@ -44,8 +44,8 @@ const requirements = [
 
 const faqs = [
   {
-    question: 'Is this the current FahamPesa Windows app?',
-    answer: 'Yes. The Windows install opens the current FahamPesa Business PWA, so the installed app stays aligned with the live Web and Windows release instead of using an old ZIP build.',
+    question: 'Is this the current Fahampesa Windows app?',
+    answer: 'Yes. The Windows install opens the current Fahampesa Business PWA, so the installed app stays aligned with the live Web and Windows release instead of using an old ZIP build.',
   },
   {
     question: 'Does the installed app work offline?',
@@ -53,11 +53,11 @@ const faqs = [
   },
   {
     question: 'Do I need a Microsoft Store account?',
-    answer: 'No. FahamPesa installs directly from Microsoft Edge or Google Chrome. A Microsoft Store account is not required.',
+    answer: 'No. Fahampesa installs directly from Microsoft Edge or Google Chrome. A Microsoft Store account is not required.',
   },
   {
     question: 'How do updates work?',
-    answer: 'The installed app checks the current FahamPesa web release. You do not need to download a new ZIP for normal updates.',
+    answer: 'The installed app checks the current Fahampesa web release. You do not need to download a new ZIP for normal updates.',
   },
   {
     question: 'Can one computer remember more than one business?',
@@ -84,10 +84,10 @@ export default function InstallationPage() {
               Windows offline-ready app
             </div>
             <h2 className="text-[#001031] text-[28px] sm:text-[38px] font-semibold font-archivo leading-tight mb-4">
-              Install the current FahamPesa Business app
+              Install the current Fahampesa Business app
             </h2>
             <p className="text-[#64748b] text-[16px] sm:text-[18px] leading-relaxed mb-8">
-              Install directly from the FahamPesa app domain. No old ZIP, no Microsoft Store search,
+              Install directly from the Fahampesa app domain. No old ZIP, no Microsoft Store search,
               and no separate legacy login system.
             </p>
             <a
@@ -95,7 +95,7 @@ export default function InstallationPage() {
               className="inline-flex items-center gap-2 bg-[#004AAD] hover:bg-[#003a8c] text-white px-7 py-3.5 rounded-[12px] text-[16px] font-semibold transition-colors"
             >
               <Download className="w-5 h-5" />
-              Install FahamPesa
+              Install Fahampesa
             </a>
           </div>
         </section>
@@ -205,13 +205,13 @@ export default function InstallationPage() {
         <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[100px] py-12 lg:py-20">
           <div className="max-w-3xl mx-auto text-center bg-[#001031] rounded-[24px] p-8 sm:p-12">
             <h3 className="text-white text-[24px] sm:text-[30px] font-semibold font-archivo mb-4">Ready to install?</h3>
-            <p className="text-[#94a3b8] text-[16px] leading-relaxed mb-8">Open the current FahamPesa installer and add the app directly to Windows.</p>
+            <p className="text-[#94a3b8] text-[16px] leading-relaxed mb-8">Open the current Fahampesa installer and add the app directly to Windows.</p>
             <a
               href={BUSINESS_INSTALL_URL}
               className="inline-flex items-center gap-2 bg-[#004AAD] hover:bg-[#003a8c] text-white px-7 py-3.5 rounded-[12px] text-[16px] font-semibold transition-colors"
             >
               <Download className="w-5 h-5" />
-              Install FahamPesa
+              Install Fahampesa
             </a>
           </div>
         </section>
