@@ -19,7 +19,7 @@ export const ContactContent = () => {
           
           <div className="space-y-1">
             <p className="font-bold mb-0">Business Name</p>
-            <p className="mb-0">FahamPesa Limited</p>
+            <p className="mb-0">Fahampesa</p>
           </div>
 
           <div className="space-y-1">
