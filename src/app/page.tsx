@@ -50,7 +50,7 @@ const assets = {
 const faqs = [
   {
     question: "What is Fahampesa?",
-    answer: "Fahampesa is a professional business management platform combining point of sale, inventory control, and business reporting for growing businesses."
+    answer: "Fahampesa provides POS software and inventory management for businesses in Kenya. Record sales, track stock, manage expenses and review business reports. Visit our showroom at Diamond Plaza 1, 4th floor, Parklands, Nairobi for a demonstration."
   },
   {
     question: "Who is Fahampesa built for?",
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     question: "How do I check Fahampesa pricing?",
-    answer: "Review the current plan terms on the Fahampesa pricing page before signing up."
+    answer: "The Fahampesa software subscription costs KSh 2,000/month. Hardware is sold separately. Review the current plan terms on the pricing page before signing up."
   },
   {
     question: "Where can I review plan terms?",
@@ -321,7 +321,7 @@ export default function LandingPage() {
               animate={{ opacity: 1, y: 0 }}
               className="font-inter font-medium text-[32px] sm:text-[48px] lg:text-[72px] text-[#001031] leading-[1.1] tracking-[-1px] lg:tracking-[-2px] mb-6 lg:mb-8"
             >
-              POS System built for your Business
+              POS Software for Businesses in Kenya
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -329,7 +329,7 @@ export default function LandingPage() {
               transition={{ delay: 0.1 }}
               className="font-inter font-normal text-[14px] lg:text-[18px] text-[#001031] leading-[22px] lg:leading-[30px] tracking-[-0.4px] mb-8 lg:mb-12 max-w-[600px]"
             >
-              Fahampesa gives your business the tools to sell faster, track stock in real time, and stay in control anywhere. Secure, offline-first, and built to scale with you.
+              Record sales, manage inventory, track expenses and review reports with Fahampesa. Built for Kenyan businesses, with a showroom in Parklands, Nairobi.
             </motion.p>
 
             <motion.div
@@ -434,7 +434,7 @@ export default function LandingPage() {
               Everything You Need <br /> to Run Your Business
             </h2>
             <p className="font-inter font-normal text-[16px] sm:text-[18px] text-[#001031] leading-[28px] tracking-[-0.4px] max-w-[720px] mx-auto">
-              From inventory management to sales tracking, FahamPesa provides all the tools small business owners need to succeed in today&apos;s competitive market.
+              Keep sales tracking and stock management together. Explore our <Link href="/inventory-management-software-kenya" className="font-semibold text-[#004AAD] underline underline-offset-4">inventory management software in Kenya</Link> for products, stock records and daily reports.
             </p>
           </div>
 

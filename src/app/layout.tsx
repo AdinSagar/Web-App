@@ -9,12 +9,13 @@ import ErrorHandler from "@/components/ErrorHandler";
 import ChatwootWidget from "@/components/ChatwootWidget";
 import MetaMeasurementConsent from "@/components/consent/MetaMeasurementConsent";
 import WhatsAppContact from "@/components/marketing/WhatsAppContact";
+import PublicBusinessSchema from "@/components/marketing/PublicBusinessSchema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fahampesa.com"),
-  title: "Fahampesa | Business Management & POS Software in Kenya",
+  title: "POS Software Kenya & Nairobi | Fahampesa",
   description:
-    "Manage sales, inventory, expenses, staff, and reports in one system. Fahampesa supports retail, wholesale, restaurants, hotels, salons, and service businesses in Kenya.",
+    "POS software and inventory management for Kenyan businesses. KSh 2,000/month, software only. Request a demo in Parklands, Nairobi. Hardware sold separately.",
   applicationName: "Fahampesa",
   verification: {
     google: "_AdKkqlOgla5oUdDrE-t0OEE1av9CFEUvC24Fnb-BOg",
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/favicon.ico", shortcut: "/favicon.ico", apple: "/assets/brand/fahampesa-logo-180.png" },
   openGraph: {
-    title: "Fahampesa | Business Management & POS Software in Kenya",
+    title: "POS Software Kenya & Nairobi | Fahampesa",
     description:
-      "Manage sales, inventory, expenses, staff, and reports in one system for Kenyan retail, wholesale, hospitality, and service businesses.",
+      "POS software and inventory management for Kenyan businesses. KSh 2,000/month, software only. Visit our Parklands, Nairobi showroom for a demo.",
     url: "/",
     siteName: "Fahampesa",
     locale: "en_KE",
@@ -41,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fahampesa | Business Management & POS Software in Kenya",
+    title: "POS Software Kenya & Nairobi | Fahampesa",
     description:
-      "Manage sales, inventory, expenses, staff, and reports for your business in Kenya.",
+      "POS software, inventory and reports for Kenyan businesses. KSh 2,000/month, software only. Request a demo in Parklands, Nairobi.",
     images: ["/assets/figma/landing/fahampesa-business-showcase.webp"],
   },
 };
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning={true}>
+        <PublicBusinessSchema />
         <ErrorHandler /><ChatwootWidget /><MetaMeasurementConsent /><WhatsAppContact />
         <AuthProvider><StaffProvider><AdminAccessProvider><NotificationsProvider><OnboardingProvider>{children}</OnboardingProvider></NotificationsProvider></AdminAccessProvider></StaffProvider></AuthProvider>
       </body>
