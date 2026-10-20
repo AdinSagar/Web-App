@@ -30,6 +30,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/inventory-management-software-kenya" className="text-[14px] font-medium text-white hover:text-[#004AAD] transition-colors font-dm-sans">
+                  Inventory Management Software
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy" className="text-[14px] font-medium text-white hover:text-[#004AAD] transition-colors font-dm-sans">
                   Privacy
                 </Link>

@@ -5,18 +5,18 @@ import Footer from "@/components/footer"
 import IndustryDemo from "./IndustryDemo"
 import IndustryBadges from "@/components/marketing/IndustryBadges"
 import { industryPages, industryHref } from "@/lib/industry-content"
-import { demoUrl } from "@/lib/marketing-contact"
+import { demoUrl, SHOWROOM, SOFTWARE_PRICE_LABEL } from "@/lib/marketing-contact"
 import { BUSINESS_SIGNUP_URL } from "@/lib/business-app"
 
 export const metadata: Metadata = {
-  title: "POS System & Business Software in Kenya | Fahampesa",
+  title: "POS System Kenya & Nairobi | Fahampesa Software",
   description:
-    "Fahampesa helps Kenyan shops, supermarkets, wholesalers, restaurants, hotels, salons and service teams record sales, track stock and review reports. See the product and get started.",
+    "POS software for Kenyan shops, restaurants and service businesses. KSh 2,000/month, software only. Request a demonstration in Parklands, Nairobi.",
   alternates: { canonical: "https://fahampesa.com/pos-system-kenya" },
   openGraph: {
-    title: "POS System & Business Software in Kenya | Fahampesa",
+    title: "POS System Kenya & Nairobi | Fahampesa Software",
     description:
-      "Explore the Fahampesa POS experience across retail, hospitality and services in Kenya. Sales, stock and reports in one place.",
+      "Explore sales, stock and reports for Kenyan businesses. KSh 2,000/month, software only. Visit our Parklands, Nairobi showroom for a demo.",
     url: "https://fahampesa.com/pos-system-kenya",
     images: ["https://fahampesa.com/assets/figma/landing/fahampesa-business-showcase.webp"],
     type: "website",
@@ -81,7 +81,11 @@ const faqs = [
   },
   {
     question: "What does it cost to get started?",
-    answer: "See the current pricing page for subscription terms. Software and hardware are separate. Ask our team for a demonstration to confirm the setup that fits your business.",
+    answer: "The Fahampesa software subscription costs KSh 2,000/month. Hardware is sold separately. Review the current pricing page for plan terms and ask for a demonstration before choosing your setup.",
+  },
+  {
+    question: "Where can I see a POS software demo in Nairobi?",
+    answer: `Visit ${SHOWROOM}. Contact the team before travelling to arrange your demonstration. Bring your business type, sample products or services, and the devices you plan to use.`,
   },
 ]
 
@@ -91,7 +95,7 @@ const secondary = "inline-flex items-center justify-center rounded-[10px] border
 const pageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "POS System & Business Software in Kenya | Fahampesa",
+  name: "POS System Kenya & Nairobi | Fahampesa Software",
   url: "https://fahampesa.com/pos-system-kenya",
   description: metadata.description,
   about: {
@@ -133,7 +137,7 @@ export default function KenyaPosPage() {
             <div>
               <p className="font-dm-sans text-sm font-bold uppercase tracking-[0.16em] text-[#004AAD]">Built for business in Kenya</p>
               <h1 className="mt-5 font-inter text-4xl font-semibold leading-[1.1] tracking-[-0.035em] sm:text-5xl xl:text-6xl">
-                POS system and business software for Kenya
+                POS system for Kenya, with a Nairobi showroom
               </h1>
               <p className="mt-6 max-w-xl font-inter text-lg leading-8 text-[#2f3037]">
                 Sell products or services, keep an eye on stock, and understand your day.
@@ -143,7 +147,7 @@ export default function KenyaPosPage() {
                 <Link href={BUSINESS_SIGNUP_URL} className={primary}>Start with Fahampesa</Link>
                 <a href={demoUrl()} target="_blank" rel="noopener noreferrer" className={secondary}>Request a Demo</a>
               </div>
-              <p className="mt-7 font-dm-sans text-sm text-[#29466D]">Sales · Products and services · Stock · Reports</p>
+              <p className="mt-7 font-dm-sans text-sm text-[#29466D]">{SOFTWARE_PRICE_LABEL}</p>
             </div>
             <div className="relative rounded-[28px] border border-white/80 bg-white/45 p-4 shadow-[0_25px_70px_rgba(0,28,85,0.14)]">
               <Image
@@ -213,6 +217,7 @@ export default function KenyaPosPage() {
           <p className="mt-4 max-w-2xl font-inter text-base leading-7 text-[#52637A]">
             These images come from the Fahampesa product materials. Screen contents are demonstrations and may differ by app or plan.
           </p>
+          <p className="mt-4 max-w-2xl font-inter text-base leading-7 text-[#52637A]">Need to organize product quantities? Explore our <Link href="/inventory-management-software-kenya" className="font-semibold text-[#004AAD] underline underline-offset-4">inventory management software in Kenya</Link> and see what to check during a stock demonstration.</p>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {productViews.map((view) => (
               <article key={view.title} className="overflow-hidden rounded-[22px] border border-[#DDE5F2] bg-white shadow-[0_12px_35px_rgba(0,28,85,0.06)]">
