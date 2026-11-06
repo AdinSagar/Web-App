@@ -40,6 +40,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/account-deletion" className="text-[14px] font-medium text-white hover:text-[#004AAD] transition-colors font-dm-sans">
+                  Delete account and data
+                </Link>
+              </li>
+              <li>
                 <Link href="/terms" className="text-[14px] font-medium text-white hover:text-[#004AAD] transition-colors font-dm-sans">
                   Terms of Service
                 </Link>
@@ -159,3 +164,4 @@ export default function Footer() {
     </>
   )
 }
+
