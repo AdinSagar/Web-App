@@ -2,6 +2,8 @@ import React from 'react'
 
 export const PrivacyContent = () => {
   const sections = [
+    { id: 'android-apps', title: 'Seller and Shop Android apps' },
+    { id: 'account-deletion', title: 'Delete your account and data' },
     { id: 'data-collected', title: 'Data collected' },
     { id: 'use-of-data', title: 'Use of data' },
     { id: 'analytics-measurement', title: 'Analytics and advertising measurement' },
@@ -25,6 +27,22 @@ export const PrivacyContent = () => {
           <div className="font-archivo text-[#191d23] text-[16px] leading-[20px] space-y-6">
             <p className="leading-[20px] mb-0">Fahampesa values data protection and trust.</p>
             <p className="leading-[20px] mb-0">We collect information required to operate the platform effectively.</p>
+
+            <section id="android-apps" className="pt-4 scroll-mt-24 space-y-4">
+              <h2 className="font-bold uppercase">Seller and Shop Android apps</h2>
+              <p>This policy applies to Fahampesa Limited, including FanPesa seller (also called Fahampesa Seller), Fahampesa Shop and Fahampesa Business. The website measurement choices described below apply to the website. Android app diagnostics and analytics are described separately here.</p>
+              <p>Depending on the features you use, the apps process your name, email, phone number, account identifiers, business address and registration details, storefront location, uploaded photos, product and service listings, customer messages, orders, bookings, invoices and business transaction records. Location permission is used to help set a business location. Listings and contact details you choose to publish are visible to customers. Messages and order or booking information are sent to the relevant participants.</p>
+              <p>Firebase Authentication supports sign-in. Firebase Cloud Messaging processes app installation identifiers and notification tokens. Firebase Analytics collects app interactions, device and app identifiers, approximate location and device information. Firebase Crashlytics collects crash reports, diagnostic information and installation identifiers to improve reliability. The Seller Android release enables analytics and crash collection. It does not display advertisements. Website analytics consent does not control Android SDK collection.</p>
+              <p>We use Google Firebase, Railway and image hosting providers to authenticate users, store and deliver data, send notifications and operate the service. These providers process information needed to perform those services. Public listings and participant-directed messages are shared as part of the requested functionality. We do not sell your personal data.</p>
+              <p>App data travels over encrypted HTTPS connections. Access is limited to authorized accounts and service providers. We retain operational information while needed for the account and requested services, with deletion and retention exceptions explained below. The free Seller app has no app subscription charge. Cash orders and bookings are paid directly to the business under the options it offers.</p>
+            </section>
+
+            <section id="account-deletion" className="rounded-xl border border-[#004aad] p-5 scroll-mt-24 space-y-3">
+              <h2 className="font-bold uppercase">Delete your account and data</h2>
+              <p>Request deletion of your account and associated personal data, or selected data without closing the account, through our privacy team. You do not need to reinstall the app or pay to make a request.</p>
+              <a href="/account-deletion" className="inline-block font-semibold text-[#004aad] underline">Account deletion instructions and request email</a>
+              <p>We verify ownership, remove the account and associated personal information, and explain records retained for legal obligations, unresolved transactions, fraud prevention or security. The deletion page explains the request steps, data covered and retention exceptions. Website journey analytics is retained for up to 180 days. Firebase Crashlytics keeps diagnostic reports and associated identifiers for 90 days before beginning removal.</p>
+            </section>
 
             <div id="data-collected" className="pt-4 scroll-mt-24">
               <h2 className="font-bold uppercase mb-4">Data collected</h2>
@@ -136,3 +154,4 @@ export const PrivacyContent = () => {
     </div>
   )
 }
+
