@@ -27,7 +27,10 @@
     "src/app/contact-information/page.tsx",
     "src/app/privacy/page.tsx",
     "src/app/terms/page.tsx",
-    "src/app/account-deletion/page.tsx"
+    "src/app/account-deletion/page.tsx",
+    "src/lib/published-showcase.ts",
+    "src/app/api/public-showcase/route.ts",
+    "src/app/apps/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

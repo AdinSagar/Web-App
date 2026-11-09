@@ -1,5 +1,6 @@
 'use client';
 import {useEffect,useState} from 'react';
+import Link from 'next/link';
 import {ArrowUpRight,Check,Share2,Smartphone} from 'lucide-react';
 
 export function ShareButton({url,title}:{url:string;title:string}){
@@ -18,7 +19,7 @@ export function AppActions({openAppUrl,installUrl,qrImage}:{openAppUrl:string|nu
   useEffect(()=>{setDevice(/Android/i.test(navigator.userAgent)?'android':/iPhone|iPad|iPod/i.test(navigator.userAgent)?'ios':'desktop');},[]);
   return <div className="share-app-actions">
     {device==='android'?(openAppUrl?<a className="share-primary" href={openAppUrl}><Smartphone size={19}/>Open in FahamPesa Shop<ArrowUpRight size={18}/></a>:<p className="share-note">App access is temporarily unavailable. Please try again later.</p>):<div className="share-qr"><img src={qrImage} width="132" height="132" alt="Scan to open this listing on your phone"/><p>{device==='ios'?'FahamPesa Shop is available for Android.':'Scan with your Android phone'}<small>Open this same listing on your phone.</small></p></div>}
-    {installUrl&&<a className="share-install" href={installUrl}>Get the Android app <ArrowUpRight size={15}/></a>}
+    <Link className="share-install" href="/apps/shopper">Get the Shopper app for Android <ArrowUpRight size={15}/></Link>
     {!installUrl&&openAppUrl&&device==='android'&&<p className="share-hint">Requires the FahamPesa Shop app on your phone.</p>}
     <p className="share-hint">Orders and bookings continue in the Shop app.</p>
   </div>;

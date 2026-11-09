@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: origin },
+    ...["/apps","/apps/seller","/apps/shopper"].map(path=>({url:origin+path})),
     ...growthPaths.map(path=>({url:origin+path})),
     { url: `${origin}/pos-system-kenya` },
     { url: `${origin}/inventory-management-software-kenya` },
