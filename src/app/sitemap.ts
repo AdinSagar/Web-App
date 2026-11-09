@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import {growthPaths} from "@/lib/business-growth"
 import { industryLinks, industryHref } from "@/lib/industry-links"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -6,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: origin },
+    ...growthPaths.map(path=>({url:origin+path})),
     { url: `${origin}/pos-system-kenya` },
     { url: `${origin}/inventory-management-software-kenya` },
     { url: `${origin}/pricingpage` },

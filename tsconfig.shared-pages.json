@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": { "incremental": false },
-  "include": ["next-env.d.ts", "src/lib/shared-catalog.ts", "src/components/shared/**/*.tsx", "src/app/(shared)/**/*.tsx"],
+  "include": ["next-env.d.ts", "src/lib/shared-catalog.ts", "src/components/shared/**/*.tsx", "src/app/(shared)/**/*.tsx", "src/app/(growth)/**/*.tsx", "src/components/marketing/GrowthFrame.tsx", "src/components/marketing/AiPromptBuilder.tsx", "src/lib/listing-discovery.ts", "src/lib/business-growth.ts"],
   "exclude": ["node_modules", ".next"]
 }

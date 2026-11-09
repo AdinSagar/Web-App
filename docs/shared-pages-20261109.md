@@ -1,6 +1,6 @@
 # Dedicated FahamPesa share pages
 
-Store links use `https://fahampesa.com/<store-handle>`. Product, menu, room and service links add a stable listing handle. The main marketing homepage is unchanged. These pages display published listings and hand off orders/bookings to the Android Shop app.
+Store links use `https://fahampesa.com/<store-handle>`. Product, menu, room and service links add a stable listing handle. The business growth extension now adds homepage navigation and guides. These pages display published listings, offer WhatsApp enquiries for valid public seller numbers, and hand off app orders/bookings to the Android Shop app.
 
 ## Deployment
 
@@ -30,7 +30,7 @@ The main domain already proxies `/api/v1` to the business service. Product and b
 - Existing `/shop/<id>/<id>` links redirect to the readable preview after normal publication checks.
 - Store and listing handles remain reserved through renames/unpublishing. Duplicate names get a short collision suffix. Main-domain routes are reserved.
 - Desktop visitors see a QR code. Android visitors see the app button. iOS visitors see Android availability information.
-- No website cart, checkout, marketplace directory, payment processing or homepage promotion was added.
+- No website cart, checkout, marketplace directory or payment processing was added. The Business Growth section links from the homepage.
 
 ## Validation
 

@@ -4,7 +4,7 @@ import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { Menu, X, ArrowUpRight, Wifi } from 'lucide-react'
 import { DownloadModal } from '@/components/DownloadModal'
 import { ProductCard, StockDashboardMockup, InventoryCardMockup } from '@/components/ProductMockup'
 import Footer from '@/components/footer'
@@ -57,8 +57,8 @@ const faqs = [
     answer: "Retailers, wholesalers, pharmacies, service businesses, and multi-branch operations that need accuracy and control."
   },
   {
-    question: "Does Fahampesa work offline?",
-    answer: "Yes. Sales, stock, and records continue working offline and sync securely when internet returns."
+    question: "Do the Seller and Shop apps need internet?",
+    answer: "Yes. The Seller and Shop apps require an internet connection for current listings, availability and orders. Shared listing pages also use current online data."
   },
   {
     question: "Which devices are supported?",
@@ -190,10 +190,11 @@ export default function LandingPage() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-2">
             <Link href="#product" className="font-dm-sans font-semibold text-[14px] text-[#001031] px-4 py-2 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">Product</Link>
             <Link href="#who-we-serve" className="font-dm-sans font-semibold text-[14px] text-[#001031] px-4 py-2 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">Customers</Link>
             <Link href="/pricingpage" className="font-dm-sans font-semibold text-[14px] text-[#001031] px-4 py-2 rounded-[8px] hover:bg-[#E6F0FF] transition-colors">Pricing</Link>
+            <Link href="/business" className="font-dm-sans font-semibold text-[14px] text-[#C74300] px-4 py-2 rounded-[8px] hover:bg-[#FFF3E8] transition-colors">Business Growth</Link>
           </nav>
 
           {/* Desktop Actions */}
@@ -278,6 +279,7 @@ export default function LandingPage() {
                 </Link>
               </div>
 
+              <Link href="/business" onClick={() => setMobileMenuOpen(false)} className="font-dm-sans font-bold text-[16px] text-[#C74300] py-3 px-4 rounded-[8px] hover:bg-[#FFF3E8] w-full text-center">Business Growth</Link>
               {/* Mobile Menu Footer Actions */}
               <div className="p-4 flex flex-col gap-4 mb-4">
                 <a href={demoUrl()} target="_blank" rel="noopener noreferrer" className="w-full rounded-xl border border-[#004AAD] py-3 text-center font-dm-sans font-semibold text-[#004AAD]">Request a Demo on WhatsApp</a>
@@ -339,13 +341,7 @@ export default function LandingPage() {
               className="flex flex-wrap gap-3 lg:gap-5 mb-6 lg:mb-8"
             >
               <a href={demoUrl()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#004AAD] px-4 py-3 font-dm-sans text-sm font-semibold text-white transition-colors hover:bg-[#003a8c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#004AAD] lg:px-6 lg:py-[18px] lg:text-lg">Request a Demo <ArrowUpRight size={18} aria-hidden="true" /></a>
-              <button
-                onClick={() => setDownloadModalOpen(true)}
-                className="flex items-center justify-center gap-[8px] lg:gap-[10px] border border-[#004AAD] rounded-[10px] px-[16px] lg:px-[32px] py-[12px] lg:py-[18px] hover:bg-[#004AAD]/5 transition-colors"
-              >
-                <span className="font-dm-sans font-semibold text-[14px] lg:text-[18px] text-[#004AAD]">Download App</span>
-                <Image src={assets.download} alt="" width={16} height={16} className="lg:w-[22px] lg:h-[22px]" />
-              </button>
+              <Link href="/business" className="inline-flex items-center gap-2 border border-[#004AAD] rounded-[10px] px-4 py-3 font-dm-sans font-semibold text-[#004AAD] lg:px-6 lg:py-[18px]">Explore business guides <ArrowUpRight size={17} /></Link>
               <Link href={BUSINESS_SIGNUP_URL} className="flex items-center justify-center gap-[8px] lg:gap-[10px] bg-[#004AAD] rounded-[10px] px-[16px] lg:px-[32px] py-[12px] lg:py-[18px] hover:bg-[#003a8c] transition-colors">
                 <span className="font-dm-sans font-semibold text-[14px] lg:text-[18px] text-white">Sign Up</span>
                 <Image src={assets.arrowForward} alt="" width={16} height={16} className="lg:w-[22px] lg:h-[22px]" />
@@ -363,8 +359,8 @@ export default function LandingPage() {
               className="flex flex-wrap gap-4 lg:gap-10"
             >
               <div className="flex items-center gap-[6px] lg:gap-[10px]">
-                <Image src={assets.wifiOff} alt="" width={16} height={16} className="lg:w-[20px] lg:h-[20px]" />
-                <span className="font-inter font-normal text-[12px] lg:text-[16px] text-[#001031] tracking-[-0.4px]">Works online and offline</span>
+                <Wifi size={20} aria-hidden="true" className="text-[#001031]" />
+                <span className="font-inter font-normal text-[12px] lg:text-[16px] text-[#001031] tracking-[-0.4px]">Current records with an internet connection</span>
               </div>
               <div className="flex items-center gap-[6px] lg:gap-[10px]">
                 <Image src={assets.sun} alt="" width={16} height={16} className="lg:w-[20px] lg:h-[20px]" />
@@ -535,7 +531,7 @@ export default function LandingPage() {
           <div className="text-center mb-[80px]">
             <span className="font-inter font-medium text-[14px] text-[#004AAD] tracking-[0.9px] uppercase block mb-4">WHO WE SERVE</span>
             <h2 className="font-inter font-medium text-[36px] sm:text-[48px] lg:text-[60px] text-[#001031] leading-[1.19] tracking-[-1.5px] mb-6">
-              Trusted by businesses <br className="hidden lg:block" /> from various industries
+              Built for businesses <br className="hidden lg:block" /> across these industries
             </h2>
             <p className="font-inter font-normal text-[16px] text-[#001031] leading-[28px] tracking-[-0.4px]">
               See how businesses across different industries use Fahampesa.
@@ -972,6 +968,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section className="bg-[#FFF7F0] border-y border-[#F1DDCD] py-16" aria-labelledby="growth-home-title"><div className="max-w-7xl mx-auto px-6 lg:px-[100px] grid gap-8 lg:grid-cols-[1.2fr_1fr]"><div><p className="font-dm-sans text-xs font-bold uppercase tracking-[0.16em] text-[#C74300]">Business Growth</p><h2 id="growth-home-title" className="mt-4 font-inter text-3xl sm:text-4xl font-semibold tracking-tight text-[#001031]">Your business, easier to find.</h2><p className="mt-5 font-inter text-base leading-7 text-[#42526A]">Help customers understand your products, prices and location before they download an app. Use practical search, social and AI guides to improve your listings and answer real customer questions.</p><Link href="/business" className="mt-6 inline-flex items-center gap-2 rounded-[10px] bg-[#C74300] px-6 py-3.5 font-dm-sans text-sm font-semibold text-white">Explore Business Growth <ArrowUpRight size={17}/></Link></div><div className="grid gap-3">{[{name:'Search & AI',detail:'Useful content, clear facts and human review.',href:'/business/search-and-ai'},{name:'Sell online',detail:'Listings and enquiries before an app download.',href:'/business/sell-online'},{name:'Food & grocery',detail:'Prepare product information and delivery rules.',href:'/business/food-and-grocery'}].map(item=><Link key={item.href} href={item.href} className="rounded-2xl bg-white border border-[#EAD8CB] p-5"><h3 className="font-inter font-semibold text-[#001031]">{item.name}</h3><p className="mt-2 font-inter text-sm text-[#596579]">{item.detail}</p></Link>)}</div></div></section>
       {/* Footer */}
       <Footer />
     </div>

@@ -5,7 +5,7 @@ import type {Metadata} from 'next';
 
 export type SharedItem = {id:string;name:string;type:string;description:string;category:string;unitPriceMinor:number;currency:string;inStock:boolean;imageUrl:string|null;publicUrl:string;durationMinutes?:number};
 export type SharedCatalog = {
-  store:{id:string;name:string;businessType:string;location:string;publicUrl:string;acceptingOrders:boolean;pickupEnabled:boolean;deliveryEnabled:boolean;deliveryArea?:string;deliveryFee?:number};
+  store:{id:string;name:string;businessType:string;location:string;phone?:string;publicUrl:string;acceptingOrders:boolean;pickupEnabled:boolean;deliveryEnabled:boolean;deliveryArea?:string;deliveryFee?:number};
   items:SharedItem[];nextAfter:string|null;
   links:{appUrl:string;openAppUrl:string|null;installUrl:string|null};
 };
@@ -52,7 +52,7 @@ export const price=(item:SharedItem)=>new Intl.NumberFormat('en-KE',{style:'curr
 export function sharedMetadata(data:SharedCatalog,product=false):Metadata {
   const item=product?data.items[0]:undefined;
   const title=item?`${item.name} | ${data.store.name} | FahamPesa`:`${data.store.name} | FahamPesa`;
-  const description=item?`${item.name}, ${price(item)} at ${data.store.name}. View details and continue in FahamPesa Shop.`:`View ${data.store.name} on FahamPesa. ${data.store.location}. Explore their listings and continue in the Shop app.`;
+  const description=item?`${item.name}, ${price(item)} at ${data.store.name}. View price, seller details and pickup or delivery information.`:`View ${data.store.name} on FahamPesa. ${data.store.location}. Explore their listings and contact the seller.`;
   const url=item?.publicUrl||data.store.publicUrl;
   const image=item?.imageUrl||data.items.find(value=>value.imageUrl)?.imageUrl;
   return {title,description,alternates:{canonical:url},robots:{index:true,follow:true},openGraph:{title,description,url,siteName:'FahamPesa',type:'website',images:image?[{url:image,alt:item?.name||data.store.name}]:[]},twitter:{card:image?'summary_large_image':'summary',title,description,images:image?[image]:[]}};

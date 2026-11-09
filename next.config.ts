@@ -33,6 +33,9 @@ const businessAppRoutes = [
 const nextConfig: NextConfig = {
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
+  async headers() {
+    return ["/api/:path*", "/admin/:path*", "/super-admin/:path*", "/dashboard/:path*", "/staff-dashboard/:path*", "/onboarding/:path*", "/login", "/signup"].map(source=>({source,headers:[{key:"X-Robots-Tag",value:"noindex, nofollow"}]}));
+  },
   async redirects() {
     return [
       {
