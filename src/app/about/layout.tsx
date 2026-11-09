@@ -3,8 +3,8 @@ import { publicPageMetadata } from "@/lib/public-page-metadata";
 
 export const metadata = publicPageMetadata(
   "/about",
-  "About Fahampesa | POS Software Company in Kenya",
-  "Learn about Fahampesa, POS and business management software for Kenyan retail, hospitality and service businesses. Visit our showroom in Parklands, Nairobi.",
+  "About FahamPesa | Business, Property & Local Commerce in Kenya",
+  "FahamPesa connects business software, rental property management, online sellers and local shoppers in Kenya. Meet our team in Parklands, Nairobi.",
 );
 
 export default function PublicPageLayout({ children }: { children: ReactNode }) {

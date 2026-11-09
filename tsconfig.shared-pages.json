@@ -30,7 +30,13 @@
     "src/app/account-deletion/page.tsx",
     "src/lib/published-showcase.ts",
     "src/app/api/public-showcase/route.ts",
-    "src/app/apps/**/*.tsx"
+    "src/app/apps/**/*.tsx",
+    "src/app/guides/**/*.tsx",
+    "src/app/catalog-sitemap.xml/route.ts",
+    "src/lib/catalog-indexing.ts",
+    "src/lib/catalog-sitemap.ts",
+    "src/app/robots.ts",
+    "src/app/sitemap.ts"
   ],
   "exclude": [
     "node_modules",

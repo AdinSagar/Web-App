@@ -1,5 +1,6 @@
 import 'server-only';
 import {cache} from 'react';
+import {indexableItem,catalogSearchUrls} from './catalog-indexing';
 import {notFound} from 'next/navigation';
 import type {Metadata} from 'next';
 
@@ -55,5 +56,5 @@ export function sharedMetadata(data:SharedCatalog,product=false):Metadata {
   const description=item?`${item.name}, ${price(item)} at ${data.store.name}. View price, seller details and pickup or delivery information.`:`View ${data.store.name} on FahamPesa. ${data.store.location}. Explore their listings and contact the seller.`;
   const url=item?.publicUrl||data.store.publicUrl;
   const image=item?.imageUrl||data.items.find(value=>value.imageUrl)?.imageUrl;
-  return {title,description,alternates:{canonical:url},robots:{index:true,follow:true},openGraph:{title,description,url,siteName:'FahamPesa',type:'website',images:image?[{url:image,alt:item?.name||data.store.name}]:[]},twitter:{card:image?'summary_large_image':'summary',title,description,images:image?[image]:[]}};
+  return {title,description,alternates:{canonical:url},robots:{index:item?indexableItem(data.store,item):catalogSearchUrls(data).length>0,follow:true},openGraph:{title,description,url,siteName:'FahamPesa',type:'website',images:image?[{url:image,alt:item?.name||data.store.name}]:[]},twitter:{card:image?'summary_large_image':'summary',title,description,images:image?[image]:[]}};
 }

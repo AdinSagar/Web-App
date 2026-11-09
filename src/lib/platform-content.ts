@@ -27,4 +27,4 @@ export const platformPages={
   ],note:'Need help choosing a workflow? Arrange a demonstration with the Nairobi team. Bring a small example of your real work, without passwords, payment credentials or private customer records.'
  }
 } as const;
-export const platformPaths=['/business/property-management','/business/sellers','/business/get-started','/business/shop','/business/reports','/business/guides'];
+export const platformPaths=['/business/property-management','/business/sellers','/business/get-started','/business/shop','/business/reports','/guides'];

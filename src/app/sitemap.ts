@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${origin}/pos-system-kenya` },
     { url: `${origin}/inventory-management-software-kenya` },
     ...platformPaths.map(path=>({url:origin+path})),
-    ...kenyaGuides.map(guide=>({url:origin+"/business/guides/"+guide.slug})),
+    ...kenyaGuides.map(guide=>({url:origin+"/guides/"+guide.slug})),
     { url: `${origin}/about` },
     { url: `${origin}/contact-information` },
     { url: `${origin}/privacy` },

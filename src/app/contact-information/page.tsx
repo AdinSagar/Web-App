@@ -1,3 +1,3 @@
 import PlatformFrame from '@/components/marketing/PlatformFrame';
 import { ContactInformationContent } from '@/components/contact/ContactInformationContent';
-export default function Page(){return <PlatformFrame><main id="main-content"><section className="fp-subhero fp-container"><span className="fp-eyebrow">FAHAMPESA</span><h1>Contact FahamPesa</h1></section><ContactInformationContent/></main></PlatformFrame>;}
+export default function Page(){return <PlatformFrame><main id="main-content"><section className="fp-subhero fp-container"><span className="fp-eyebrow">LOCAL PEOPLE. PRACTICAL SUPPORT.</span><h1>Let’s find the right<br/>starting point for you.</h1><p>Talk to the FahamPesa team about your business, rental properties or online store. Visit us in Nairobi, call or start with a WhatsApp conversation.</p></section><ContactInformationContent/></main></PlatformFrame>;}

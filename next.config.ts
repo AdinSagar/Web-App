@@ -37,6 +37,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/business/guides/:path*", destination: "/guides/:path*", permanent: true },
       { source: "/subscription", destination: "/business/get-started", permanent: true },
       { source: "/pricing", destination: "/business/get-started", permanent: true },
       {

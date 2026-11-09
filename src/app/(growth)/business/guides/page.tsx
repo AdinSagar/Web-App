@@ -1,6 +1,2 @@
-import Link from 'next/link';
-import {ArrowUpRight} from 'lucide-react';
-import {kenyaGuides} from '@/lib/kenya-guides';
-import {publicPageMetadata} from '@/lib/public-page-metadata';
-export const metadata=publicPageMetadata('/business/guides','Practical business, rental & selling guides for Kenya | FahamPesa','Practical guides to stock counts, rent payments, deposits, WhatsApp store links and business reports for Kenyan business owners and property managers.');
-export default function Page(){return <main><section className="fp-subhero fp-container"><nav className="fp-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>Practical guides</span></nav><span className="fp-eyebrow">READ. APPLY. REVIEW.</span><h1>Useful answers for<br/>the work in front of you.</h1><p>Practical guidance for business owners, property managers and online sellers in Kenya. Start with one process you want to improve.</p></section><section className="fp-section fp-container fp-guide-grid">{kenyaGuides.map(guide=><Link className="fp-guide-card" key={guide.slug} href={'/business/guides/'+guide.slug}><span className="fp-eyebrow">{guide.category}</span><h2>{guide.title}</h2><p>{guide.description}</p><span>Read the guide <ArrowUpRight size={17}/></span></Link>)}</section></main>;}
+import {permanentRedirect} from 'next/navigation';
+export default function Page(){permanentRedirect('/guides')}
