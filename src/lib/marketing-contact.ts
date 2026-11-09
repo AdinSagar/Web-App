@@ -12,6 +12,7 @@ export function demoUrl(business = "my business") {
 
 export const BUSINESS_EMAIL = "info@fahampesa.com"
 export const SHOWROOM_MAP_URL = "https://www.google.com/maps/search/?api=1&query=Fahampesa%20Diamond%20Plaza%201%20Parklands%20Nairobi"
+export const SHOWROOM_MAP_EMBED_URL = "https://www.google.com/maps?q=Fahampesa%20Diamond%20Plaza%201%20Parklands%20Nairobi&output=embed"
 export const SOCIAL_PROFILES = [
   {name:"Instagram",url:"https://www.instagram.com/fahampesa"},
   {name:"Facebook",url:"https://www.facebook.com/fahampesa"},
