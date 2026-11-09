@@ -22,7 +22,7 @@ export function ContactInformationContent() {
 
         <div>
            <p className="font-bold mb-1">Business Description</p>
-           <p>Fahampesa is a professional POS and business management platform that helps businesses reduce losses and gain clear control over sales, inventory, and profit. Built for reliability, offline use, and long term growth.</p>
+           <p>FahamPesa provides business tools, property management and online selling. Shoppers explore published businesses and products before choosing their next step.</p>
         </div>
 
         <div>

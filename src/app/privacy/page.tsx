@@ -1,27 +1,4 @@
-'use client'
-
-import { useState } from 'react'
-import { DownloadModal } from '@/components/DownloadModal'
-import Footer from '@/components/footer'
-import { PrivacyContent } from '@/components/privacy/PrivacyContent'
-import PageHeader from '@/components/PageHeader'
-import PublicHeader from '@/components/public-header'
-
-export default function PrivacyPage() {
-  const [downloadModalOpen, setDownloadModalOpen] = useState(false)
-
-  return (
-    <div className="min-h-screen bg-[#f8f8f9] font-dm-sans">
-      <DownloadModal open={downloadModalOpen} onOpenChange={setDownloadModalOpen} />
-
-      <PublicHeader onOpenDownload={() => setDownloadModalOpen(true)} />
-
-      <main>
-        <PageHeader title="Privacy Policy" />
-        <PrivacyContent />
-      </main>
-
-      <Footer />
-    </div>
-  )
-}
+import MetaMeasurementConsent from '@/components/consent/MetaMeasurementConsent';
+import PlatformFrame from '@/components/marketing/PlatformFrame';
+import { PrivacyContent } from '@/components/privacy/PrivacyContent';
+export default function Page(){return <PlatformFrame><MetaMeasurementConsent/><main id="main-content"><section className="fp-subhero fp-container"><span className="fp-eyebrow">FAHAMPESA</span><h1>Privacy policy</h1></section><PrivacyContent/></main></PlatformFrame>;}

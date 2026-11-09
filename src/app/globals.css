@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600;700&family=Archivo:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&family=Architects+Daughter&family=Roboto:wght@300;400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Public marketing pages use a locally served Inter font. */
 
 :root {
   --font-geist-sans: "Geist", Arial, Helvetica, sans-serif;

@@ -10,7 +10,7 @@ const businessSchema = {
       legalName: "Fahampesa Limited",
       url: "https://fahampesa.com/",
       logo: "https://fahampesa.com/assets/brand/fahampesa-logo-512.png",
-      description: "POS and business management software for businesses in Kenya.",
+      description: "Business management, property management and online selling tools for Kenyan businesses, with public store and product discovery for shoppers.",
       telephone: CALL_URL.replace("tel:", ""),
       address: {
         "@type": "PostalAddress",

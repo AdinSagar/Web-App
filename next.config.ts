@@ -26,7 +26,6 @@ const businessAppRoutes = [
   "/settings",
   "/shopping-sheets",
   "/staff",
-  "/subscription",
   "/suppliers",
 ];
 
@@ -38,6 +37,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/subscription", destination: "/business/get-started", permanent: true },
+      { source: "/pricing", destination: "/business/get-started", permanent: true },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.fahampesa.com" }],

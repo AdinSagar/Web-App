@@ -1,3 +1,4 @@
+import PlatformFrame from '@/components/marketing/PlatformFrame'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ const requestEmail = 'mailto:privacy@fahampesa.com?subject=' + encodeURIComponen
 
 export default function AccountDeletionPage() {
   return (
-    <main className="min-h-screen bg-[#f8f8f9] px-6 py-12 text-[#001223] font-dm-sans">
+    <PlatformFrame><main id="main-content" className="min-h-screen bg-[#f8f8f9] px-6 py-12 text-[#001223] font-dm-sans">
       <div className="mx-auto max-w-3xl">
         <a href="/" className="text-xl font-bold">Fahampesa</a>
         <article className="mt-8 rounded-2xl bg-white p-6 sm:p-10 shadow-sm space-y-8 leading-relaxed">
@@ -18,7 +19,7 @@ export default function AccountDeletionPage() {
             <p className="text-sm font-semibold text-[#004aad]">ACCOUNT AND DATA DELETION</p>
             <h1 className="text-3xl sm:text-4xl font-bold">Request account deletion</h1>
             <p>For FanPesa seller, Fahampesa Seller, Fahampesa Shop and Fahampesa Business accounts operated by Fahampesa Limited.</p>
-            <p>You do not need the app installed or an active subscription to make a request.</p>
+            <p>You do not need the app installed or an active paid account to make a request.</p>
           </header>
           <section aria-labelledby="request-title" className="space-y-4">
             <h2 id="request-title" className="text-xl font-bold">Send your request</h2>
@@ -51,6 +52,6 @@ export default function AccountDeletionPage() {
           </footer>
         </article>
       </div>
-    </main>
+    </main></PlatformFrame>
   )
 }

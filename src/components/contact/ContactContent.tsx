@@ -30,7 +30,7 @@ export const ContactContent = () => {
           <div className="space-y-1">
             <p className="font-bold mb-0">Business Description</p>
             <p className="mb-0 max-w-[800px] mx-auto">
-              Fahampesa is a professional POS and business management platform that helps businesses reduce losses and gain clear control over sales, inventory, and profit. Built for reliability, offline use, and long term growth.
+              FahamPesa provides business tools, property management and online selling. Shoppers explore published businesses and products before choosing their next step.
             </p>
           </div>
 

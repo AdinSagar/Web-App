@@ -19,8 +19,8 @@ export const industryPages: IndustryContent[] = [
     workflow: ["Add the products and starting stock for the shop.", "Record a customer's basket and its payment in the supported checkout workflow.", "Review the sale and stock records, then use reports to plan the next trading day."],
     demo: "Bring a short list of your products, current prices and devices. Ask us to demonstrate a sale, a stock adjustment and a daily report with examples that match your shop.",
     questions: [
-      { question: "Can I review my shop while I am away?", answer: "You can review synced business records online with an authorized owner account. Records made offline become available on other devices after they synchronize." },
-      { question: "Is POS hardware included?", answer: "The software subscription and hardware are separate. Tell us which computer, scanner and printer you already use so we can confirm a suitable setup." },
+      { question: "Can I review my shop while I am away?", answer: "You can review synced business records online with an authorized owner account. An internet connection is required." },
+      { question: "Is POS hardware included?", answer: "Software setup and hardware requirements are separate. Tell us which computer, scanner and printer you already use so we can confirm a suitable setup." },
     ],
   },
   {
@@ -109,7 +109,7 @@ export const industryPages: IndustryContent[] = [
     workflow: ["Set up drinks, selling units and starting quantities.", "Record customer orders and complete the supported checkout steps.", "Review sales and stock records to prepare for the next trading day."],
     demo: "Bring your drinks list and explain how you sell bottles, packs or measures. We will confirm the supported product setup and walk through an order, checkout and stock review.",
     questions: [
-      { question: "Can I check bar sales away from the venue?", answer: "An authorized owner can review synced records online. Offline activity must synchronize before it is visible on another device." },
+      { question: "Can I check bar sales away from the venue?", answer: "An authorized owner can review synced records online. An internet connection is required." },
       { question: "Are special drink measures supported?", answer: "Ask our team to demonstrate your exact selling units. Do not assume automatic bottle-to-measure conversion without checking the configured workflow." },
     ],
   },

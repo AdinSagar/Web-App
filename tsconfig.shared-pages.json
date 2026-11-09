@@ -1,6 +1,36 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": { "incremental": false },
-  "include": ["next-env.d.ts", "src/lib/shared-catalog.ts", "src/components/shared/**/*.tsx", "src/app/(shared)/**/*.tsx", "src/app/(growth)/**/*.tsx", "src/components/marketing/GrowthFrame.tsx", "src/components/marketing/AiPromptBuilder.tsx", "src/lib/listing-discovery.ts", "src/lib/business-growth.ts"],
-  "exclude": ["node_modules", ".next"]
+  "compilerOptions": {
+    "incremental": false
+  },
+  "include": [
+    "next-env.d.ts",
+    "src/lib/shared-catalog.ts",
+    "src/components/shared/**/*.tsx",
+    "src/app/(shared)/**/*.tsx",
+    "src/app/(growth)/**/*.tsx",
+    "src/components/marketing/GrowthFrame.tsx",
+    "src/components/marketing/AiPromptBuilder.tsx",
+    "src/lib/listing-discovery.ts",
+    "src/lib/business-growth.ts",
+    "src/app/page.tsx",
+    "src/app/pos-system-kenya/page.tsx",
+    "src/app/inventory-management-software-kenya/page.tsx",
+    "src/app/industries/**/*.tsx",
+    "src/app/pricingpage/**/*.tsx",
+    "src/components/marketing/*.tsx",
+    "src/lib/platform-content.ts",
+    "src/lib/report-brief.ts",
+    "src/lib/kenya-guides.ts",
+    "src/lib/public-stores.ts",
+    "src/app/about/page.tsx",
+    "src/app/contact-information/page.tsx",
+    "src/app/privacy/page.tsx",
+    "src/app/terms/page.tsx",
+    "src/app/account-deletion/page.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }

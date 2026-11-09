@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import Footer from "@/components/footer"
+import PlatformFrame from "@/components/marketing/PlatformFrame"
 import IndustryDemo from "./IndustryDemo"
 import IndustryBadges from "@/components/marketing/IndustryBadges"
 import { industryPages, industryHref } from "@/lib/industry-content"
@@ -11,12 +11,12 @@ import { BUSINESS_SIGNUP_URL } from "@/lib/business-app"
 export const metadata: Metadata = {
   title: "POS System Kenya & Nairobi | Fahampesa Software",
   description:
-    "POS software for Kenyan shops, restaurants and service businesses. KSh 2,000/month, software only. Request a demonstration in Parklands, Nairobi.",
+    "POS software for Kenyan shops, restaurants and service businesses. Request a demonstration in Parklands, Nairobi.",
   alternates: { canonical: "https://fahampesa.com/pos-system-kenya" },
   openGraph: {
     title: "POS System Kenya & Nairobi | Fahampesa Software",
     description:
-      "Explore sales, stock and reports for Kenyan businesses. KSh 2,000/month, software only. Visit our Parklands, Nairobi showroom for a demo.",
+      "Explore sales, stock and reports for Kenyan businesses. Visit our Parklands, Nairobi showroom for a demo.",
     url: "https://fahampesa.com/pos-system-kenya",
     images: ["https://fahampesa.com/assets/figma/landing/fahampesa-business-showcase.webp"],
     type: "website",
@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     question: "What does it cost to get started?",
-    answer: "The Fahampesa software subscription costs KSh 2,000/month. Hardware is sold separately. Review the current pricing page for plan terms and ask for a demonstration before choosing your setup.",
+    answer: "Use the Getting Started guide to choose a workflow. Ask for a demonstration and confirm your device requirements with the FahamPesa team.",
   },
   {
     question: "Where can I see a POS software demo in Nairobi?",
@@ -114,24 +114,11 @@ const pageSchema = {
 
 export default function KenyaPosPage() {
   return (
-    <div className="min-h-screen bg-white text-[#001031]">
+    <PlatformFrame>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
-      <header className="border-b border-[#E5EAF3] bg-white">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-5 lg:px-[100px]">
-          <Link href="/" className="flex items-center gap-2" aria-label="Fahampesa home">
-            <Image src="/assets/brand/fahampesa-logo-512.png" alt="" width={32} height={32} className="rounded-lg" />
-            <span className="font-roboto text-xl font-bold text-[#001223]">Fahampesa</span>
-          </Link>
-          <nav aria-label="Main navigation" className="flex items-center gap-5 font-dm-sans text-sm font-semibold">
-            <Link href="#industries" className="hidden hover:text-[#004AAD] sm:inline">Industries</Link>
-            <Link href="#product" className="hidden hover:text-[#004AAD] sm:inline">Product</Link>
-            <Link href="/pricingpage" className="hover:text-[#004AAD]">Pricing</Link>
-            <Link href={BUSINESS_SIGNUP_URL} className="rounded-lg bg-[#004AAD] px-4 py-2.5 text-white hover:bg-[#003a8c]">Sign Up</Link>
-          </nav>
-        </div>
-      </header>
 
-      <main>
+
+      <main id="main-content">
         <section className="overflow-hidden bg-[#DEE4FF]">
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-[100px] lg:py-24">
             <div>
@@ -295,7 +282,7 @@ export default function KenyaPosPage() {
             ))}
           </div>
           <p className="mt-8 max-w-4xl rounded-xl border border-[#DDE5F2] bg-[#F8FAFE] p-5 font-inter text-sm leading-6 text-[#42526A]">
-            Comparing systems? Check the exact plan limits, payment flow, hardware and offline setup before deciding. <Link href="/pricingpage" className="font-semibold text-[#004AAD] underline underline-offset-2">See Fahampesa plans</Link> or <Link href="/contact-information" className="font-semibold text-[#004AAD] underline underline-offset-2">ask for a walkthrough</Link> with your real products and services.
+            Comparing systems? Check the exact plan limits, payment flow, hardware and offline setup before deciding. <Link href="/business/get-started" className="font-semibold text-[#004AAD] underline underline-offset-2">See Fahampesa plans</Link> or <Link href="/contact-information" className="font-semibold text-[#004AAD] underline underline-offset-2">ask for a walkthrough</Link> with your real products and services.
           </p>
         </section>
 
@@ -312,7 +299,7 @@ export default function KenyaPosPage() {
           </div>
         </section>
       </main>
-      <Footer />
-    </div>
+
+    </PlatformFrame>
   )
 }

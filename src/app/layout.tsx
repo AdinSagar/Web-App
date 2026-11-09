@@ -4,9 +4,9 @@ import SiteExperience from '@/components/SiteExperience';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fahampesa.com"),
-  title: "POS Software Kenya & Nairobi | Fahampesa",
+  title: "FahamPesa | Business, Property Management & Online Selling in Kenya",
   description:
-    "POS software and inventory management for Kenyan businesses. KSh 2,000/month, software only. Request a demo in Parklands, Nairobi. Hardware sold separately.",
+    "Manage businesses and rental properties, sell online and explore local stores with FahamPesa. Practical tools and support in Kenya.",
   applicationName: "Fahampesa",
   verification: {
     google: "_AdKkqlOgla5oUdDrE-t0OEE1av9CFEUvC24Fnb-BOg",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/favicon.ico", shortcut: "/favicon.ico", apple: "/assets/brand/fahampesa-logo-180.png" },
   openGraph: {
-    title: "POS Software Kenya & Nairobi | Fahampesa",
+    title: "FahamPesa | Business, Property Management & Online Selling in Kenya",
     description:
-      "POS software and inventory management for Kenyan businesses. KSh 2,000/month, software only. Visit our Parklands, Nairobi showroom for a demo.",
+      "Business and property management, online selling and shopper discovery in Kenya. Explore FahamPesa and arrange a demonstration in Nairobi.",
     url: "/",
     siteName: "Fahampesa",
     locale: "en_KE",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "POS Software Kenya & Nairobi | Fahampesa",
+    title: "FahamPesa | Business, Property Management & Online Selling in Kenya",
     description:
-      "POS software, inventory and reports for Kenyan businesses. KSh 2,000/month, software only. Request a demo in Parklands, Nairobi.",
+      "Run your business, manage properties and reach local shoppers with FahamPesa. Explore the platform before downloading an app.",
     images: ["/assets/figma/landing/fahampesa-business-showcase.webp"],
   },
 };

@@ -71,7 +71,7 @@ export const PrivacyContent = () => {
                 <li>• Fahampesa also counts daily page loads by page category and broad referral source without cookies or visitor identifiers. These are aggregate page counts, not unique visitor counts.</li>
                 <li>• First-party journey analytics and Meta advertising measurement are optional and controlled separately in Privacy choices.</li>
                 <li>• First-party analytics records page views, selected action categories, broad device/browser type, and safe campaign/referrer labels only after analytics consent. It does not record form contents, keystrokes, passwords, payment credentials, or session replays.</li>
-                <li>• Meta measurement uses ad and page activity only after ad measurement consent. A confirmed subscription payment may be reported with its amount and currency after consent; direct identifiers, M-Pesa receipts, and business records are excluded.</li>
+                <li>• Meta measurement uses ad and page activity only after ad measurement consent. A confirmed service payment may be reported with its amount and currency after consent; direct identifiers, M-Pesa receipts, and business records are excluded.</li>
                 <li>• Authorized Fahampesa administrators may review anonymized customer journey stages and verified payment outcomes for service improvement and conversion support.</li>
                 <li>• You can change or withdraw either optional choice through the Privacy choices control. First-party analytics events are automatically deleted within 180 days. If you withdraw analytics consent, Fahampesa requests deletion of the associated first-party journey events.</li>
               </ul>
@@ -82,7 +82,7 @@ export const PrivacyContent = () => {
               <ul className="list-none space-y-2 pl-0">
                 <li>• Data is stored on secure infrastructure.</li>
                 <li>• Access is restricted to authorized systems and personnel.</li>
-                <li>• Fahampesa does not sell customer contact or business records. Optional Meta advertising measurement is enabled only after a separate choice; limited ad identifiers and confirmed subscription value/currency may be sent to Meta. Contact details, passwords, payment credentials, M-Pesa receipts, and business records are not sent.</li>
+                <li>• Fahampesa does not sell customer contact or business records. Optional Meta advertising measurement is enabled only after a separate choice; limited ad identifiers and confirmed service payment value/currency may be sent to Meta. Contact details, passwords, payment credentials, M-Pesa receipts, and business records are not sent.</li>
                 <li>• Fahampesa follows applicable data protection laws in its operating regions.</li>
               </ul>
             </div>

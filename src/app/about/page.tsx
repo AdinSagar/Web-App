@@ -1,27 +1,4 @@
-'use client'
-
-import { useState } from 'react'
-import { DownloadModal } from '@/components/DownloadModal'
-import Footer from '@/components/footer'
-import { AboutContent } from '@/components/about/AboutContent'
-import PageHeader from '@/components/PageHeader'
-import PublicHeader from '@/components/public-header'
-
-export default function AboutPage() {
-  const [downloadModalOpen, setDownloadModalOpen] = useState(false)
-
-  return (
-    <div className="min-h-screen bg-[#f8f8f9] font-dm-sans">
-      <DownloadModal open={downloadModalOpen} onOpenChange={setDownloadModalOpen} />
-
-      <PublicHeader onOpenDownload={() => setDownloadModalOpen(true)} />
-
-      <main>
-        <PageHeader title="About Us" />
-        <AboutContent />
-      </main>
-
-      <Footer />
-    </div>
-  )
-}
+import Link from 'next/link';
+import PlatformFrame from '@/components/marketing/PlatformFrame';
+import {solutionLinks} from '@/components/marketing/PlatformFrame';
+export default function Page(){return <PlatformFrame><main id="main-content"><section className="fp-subhero fp-container"><span className="fp-eyebrow">ABOUT FAHAMPESA</span><h1>Built around the work<br/>you do every day.</h1><p>FahamPesa brings business tools, property management and local online commerce into one platform, with separate paths for business owners, sellers and shoppers.</p></section><section className="fp-section fp-container"><div className="fp-content-grid">{solutionLinks.map(([label,href])=><article key={href}><h2>{label}</h2><p>{href.includes('property')?'Keep rental records, tenant payments, deposits and receipts together.':href.includes('sellers')?'Publish your business and products, then share useful listing links with customers.':href.includes('shop')?'Explore published stores and services before choosing an order or booking route.':'Record sales, review stock, manage expenses and understand your business reports.'}</p><Link className="fp-text-link" href={href}>Explore {label.toLowerCase()} →</Link></article>)}</div></section><section className="fp-container fp-section"><h2>Start with a real workflow.</h2><p>Bring a product list, a rental example or the service you want to offer. Our Nairobi team will help you review the relevant workflow and your intended devices.</p><div className="fp-inline-links"><Link href="/business/get-started">Getting Started</Link><Link href="/contact-information">Contact our team</Link><Link href="/trust">Trust and support</Link></div></section></main></PlatformFrame>;}
