@@ -28,6 +28,17 @@ test('production public guides, sitemap and private index controls',async()=>{
     const catalog=await fetch(origin+'/catalog-sitemap.xml');assert.equal(catalog.status,503,'unconfigured catalog must not serve an empty successful sitemap');assert.equal(catalog.headers.get('cache-control'),'no-store');
     const privatePage=await fetch(origin+'/staff-dashboard',{redirect:'manual'});assert.equal(privatePage.headers.get('x-robots-tag'),'noindex, nofollow');
     const login=await fetch(origin+'/login',{redirect:'manual'});assert.equal(login.status,307);assert.equal(login.headers.get('location'),'https://app.fahampesa.com/?intent=login');
-    const homepage=await(await fetch(origin+'/')).text();assert.match(homepage,/Business Growth/);assert.match(homepage,/Your properties/);assert.doesNotMatch(homepage,/subscription|KSh 2,000/i);assert.ok(!homepage.includes('Works online and offline'));
+    const homepage=await(await fetch(origin+'/')).text();assert.match(homepage,/Business Growth/);assert.match(homepage,/Property management/);assert.doesNotMatch(homepage,/subscription|KSh 2,000/i);assert.ok(!homepage.includes('Works online and offline'));
+    assert.match(homepage,/<title>FahamPesa \| Business Tools, Property &amp; Online Selling<\/title>/);
+    assert.match(homepage,/name="description" content="Manage sales, stock and rental properties\./);
+    assert.match(homepage,/property="og:site_name" content="FahamPesa"/);
+    assert.match(homepage,/property="og:image" content="https:\/\/fahampesa.com\/brand-preview"/);
+    assert.match(homepage,/sizes="192x192"[^>]*href="\/assets\/brand\/fahampesa-logo-192.png"|href="\/assets\/brand\/fahampesa-logo-192.png"[^>]*sizes="192x192"/);
+    const graph=[...homepage.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].flatMap(match=>JSON.parse(match[1])['@graph']||[]);
+    assert.equal(graph.find(entity=>entity['@type']==='WebSite').name,'FahamPesa');
+    assert.equal(graph.find(entity=>entity['@type']==='WebSite').alternateName,'Fahampesa');
+    assert.equal(graph.find(entity=>entity['@type']==='Organization').name,'FahamPesa');
+    assert.match(homepage,/class="fp-container fp-tour-wrap" data-nosnippet="true"/);
+    const brand=await fetch(origin+'/brand-preview');assert.equal(brand.status,200);assert.match(brand.headers.get('content-type'),/image\/png/);const bytes=Buffer.from(await brand.arrayBuffer());assert.equal(bytes.readUInt32BE(16),1200);assert.equal(bytes.readUInt32BE(20),630);
   } finally {server.kill('SIGTERM');if(server.exitCode===null)await once(server,'exit');}
 });

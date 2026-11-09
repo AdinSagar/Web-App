@@ -36,7 +36,9 @@
     "src/lib/catalog-indexing.ts",
     "src/lib/catalog-sitemap.ts",
     "src/app/robots.ts",
-    "src/app/sitemap.ts"
+    "src/app/sitemap.ts",
+    "src/app/brand-preview/route.tsx",
+    "src/lib/public-root-metadata.ts"
   ],
   "exclude": [
     "node_modules",

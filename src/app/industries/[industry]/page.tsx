@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import {publicPageMetadata} from "@/lib/public-page-metadata"
 import Link from "next/link"
 import Image from "next/image"
 import { notFound } from "next/navigation"
@@ -15,9 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { industry } = await params
   const page = industryPages.find(p => p.slug === industry)
   if (!page) return {}
-  const title = `${page.title} | Fahampesa`
-  const url = `https://fahampesa.com${industryHref(page.slug)}`
-  return { title, description: page.description, alternates: { canonical: url }, openGraph: { title, description: page.description, url, type: "website", locale: "en_KE", images: ["/assets/figma/landing/fahampesa-business-showcase.webp"] }, twitter: { card: "summary_large_image", title, description: page.description, images: ["/assets/figma/landing/fahampesa-business-showcase.webp"] } }
+  return publicPageMetadata(industryHref(page.slug), `${page.title} | FahamPesa`, page.description)
 }
 const button = "inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] bg-[#c74300] px-6 py-3.5 font-inter text-sm font-semibold text-white transition-colors hover:bg-[#a83800] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c74300]"
 
@@ -31,7 +30,7 @@ export default async function IndustryPage({ params }: Props) {
   ]
   const url = `https://fahampesa.com${industryHref(page.slug)}`
   const schema = { "@context": "https://schema.org", "@graph": [
-    { "@type": "WebPage", "@id": `${url}#webpage`, url, name: `${page.title} | Fahampesa`, description: page.description, inLanguage: "en-KE", publisher: { "@id": "https://fahampesa.com/#organization" }, about: { "@type": "SoftwareApplication", name: "Fahampesa", applicationCategory: "BusinessApplication", url: "https://fahampesa.com/" }, breadcrumb: { "@id": `${url}#breadcrumb` } },
+    { "@type": "WebPage", "@id": `${url}#webpage`, url, name: `${page.title} | FahamPesa`, description: page.description, inLanguage: "en-KE", publisher: { "@id": "https://fahampesa.com/#organization" }, about: { "@type": "SoftwareApplication", name: "Fahampesa", applicationCategory: "BusinessApplication", url: "https://fahampesa.com/" }, breadcrumb: { "@id": `${url}#breadcrumb` } },
     { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://fahampesa.com/" }, { "@type": "ListItem", position: 2, name: "POS system in Kenya", item: "https://fahampesa.com/pos-system-kenya" }, { "@type": "ListItem", position: 3, name: page.name, item: url }] },
   ] }
   return (

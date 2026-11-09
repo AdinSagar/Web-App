@@ -1,12 +1,14 @@
 import { BUSINESS_EMAIL, CALL_URL, WHATSAPP_URL, SHOWROOM_HOURS, SOCIAL_PROFILES } from "@/lib/marketing-contact"
 
+import {PUBLIC_BRAND} from "@/lib/public-brand"
+
 const businessSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": "https://fahampesa.com/#organization",
-      name: "Fahampesa",
+      name: PUBLIC_BRAND.name,
       legalName: "Fahampesa Limited",
       url: "https://fahampesa.com/",
       logo: "https://fahampesa.com/assets/brand/fahampesa-logo-512.png",
@@ -27,7 +29,7 @@ const businessSchema = {
     {
       "@type": "LocalBusiness",
       "@id": "https://fahampesa.com/#nairobi-showroom",
-      name: "Fahampesa",
+      name: PUBLIC_BRAND.name,
       description: "FahamPesa software demonstrations and compatible business hardware in Parklands, Nairobi.",
       url: "https://fahampesa.com/contact-information",
       telephone: CALL_URL.replace("tel:", ""),
@@ -41,7 +43,8 @@ const businessSchema = {
       "@type": "WebSite",
       "@id": "https://fahampesa.com/#website",
       url: "https://fahampesa.com/",
-      name: "Fahampesa",
+      name: PUBLIC_BRAND.name,
+      alternateName: PUBLIC_BRAND.alternateName,
       inLanguage: "en-KE",
       publisher: { "@id": "https://fahampesa.com/#organization" },
     },
