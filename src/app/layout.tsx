@@ -1,15 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AuthProvider } from "@/contexts/AuthContext";
-import { StaffProvider } from "@/contexts/StaffContext";
-import { AdminAccessProvider } from "@/contexts/AdminAccessContext";
-import { NotificationsProvider } from "@/contexts/NotificationsContext";
-import { OnboardingProvider } from "@/components/onboarding/OnboardingProvider";
-import ErrorHandler from "@/components/ErrorHandler";
-import ChatwootWidget from "@/components/ChatwootWidget";
-import MetaMeasurementConsent from "@/components/consent/MetaMeasurementConsent";
-import WhatsAppContact from "@/components/marketing/WhatsAppContact";
-import PublicBusinessSchema from "@/components/marketing/PublicBusinessSchema";
+import SiteExperience from '@/components/SiteExperience';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fahampesa.com"),
@@ -53,9 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning={true}>
-        <PublicBusinessSchema />
-        <ErrorHandler /><ChatwootWidget /><MetaMeasurementConsent /><WhatsAppContact />
-        <AuthProvider><StaffProvider><AdminAccessProvider><NotificationsProvider><OnboardingProvider>{children}</OnboardingProvider></NotificationsProvider></AdminAccessProvider></StaffProvider></AuthProvider>
+        <SiteExperience>{children}</SiteExperience>
       </body>
     </html>
   );

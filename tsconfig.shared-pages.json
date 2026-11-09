@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "incremental": false },
+  "include": ["next-env.d.ts", "src/lib/shared-catalog.ts", "src/components/shared/**/*.tsx", "src/app/(shared)/**/*.tsx"],
+  "exclude": ["node_modules", ".next"]
+}
