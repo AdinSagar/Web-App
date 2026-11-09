@@ -11,7 +11,7 @@ const businessSchema = {
       name: PUBLIC_BRAND.name,
       legalName: "Fahampesa Limited",
       url: "https://fahampesa.com/",
-      logo: "https://fahampesa.com/assets/brand/fahampesa-logo-512.png",
+      logo: PUBLIC_BRAND.origin + PUBLIC_BRAND.logo,
       description: "Business management, property management and online selling tools for Kenyan businesses, with public store and product discovery for shoppers.",
       telephone: CALL_URL.replace("tel:", ""),
       email: BUSINESS_EMAIL,

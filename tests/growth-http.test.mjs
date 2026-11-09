@@ -33,7 +33,7 @@ test('production public guides, sitemap and private index controls',async()=>{
     assert.match(homepage,/name="description" content="Manage sales, stock and rental properties\./);
     assert.match(homepage,/property="og:site_name" content="FahamPesa"/);
     assert.match(homepage,/property="og:image" content="https:\/\/fahampesa.com\/brand-preview"/);
-    assert.match(homepage,/sizes="192x192"[^>]*href="\/assets\/brand\/fahampesa-logo-192.png"|href="\/assets\/brand\/fahampesa-logo-192.png"[^>]*sizes="192x192"/);
+    assert.match(homepage,/sizes="192x192"[^>]*href="\/assets\/brand\/fahampesa-f-192.png"|href="\/assets\/brand\/fahampesa-f-192.png"[^>]*sizes="192x192"/);
     const graph=[...homepage.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].flatMap(match=>JSON.parse(match[1])['@graph']||[]);
     assert.equal(graph.find(entity=>entity['@type']==='WebSite').name,'FahamPesa');
     assert.equal(graph.find(entity=>entity['@type']==='WebSite').alternateName,'Fahampesa');

@@ -11,8 +11,8 @@ export const publicRootMetadata: Metadata = {
     other: { "msvalidate.01": "FFDDA27B1C8D5C0D6681293A62D030ED" },
   },
   icons: {
-    icon: [{url: PUBLIC_BRAND.icon, type: 'image/png', sizes: '192x192'}, {url: '/favicon.ico', sizes: '16x16 32x32 48x48'}],
+    icon: [{url: PUBLIC_BRAND.icon, type: 'image/png', sizes: '192x192'}, {url: PUBLIC_BRAND.favicon, sizes: '16x16 32x32 48x48'}],
     shortcut: PUBLIC_BRAND.icon,
-    apple: '/assets/brand/fahampesa-logo-180.png',
+    apple: PUBLIC_BRAND.apple,
   },
 };

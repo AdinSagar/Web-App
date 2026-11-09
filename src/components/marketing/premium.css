@@ -15,3 +15,5 @@
 @media(max-width:900px){.fp-contact-grid{gap:35px}.fp-contact-visit{padding:27px}.fp-contact-prepare{gap:40px}}@media(max-width:640px){.fp-contact-grid,.fp-contact-prepare{grid-template-columns:1fr;gap:35px}.fp-contact-visit{padding:25px 21px}.fp-contact-hours dl>div{font-size:11px}.fp-contact-methods h3{font-size:22px}.fp-contact-methods>a{gap:14px}.fp-contact-prepare li{padding-left:35px}.fp-contact-prepare h3{font-size:23px}}
 
 .fp-brand>img{border-radius:8px}.fp-tour-logo>img{border-radius:6px}
+
+.fp-brand,.fp-tour-logo{display:inline-flex;align-items:center}.fp-brand>img,.fp-tour-logo>img{flex-shrink:0}.fp-app-icon img{display:block}.fp-tour-logo:focus-visible,.fp-app-icon:focus-visible,.fp-brand:focus-visible{outline:2px solid #bf4400;outline-offset:4px}

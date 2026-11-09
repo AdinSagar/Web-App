@@ -7,7 +7,7 @@ export const dynamic='force-static';
 
 // A code-rendered brand card, with the existing logo and no invented app screens.
 export async function GET(){
- const [logo,regular,semibold]=await Promise.all([readFile(join(process.cwd(),'public/assets/brand/fahampesa-logo-192.png')),readFile(join(process.cwd(),'public/assets/fonts/inter-share-400.ttf')),readFile(join(process.cwd(),'public/assets/fonts/inter-share-600.ttf'))]);
+ const [logo,regular,semibold]=await Promise.all([readFile(join(process.cwd(),'public/assets/brand/fahampesa-f-192.png')),readFile(join(process.cwd(),'public/assets/fonts/inter-share-400.ttf')),readFile(join(process.cwd(),'public/assets/fonts/inter-share-600.ttf'))]);
  return new ImageResponse(
   <div style={{width:'100%',height:'100%',display:'flex',flexDirection:'column',padding:'54px 64px',background:'#101c30',color:'#fff',fontFamily:'Inter'}}>
    <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>

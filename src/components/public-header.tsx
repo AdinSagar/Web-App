@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { BUSINESS_LOGIN_URL, BUSINESS_SIGNUP_URL } from '@/lib/business-app'
 
 const assets = {
-  logo: '/assets/brand/fahampesa-logo-512.png',
+  logo: '/assets/brand/fahampesa-f-512.png',
 }
 
 
