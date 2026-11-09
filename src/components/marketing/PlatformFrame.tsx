@@ -5,6 +5,7 @@ import {BUSINESS_LOGIN_URL,BUSINESS_SIGNUP_URL} from '@/lib/business-app';
 import {CALL_NUMBER,CALL_URL,WHATSAPP_URL,SHOWROOM} from '@/lib/marketing-contact';
 import './platform.css';
 import './premium.css';
+import './workflows.css';
 
 export const solutionLinks=[['Business tools','/pos-system-kenya'],['Property management','/business/property-management'],['Sell online','/business/sellers'],['FahamPesa Shop','/business/shop']] as const;
 export default function PlatformFrame({children}:{children:React.ReactNode}) {

@@ -6,8 +6,7 @@ import {catalogSearchUrls,publicListingUrl,sitemapXml} from './catalog-indexing'
 const cursorPattern=/^[A-Za-z0-9_.:-]{1,200}$/;
 // Bounded discovery for launch. Sitemap inclusion supplements crawlable directory links.
 // Cache only successful results. Upstream failures return 503 rather than an empty sitemap.
-export const publishedCatalogSitemap=unstable_cache(async()=>{
- const origin=catalogOrigin();
+const cachedCatalogSitemap=unstable_cache(async(origin:string)=>{
  const signal=AbortSignal.timeout(20000);
  const json=async(path:string)=>{const res=await fetch(origin+path,{cache:'no-store',redirect:'error',signal});if(!res.ok)throw Error('Catalog unavailable');return res.json();};
  const stores=new Set<string>();const directoryCursors=new Set<string>();let after='';
@@ -36,4 +35,7 @@ export const publishedCatalogSitemap=unstable_cache(async()=>{
   }));
  }
  return sitemapXml(urls);
-},['published-catalog-sitemap-v1'],{revalidate:900});
+},['published-catalog-sitemap-v2'],{revalidate:900});
+
+// Validate configuration on every request, including cache hits. The origin also scopes the cache key.
+export const publishedCatalogSitemap=()=>cachedCatalogSitemap(catalogOrigin());
