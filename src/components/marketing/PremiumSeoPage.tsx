@@ -45,7 +45,7 @@ export default function PremiumSeoPage({ page }: { page: SeoSolutionPage }) {
   }
 
   return (
-    <main id="main-content" className="seo-page">
+    <main id="seo-content" className="seo-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(schema) }} />
 
       <section className="seo-hero">

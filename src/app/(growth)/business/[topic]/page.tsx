@@ -5,7 +5,6 @@ import {growthGuides} from '@/lib/business-growth'
 import {publicPageMetadata} from '@/lib/public-page-metadata'
 import AiPromptBuilder from '@/components/marketing/AiPromptBuilder'
 import PremiumSeoPage from '@/components/marketing/PremiumSeoPage'
-import PlatformFrame from '@/components/marketing/PlatformFrame'
 import {seoSolutionPages} from '@/lib/seo-solution-content'
 
 export const dynamicParams = false
@@ -28,7 +27,7 @@ export async function generateMetadata({params}: Props) {
 export default async function Page({params}: Props) {
   const {topic} = await params
   const solution = seoSolutionPages.find(item => item.slug === topic)
-  if (solution) return <PlatformFrame><PremiumSeoPage page={solution}/></PlatformFrame>
+  if (solution) return <PremiumSeoPage page={solution}/>
 
   const guide = growthGuides.find(item => item.slug === topic)
   if (!guide) notFound()
