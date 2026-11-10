@@ -19,6 +19,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return publicPageMetadata(industryHref(page.slug), `${page.title} | FahamPesa`, page.description)
 }
 const button = "inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] bg-[#c74300] px-6 py-3.5 font-inter text-sm font-semibold text-white transition-colors hover:bg-[#a83800] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c74300]"
+const relatedByIndustry: Record<string, {label: string; href: string; body: string}[]> = {
+  "duka-kiosk-pos-kenya": [
+    {label: "Inventory management", href: "/inventory-management-software-kenya", body: "Keep product quantities and stock movement visible."},
+    {label: "Bookkeeping software", href: "/business/bookkeeping-software-kenya", body: "Connect sales, expenses and daily records."},
+    {label: "Invoice software", href: "/business/invoice-software-kenya", body: "Follow customer charges and payments."},
+  ],
+  "pharmacy-pos-kenya": [
+    {label: "Inventory management", href: "/inventory-management-software-kenya", body: "Organise products, quantities and stock checks."},
+    {label: "Supplier management", href: "/business/supplier-management-software", body: "Connect suppliers, purchases and deliveries."},
+    {label: "Business records", href: "/business/bookkeeping-software-kenya", body: "Review sales, purchases and expenses."},
+  ],
+  "hardware-shop-pos-kenya": [
+    {label: "Supplier management", href: "/business/supplier-management-software", body: "Track purchases and accepted quantities."},
+    {label: "Invoice software", href: "/business/invoice-software-kenya", body: "Keep invoices and part payments clear."},
+    {label: "Wholesale software", href: "/industries/wholesale-pos-kenya", body: "Review bulk sales and stock workflows."},
+  ],
+}
 
 export default async function IndustryPage({ params }: Props) {
   const { industry } = await params
@@ -29,6 +46,7 @@ export default async function IndustryPage({ params }: Props) {
     { question: "Where can I request a software demonstration in Nairobi?", answer: `Visit ${SHOWROOM}. Call ${CALL_NUMBER} before travelling to arrange a time. Bring your sample products or services and the devices you plan to use.` },
   ]
   const url = `https://fahampesa.com${industryHref(page.slug)}`
+  const related = relatedByIndustry[page.slug] ?? []
   const schema = { "@context": "https://schema.org", "@graph": [
     { "@type": "WebPage", "@id": `${url}#webpage`, url, name: `${page.title} | FahamPesa`, description: page.description, inLanguage: "en-KE", publisher: { "@id": "https://fahampesa.com/#organization" }, about: { "@type": "SoftwareApplication", name: "Fahampesa", applicationCategory: "BusinessApplication", url: "https://fahampesa.com/" }, breadcrumb: { "@id": `${url}#breadcrumb` } },
     { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://fahampesa.com/" }, { "@type": "ListItem", position: 2, name: "POS system in Kenya", item: "https://fahampesa.com/pos-system-kenya" }, { "@type": "ListItem", position: 3, name: page.name, item: url }] },
@@ -52,6 +70,7 @@ export default async function IndustryPage({ params }: Props) {
         <section className="mx-auto max-w-7xl px-6 py-16 lg:px-[100px]"><h2 className="font-inter text-3xl font-semibold tracking-tight">From setup to a clear business record</h2><ol className="mt-8 grid gap-6 md:grid-cols-3">{page.workflow.map((step, i) => <li key={step} className="flex items-start gap-4"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#fff1e7] font-inter font-bold text-[#c74300]">{i + 1}</span><p className="font-inter text-base leading-7 text-[#626873]">{step}</p></li>)}</ol><div className="mt-10 rounded-[22px] border border-[#e4e3df] p-7"><h3 className="font-inter text-xl font-semibold">Record checkout payments clearly</h3><p className="mt-3 font-inter text-base leading-7 text-[#626873]">Supported checkout workflows let your team record cash, M-Pesa, card and bank payments. Payment recording does not automatically process a card or verify an M-Pesa transfer. Ask us to demonstrate the payment and confirmation steps available for your business.</p><div className="mt-4 flex flex-wrap gap-2">{["Cash records", "M-Pesa records", "Card records", "Bank records"].map(label => <span key={label} className="inline-flex items-center gap-1.5 rounded-full bg-[#fff1e7] px-3 py-2 font-inter text-xs font-semibold text-[#c74300]"><CheckCircle2 size={14} aria-hidden="true" />{label}</span>)}</div></div></section>
         <section className="bg-[#101c30] text-white"><div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:px-[100px]"><div><p className="font-inter text-xs font-bold uppercase tracking-[0.16em] text-[#ffb780]">See it with your business in mind</p><h2 className="mt-4 font-inter text-3xl font-semibold">What to bring to your demonstration</h2><p className="mt-5 font-inter text-base leading-8 text-[#dbe0e8]">{page.demo}</p><a href={demoUrl(page.name)} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-[10px] bg-white px-6 py-3.5 font-inter text-sm font-semibold text-[#101c30] hover:bg-[#fff1e7]">Request a Demo on WhatsApp <ArrowUpRight size={16} aria-hidden="true" /></a></div><div className="rounded-[22px] border border-white/20 bg-white/5 p-7 font-inter text-sm leading-7 text-[#dbe0e8]"><h3 className="text-lg font-semibold text-white">Talk to the Fahampesa team</h3><p className="mt-4">Visit our showroom: {SHOWROOM}.</p><p className="mt-4">WhatsApp: <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline underline-offset-4">{WHATSAPP_NUMBER}</a></p><p>Call: <a href={CALL_URL} className="font-semibold text-white underline underline-offset-4">{CALL_NUMBER}</a></p><Link href="/installation" className="mt-4 inline-block text-white underline underline-offset-4">Windows installation guide</Link></div></div></section>
         <section className="mx-auto max-w-7xl px-6 py-16 lg:px-[100px]"><h2 className="font-inter text-3xl font-semibold">Questions before you choose</h2><div className="mt-6 max-w-4xl divide-y divide-[#e4e3df]">{questions.map(faq => <div key={faq.question} className="py-6"><h3 className="font-inter text-lg font-semibold">{faq.question}</h3><p className="mt-3 font-inter text-base leading-7 text-[#626873]">{faq.answer}</p></div>)}</div><Link href="/business/get-started" className="mt-6 inline-flex items-center gap-2 font-inter font-semibold text-[#c74300] underline underline-offset-4">Explore the Getting Started guide <ArrowUpRight size={16} aria-hidden="true" /></Link></section>
+        {related.length > 0 && <section className="border-y border-[#e4e3df] bg-[#f8f7f4]"><div className="mx-auto max-w-7xl px-6 py-16 lg:px-[100px]"><p className="font-inter text-xs font-bold uppercase tracking-[0.16em] text-[#c74300]">Related workflows</p><h2 className="mt-3 font-inter text-3xl font-semibold tracking-tight">Keep the records connected.</h2><div className="mt-8 grid gap-5 md:grid-cols-3">{related.map(item => <Link key={item.href} href={item.href} className="rounded-[20px] border border-[#e4e3df] bg-white p-6 transition-transform hover:-translate-y-1"><span className="flex items-center justify-between gap-4 font-inter text-lg font-semibold">{item.label}<ArrowUpRight size={18} className="text-[#c74300]"/></span><span className="mt-3 block font-inter text-sm leading-7 text-[#626873]">{item.body}</span></Link>)}</div></div></section>}
         <IndustryBadges />
       </main>
 

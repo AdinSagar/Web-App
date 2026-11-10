@@ -23,5 +23,16 @@ export function publicPageMetadata(path: string, title: string, description: str
       description,
       images: [PUBLIC_BRAND.image],
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
   };
 }

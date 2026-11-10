@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { ArrowUpRight, ShoppingBag, Store, Boxes, UtensilsCrossed, BedDouble, Wine, Scissors, Wrench } from "lucide-react"
+import { ArrowUpRight, ShoppingBag, Store, Boxes, UtensilsCrossed, BedDouble, Wine, Scissors, Wrench, ShoppingBasket, Pill, Hammer } from "lucide-react"
 import { industryLinks, industryHref } from "@/lib/industry-links"
 
-const icons = [ShoppingBag, Store, Boxes, UtensilsCrossed, BedDouble, Wine, Scissors, Wrench]
+const icons = [ShoppingBag, Store, Boxes, UtensilsCrossed, BedDouble, Wine, Scissors, Wrench, ShoppingBasket, Pill, Hammer]
 
 export default function IndustryBadges() {
   return (

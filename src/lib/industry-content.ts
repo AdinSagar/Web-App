@@ -149,6 +149,66 @@ export const industryPages: IndustryContent[] = [
       { question: "Is this a clinical patient-record system?", answer: "This page describes service operations and business records. It does not claim clinical patient records, medical billing or a hospital information system." },
     ],
   },
+  {
+    slug: "duka-kiosk-pos-kenya", name: "Dukas & kiosks", title: "Duka & Kiosk POS Software in Kenya",
+    description: "Record daily sales, stock, expenses and customer balances with Fahampesa duka and kiosk POS software for small shops in Kenya.",
+    intro: "Give a busy duka one clear place for sales, stock and daily expenses. Fahampesa helps shop owners replace scattered notes with records they can review from the counter or through an authorised owner account.",
+    audience: "Dukas, kiosks, convenience shops and small neighbourhood retailers selling fast-moving household products.",
+    challenge: "Small shops handle many low-value sales, frequent restocking and informal customer credit. Missing one quantity or mixing business money with personal spending makes the trading day harder to explain.",
+    features: [
+      { title: "Record each counter sale", body: "Select the products and quantities sold, then keep the completed transaction in the sales history. Clear entries reduce the need to reconstruct the day from memory." },
+      { title: "See what needs restocking", body: "Maintain starting quantities and review product movement. Count physical stock before ordering so the record reflects what remains on the shelf." },
+      { title: "Keep expenses and credit visible", body: "Record shop expenses with a useful description. Use supported customer and debtor records when goods are sold on credit instead of treating unpaid sales as cash received." },
+    ],
+    workflow: ["Add the shop's common products, selling units, prices and opening quantities.", "Record sales and business expenses throughout the trading day.", "Review sales, money received, customer balances and low stock before closing."],
+    demo: "Bring ten common products, their prices and the units you sell. Ask the team to show a cash sale, an M-Pesa record, a credit sale, a stock count and the end-of-day report.",
+    questions: [
+      { question: "Is Fahampesa suitable for a small kiosk?", answer: "Yes. Start with the products and records the shop uses every day. A demonstration helps confirm the device and workflow before setup." },
+      { question: "Can I record products sold on credit?", answer: "Supported customer and debtor workflows keep the sale and outstanding balance visible. Record later payments against the correct customer record." },
+      { question: "Does recording M-Pesa verify the payment?", answer: "No. A payment method entry is a business record. Confirm the source transaction through the enabled payment workflow before treating money as received." },
+      { question: "Can the owner review the shop away from the counter?", answer: "An authorised owner can review synced records online. Internet access and the correct account permissions are required." },
+    ],
+  },
+  {
+    slug: "pharmacy-pos-kenya", name: "Pharmacies", title: "Pharmacy POS & Inventory Software in Kenya",
+    description: "Organise pharmacy product sales, stock, suppliers and expiry information with Fahampesa pharmacy POS and inventory software in Kenya.",
+    intro: "Keep retail sales and medicine stock records connected in one business workspace. Fahampesa supports product, supplier and inventory operations for pharmacies while keeping clinical decisions outside the POS.",
+    audience: "Licensed pharmacies and chemists that need retail sales, supplier, purchase and inventory records for products they are authorised to sell.",
+    challenge: "A pharmacy needs accurate product names, units, batches and available quantities. Business software should help the team review stock without presenting itself as a prescriber, medical adviser or patient-record system.",
+    features: [
+      { title: "Organise the product catalogue", body: "Use clear generic or brand names, pack sizes, units and prices. Keep similar products distinct so staff select the intended item at checkout." },
+      { title: "Review stock and expiry details", body: "Record supported batch or expiry information where available, then follow a documented physical-check routine. Software alerts do not replace professional stock control." },
+      { title: "Connect suppliers and purchases", body: "Keep supplier contacts, purchases and accepted quantities together. Record delivery differences before adding available stock." },
+    ],
+    workflow: ["Set up authorised products with accurate names, units, prices and opening quantities.", "Record retail sales and accepted supplier deliveries through the supported workflow.", "Review quantities and expiry information, then complete the required physical and professional checks."],
+    demo: "Bring a small sample catalogue with pack sizes and expiry examples. Ask the team to demonstrate product search, a sale, receiving stock and the information available for inventory review.",
+    questions: [
+      { question: "Is Fahampesa a clinical or dispensing system?", answer: "No. This page describes retail sales and inventory operations. It does not claim prescribing, diagnosis, clinical records or automated professional decisions." },
+      { question: "Can I track medicine expiry dates?", answer: "Ask the team to demonstrate the expiry and batch fields available in your current workspace. Keep a separate physical and professional verification process." },
+      { question: "Does the software confirm a medicine is safe to sell?", answer: "No. Licensed professionals remain responsible for legal, clinical and product-safety decisions." },
+      { question: "Can I keep pharmacy supplier records?", answer: "Supplier and purchase tools support business records. Verify supplier authorisation and retain the source documents required by your procedures." },
+    ],
+  },
+  {
+    slug: "hardware-shop-pos-kenya", name: "Hardware shops", title: "Hardware Shop POS & Inventory Software in Kenya",
+    description: "Manage hardware shop sales, product units, stock, suppliers and customer invoices with Fahampesa POS and inventory software in Kenya.",
+    intro: "Keep product units, counter sales, supplier purchases and customer invoices connected. Fahampesa helps hardware businesses explain what was sold, what remains and what a customer still owes.",
+    audience: "Hardware shops, building-material retailers and suppliers selling items by piece, pack, length, weight or other defined units.",
+    challenge: "Hardware catalogues include many similar items and selling units. An unclear unit or product description creates pricing, stock and customer-balance errors that become expensive to trace later.",
+    features: [
+      { title: "Define products and selling units", body: "Use specific names, variants and units such as pieces, bags or metres. Confirm how the business buys and sells each item before entering opening stock." },
+      { title: "Connect purchases to available stock", body: "Record the supplier, expected quantities and accepted delivery. Explain shortages or damaged goods instead of adding the full order automatically." },
+      { title: "Keep invoices and balances clear", body: "Prepare itemised customer invoices and record part payments against the correct document. The outstanding balance stays visible for follow-up." },
+    ],
+    workflow: ["Create specific product names, units, prices and opening quantities.", "Record supplier purchases, deliveries and customer sales against those units.", "Review stock differences, invoices and outstanding customer balances before reordering."],
+    demo: "Bring examples of products sold in different units, one supplier purchase and one customer invoice. Ask the team to show the complete record from delivery to sale and payment.",
+    questions: [
+      { question: "Can I sell products in different units?", answer: "Define the unit used for each product and confirm the intended setup during a demonstration. Do not assume an automatic conversion between every pack and individual item." },
+      { question: "Can I prepare a customer invoice?", answer: "Supported invoice tools record item lines, totals, payments and remaining balances. Confirm the document and tax requirements for your business." },
+      { question: "Can staff see supplier purchase information?", answer: "Access depends on the assigned role and workspace permissions. Give each staff member only the information needed for their work." },
+      { question: "Does the system verify M-Pesa or bank payments?", answer: "A recorded method does not prove a transfer. Confirm the source transaction before marking the invoice as paid." },
+    ],
+  },
 ]
 
 export { industryHref } from "./industry-links"
