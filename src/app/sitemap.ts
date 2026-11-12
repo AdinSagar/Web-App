@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${origin}/about` },
     { url: `${origin}/contact-information` },
     { url: `${origin}/privacy` },
+    { url: `${origin}/terms` },
     { url: `${origin}/account-deletion` },
     { url: `${origin}/installation` },
     ...industryLinks.map(({ slug }) => ({ url: `${origin}${industryHref(slug)}` })),
