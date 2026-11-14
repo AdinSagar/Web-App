@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/contexts/AuthContext'
@@ -333,13 +335,13 @@ export default function VerifyPhonePage() {
       {/* Header */}
       <header className="bg-white h-20 flex items-center px-6 lg:px-[103px]">
         <div className="flex gap-2 items-center">
-          <Image
-            src="/assets/brand/fahampesa-logo-512.png"
+          <Link href="/" aria-label="FahamPesa home"><Image
+            src="/assets/brand/fahampesa-f-512.png"
             alt="Fahampesa"
             width={40}
             height={40}
             className="w-10 h-10"
-          />
+          /></Link>
           <div className="flex flex-col">
             <span className="font-bold text-[#001223] text-xl lg:text-2xl">Fahampesa</span>
             <span className="text-[#001223] text-xs font-light">Smart Business Tools</span>

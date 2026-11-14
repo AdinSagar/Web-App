@@ -25,7 +25,7 @@ const steps = [
     number: 3,
     icon: ShieldCheck,
     title: 'Approve the browser install',
-    description: 'Confirm the install prompt. Fahampesa is added to Windows as a standalone app and keeps its offline workspace on this computer.',
+    description: 'Confirm the install prompt. Fahampesa is added to Windows as a standalone app for your connected online workspace.',
   },
   {
     number: 4,
@@ -39,7 +39,7 @@ const requirements = [
   'Windows 10 or Windows 11',
   'Microsoft Edge or Google Chrome',
   'Internet connection for first setup and account verification',
-  'Browser storage enabled for offline business data',
+  'Reliable internet connection for daily use',
 ]
 
 const faqs = [
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     question: 'Does the installed app work offline?',
-    answer: 'Supported POS and business workflows use local browser storage and continue offline. Cloud updates sync again after the connection returns.',
+    answer: 'No. Fahampesa requires an internet connection for current sales, stock, reports and account data.',
   },
   {
     question: 'Do I need a Microsoft Store account?',
@@ -81,7 +81,7 @@ export default function InstallationPage() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-[#E6F0FF] text-[#004AAD] px-4 py-2 rounded-full text-[14px] font-medium mb-6">
               <Monitor className="w-4 h-4" />
-              Windows offline-ready app
+              Windows app with online access
             </div>
             <h2 className="text-[#001031] text-[28px] sm:text-[38px] font-semibold font-archivo leading-tight mb-4">
               Install the current Fahampesa Business app
@@ -156,7 +156,7 @@ export default function InstallationPage() {
                 ['1', 'Owner account', 'Create or sign in to the owner account with email and password. New accounts verify email once.'],
                 ['2', 'Business setup', 'Choose the business type, branch, country, and business details. Kenya automatically uses KES.'],
                 ['3', 'Staff access', 'Create staff and set PINs. On remembered computers, staff choose their name and enter the PIN.'],
-                ['4', 'Start working', 'Open the correct POS or business workspace and continue working online or offline where supported.'],
+                ['4', 'Start working', 'Open the correct POS or business workspace and keep the device connected while you work.'],
               ].map(([number, title, copy], index) => (
                 <div key={number} className="bg-white border border-gray-100 rounded-[16px] p-6 flex gap-4 items-start shadow-sm">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#E6F0FF] flex items-center justify-center text-[14px] font-semibold text-[#004AAD]">{number}</div>

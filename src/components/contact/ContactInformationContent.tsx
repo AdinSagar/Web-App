@@ -1,66 +1,17 @@
-'use client'
-
-import React from 'react';
+import Link from 'next/link';
+import {ArrowUpRight, MapPin, MessageCircle, Phone, Mail, Building2} from 'lucide-react';
+import {BUSINESS_EMAIL,CALL_NUMBER,CALL_URL,WHATSAPP_NUMBER,WHATSAPP_URL,SHOWROOM,SHOWROOM_HOURS,SHOWROOM_MAP_URL,SHOWROOM_MAP_EMBED_URL,SOCIAL_PROFILES,demoUrl} from '@/lib/marketing-contact';
 
 export function ContactInformationContent() {
-  return (
-    <div className="relative w-full max-w-[1440px] mx-auto bg-white py-16 px-6 lg:px-[100px] min-h-[60vh]">
-      <h2 className="font-archivo font-semibold text-[36px] text-[#191d23] mb-12 lg:mb-[60px]">
-        Contact Information
-      </h2>
-
-      <div className="font-archivo text-[16px] text-[#191d23] leading-[24px] max-w-[946px] space-y-8">
-        <div>
-          <p className="font-bold mb-1">Business Name</p>
-          <p>Fahampesa</p>
-        </div>
-
-        <div>
-          <p className="font-bold mb-1">Business Category</p>
-          <p>Software company</p>
-        </div>
-
-        <div>
-           <p className="font-bold mb-1">Business Description</p>
-           <p>Fahampesa is a professional POS and business management platform that helps businesses reduce losses and gain clear control over sales, inventory, and profit. Built for reliability, offline use, and long term growth.</p>
-        </div>
-
-        <div>
-          <p className="font-bold mb-1">Business Hours</p>
-          <p>Monday to Friday: 8:00 AM to 5:00 PM</p>
-          <p>Saturday: 9:00 AM to 5:00 PM</p>
-          <p>Sunday: Closed</p>
-        </div>
-
-        <div>
-          <p className="font-bold mb-1">Showroom</p>
-          <p>Diamond Plaza 1, 4th floor, Parklands, Nairobi, Kenya</p>
-        </div>
-
-        <div>
-          <p className="font-bold mb-1">Website</p>
-          <p><a href="https://fahampesa.com" target="_blank" rel="noopener noreferrer" className="hover:underline text-[#004aad]">https://fahampesa.com</a></p>
-        </div>
-
-        <div>
-          <p className="font-bold mb-1">Social Media</p>
-          <p>Instagram: <a href="https://www.instagram.com/fahampesa" target="_blank" rel="noopener noreferrer" className="hover:underline text-[#004aad]">https://www.instagram.com/fahampesa</a></p>
-          <p>Facebook: <a href="https://www.facebook.com/fahampesa" target="_blank" rel="noopener noreferrer" className="hover:underline text-[#004aad]">https://www.facebook.com/fahampesa</a></p>
-          <p>TikTok: <a href="https://www.tiktok.com/@fahampesa" target="_blank" rel="noopener noreferrer" className="hover:underline text-[#004aad]">https://www.tiktok.com/@fahampesa</a></p>
-        </div>
-
-        <div>
-          <p className="font-bold mb-1">Contact Details</p>
-          <p>Email: <a href="mailto:info@fahampesa.com" className="hover:underline text-[#004aad]">info@fahampesa.com</a></p>
-          <p>Call: <a href="tel:+254716908595" className="hover:underline text-[#004aad]">0716 908 595</a></p>
-          <p>WhatsApp: <a href="https://wa.me/254117154195" target="_blank" rel="noopener noreferrer" className="hover:underline text-[#004aad]">+254 117 154 195</a></p>
-        </div>
-
-        <div>
-          <p className="font-bold mb-1">Support</p>
-          <p>For support, sales, or partnership inquiries, contact us through the email or phone number above.</p>
-        </div>
-      </div>
-    </div>
-  );
+ return <>
+  <section className="fp-container fp-section fp-contact-grid" aria-label="Contact and showroom">
+   <div className="fp-contact-visit"><span className="fp-eyebrow"><MapPin size={15}/> PARKLANDS, NAIROBI</span><h2>Meet the team.<br/>See your workflow.</h2><p>Visit our showroom to explore business tools, property management or online selling. Bring a small example of your work so the demonstration answers your questions.</p><address>{SHOWROOM}</address><div className="fp-actions"><a className="fp-button" href={demoUrl('a showroom visit')}>Arrange a visit <ArrowUpRight size={16}/></a><a className="fp-text-link" href={SHOWROOM_MAP_URL} target="_blank" rel="noopener noreferrer">Get directions <ArrowUpRight size={16}/></a></div><div className="fp-contact-hours"><h3>Showroom hours</h3><span>Nairobi time, EAT (UTC+3)</span><dl>{SHOWROOM_HOURS.map(row=><div key={row.label}><dt>{row.label}</dt><dd>{row.hours}</dd></div>)}</dl><p>Contact us before travelling on a public holiday.</p></div></div>
+   <div className="fp-contact-methods"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><MessageCircle size={22}/><div><span>WHATSAPP</span><h3>Start a conversation</h3><p>{WHATSAPP_NUMBER}</p><small>Ask about setup, devices or a demonstration.</small></div><ArrowUpRight size={18}/></a><a href={CALL_URL}><Phone size={22}/><div><span>CALL OUR TEAM</span><h3>{CALL_NUMBER}</h3><p>Speak to us during showroom hours.</p></div><ArrowUpRight size={18}/></a><a href={'mailto:'+BUSINESS_EMAIL}><Mail size={22}/><div><span>EMAIL</span><h3>{BUSINESS_EMAIL}</h3><p>Sales, support and partnership enquiries.</p></div><ArrowUpRight size={18}/></a><div className="fp-contact-social"><span className="fp-eyebrow">OFFICIAL SOCIAL PROFILES</span><div>{SOCIAL_PROFILES.map(profile=><a key={profile.name} href={profile.url} target="_blank" rel="noopener noreferrer">{profile.name}<ArrowUpRight size={15}/></a>)}</div></div></div>
+  </section>
+  <section className="fp-container fp-showroom-map" aria-labelledby="showroom-map-title">
+   <div className="fp-showroom-map-copy"><span className="fp-eyebrow"><MapPin size={15}/> FIND THE SHOWROOM</span><h2 id="showroom-map-title">Diamond Plaza 1.<br/>Parklands, Nairobi.</h2><p>Use the map to plan your visit. FahamPesa is on the 4th floor. Contact the team before travelling on a public holiday.</p><a className="fp-text-link" href={SHOWROOM_MAP_URL} target="_blank" rel="noopener noreferrer">Open directions in Google Maps <ArrowUpRight size={16}/></a></div>
+   <div className="fp-showroom-map-frame"><iframe title="Map showing FahamPesa at Diamond Plaza 1 in Parklands, Nairobi" src={SHOWROOM_MAP_EMBED_URL} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/></div>
+  </section>
+  <section className="fp-container fp-section fp-contact-prepare"><div><span className="fp-eyebrow"><Building2 size={15}/> MAKE THE VISIT USEFUL</span><h2>Start with what<br/>you need to manage.</h2><p>Our showroom is for FahamPesa software demonstrations and compatible business hardware. For a product order from a marketplace seller, contact the seller shown on the listing.</p></div><ol><li><h3>Business tools</h3><p>Bring a sample product list and your printer or scanner model. Review sales, stock, receipts and reports.</p><Link href="/pos-system-kenya">Explore business tools <ArrowUpRight size={15}/></Link></li><li><h3>Properties and rentals</h3><p>Prepare an example unit, monthly rent and required deposit. Use sample figures instead of private tenant records.</p><Link href="/business/property-management">Explore property management <ArrowUpRight size={15}/></Link></li><li><h3>Selling and shopping</h3><p>Review your store details, product photos and pickup or delivery area. Choose the app for your role.</p><Link href="/apps">Compare Seller and Shopper apps <ArrowUpRight size={15}/></Link></li></ol></section>
+ </>;
 }

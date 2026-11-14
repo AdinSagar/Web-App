@@ -1,8 +1,9 @@
+import PlatformFrame from '@/components/marketing/PlatformFrame'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Delete your account | Fahampesa',
-  description: 'Request deletion of your FanPesa seller or Fahampesa account and associated personal data.',
+  description: 'Request deletion of your FahamPesa Parking, FanPesa seller or Fahampesa account and associated personal data.',
   alternates: { canonical: 'https://fahampesa.com/account-deletion' },
 }
 
@@ -10,15 +11,15 @@ const requestEmail = 'mailto:privacy@fahampesa.com?subject=' + encodeURIComponen
 
 export default function AccountDeletionPage() {
   return (
-    <main className="min-h-screen bg-[#f8f8f9] px-6 py-12 text-[#001223] font-dm-sans">
+    <PlatformFrame><main id="main-content" className="min-h-screen bg-[#f8f8f9] px-6 py-12 text-[#001223] font-dm-sans">
       <div className="mx-auto max-w-3xl">
         <a href="/" className="text-xl font-bold">Fahampesa</a>
         <article className="mt-8 rounded-2xl bg-white p-6 sm:p-10 shadow-sm space-y-8 leading-relaxed">
           <header className="space-y-3">
             <p className="text-sm font-semibold text-[#004aad]">ACCOUNT AND DATA DELETION</p>
             <h1 className="text-3xl sm:text-4xl font-bold">Request account deletion</h1>
-            <p>For FanPesa seller, Fahampesa Seller, Fahampesa Shop and Fahampesa Business accounts operated by Fahampesa Limited.</p>
-            <p>You do not need the app installed or an active subscription to make a request.</p>
+            <p>For FanPesa seller, Fahampesa Seller, Fahampesa Shop, Fahampesa Business and FahamPesa Parking accounts operated by Fahampesa Limited.</p>
+            <p>You do not need the app installed or an active paid account to make a request.</p>
           </header>
           <section aria-labelledby="request-title" className="space-y-4">
             <h2 id="request-title" className="text-xl font-bold">Send your request</h2>
@@ -30,6 +31,11 @@ export default function AccountDeletionPage() {
             <a href={requestEmail} className="inline-flex min-h-12 items-center rounded-xl bg-[#004aad] px-6 py-3 font-semibold text-white">Email deletion request</a>
             <p className="text-sm">This opens your email app. Review and send the email to submit your request. If an email app is unavailable, email <a className="underline break-all" href="mailto:privacy@fahampesa.com">privacy@fahampesa.com</a> using your preferred mail service. Do not send passwords, PINs, payment credentials or identity document images.</p>
             <p className="text-sm">If you no longer have access to your registered email or phone, contact <a href="mailto:support@fahampesa.com" className="underline">support@fahampesa.com</a> for help verifying ownership.</p>
+          </section>
+          <section className="space-y-3">
+            <h2 className="text-xl font-bold">Parking staff and vehicle records</h2>
+            <p>Parking guards do not need a registered email address to request deletion. Email privacy@fahampesa.com with your staff name, property name and a way to contact you. Ask for deletion of your staff account and associated personal data, or identify the parking records you want removed. Do not send your guard PIN.</p>
+            <p>For a vehicle record, identify the property, number plate and approximate visit date. We verify your relationship to the record before making changes. You may also ask your property manager to help. Removing a guard's access does not automatically erase historical tickets, receipts or shift records. Any necessary retention is explained as part of the request.</p>
           </section>
           <section className="space-y-3">
             <h2 className="text-xl font-bold">What happens next</h2>
@@ -51,6 +57,6 @@ export default function AccountDeletionPage() {
           </footer>
         </article>
       </div>
-    </main>
+    </main></PlatformFrame>
   )
 }

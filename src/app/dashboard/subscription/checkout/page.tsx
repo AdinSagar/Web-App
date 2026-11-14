@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 import { useState, Suspense, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Image from 'next/image'
@@ -267,12 +269,12 @@ function CheckoutContent() {
                 {/* Logo */}
                 <div className="absolute left-[40px] top-[20px] flex gap-[7px] items-center">
                     <div className="w-[40px] h-[40px]">
-                        <Image
-                            src="/assets/brand/fahampesa-logo-512.png"
+                        <Link href="/" aria-label="FahamPesa home"><Image
+                            src="/assets/brand/fahampesa-f-512.png"
                             alt="Fahampesa"
                             width={40}
                             height={40}
-                        />
+                        /></Link>
                     </div>
                     <div className="flex flex-col w-[125px] leading-normal text-[#001223]">
                         <p className="font-roboto font-bold text-[24px]">

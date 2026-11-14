@@ -1,0 +1,16 @@
+import Link from 'next/link';
+import {notFound} from 'next/navigation';
+import {ArrowRight} from 'lucide-react';
+import {kenyaGuides} from '@/lib/kenya-guides';
+import {guideDetails} from '@/lib/guide-details';
+import {publicPageMetadata} from '@/lib/public-page-metadata';
+import {safeJsonLd} from '@/lib/listing-discovery';
+export const dynamicParams=false;
+export const generateStaticParams=()=>kenyaGuides.map(guide=>({slug:guide.slug}));
+type Props={params:Promise<{slug:string}>};
+export async function generateMetadata({params}:Props){const {slug}=await params;const guide=kenyaGuides.find(g=>g.slug===slug);if(!guide)notFound();return publicPageMetadata('/guides/'+slug,guide.title+' | FahamPesa',guide.description);}
+export default async function Page({params}:Props){
+ const {slug}=await params;const guide=kenyaGuides.find(g=>g.slug===slug);if(!guide)notFound();const detail=guideDetails[slug];const url='https://fahampesa.com/guides/'+slug;
+ const schema={'@context':'https://schema.org','@type':'Article',headline:guide.title,description:guide.description,inLanguage:'en-KE',mainEntityOfPage:url,dateModified:'2026-11-09',author:{'@id':'https://fahampesa.com/#organization'},publisher:{'@id':'https://fahampesa.com/#organization'}};
+ return <main id="main-content"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:safeJsonLd(schema)}}/><section className="fp-subhero fp-container"><nav className="fp-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/guides">Practical guides</Link><span>/</span><span>{guide.category.toLowerCase()}</span></nav><span className="fp-eyebrow">{guide.category}</span><h1>{guide.title}</h1><p>{guide.intro}</p><p className="growth-small">By FahamPesa · Updated 9 November 2026 · Practical examples</p></section><article className="fp-article"><aside className="fp-guide-summary"><h2>The practical answer</h2><p>{detail.summary}</p></aside><nav className="fp-guide-toc" aria-label="On this page"><strong>In this guide</strong>{guide.sections.map((section,index)=><a key={section.title} href={'#step-'+(index+1)}>{section.title}</a>)}<a href="#worked-example">Worked example</a><a href="#checklist">Your next steps</a></nav>{guide.sections.map((section,index)=><section id={'step-'+(index+1)} key={section.title}><h2>{section.title}</h2><p>{section.body}</p><ul>{section.points.map(point=><li key={point}>{point}</li>)}</ul></section>)}<section id="worked-example"><span className="fp-eyebrow">WORKED EXAMPLE</span><h2>{detail.heading}</h2><table className="fp-guide-table"><caption className="sr-only">{detail.heading}</caption><thead><tr>{detail.columns.map(column=><th key={column} scope="col">{column}</th>)}</tr></thead><tbody>{detail.rows.map(row=><tr key={row[0]}>{row.map((cell,i)=>i===0?<th key={i} scope="row">{cell}</th>:<td key={i}>{cell}</td>)}</tr>)}</tbody></table><p>{detail.review}</p></section><section id="checklist" className="fp-guide-actions"><h2>Your next steps</h2><ol>{detail.checklist.map(item=><li key={item}>{item}</li>)}</ol></section><div className="fp-inline-links"><Link href={guide.href}>{guide.next}<ArrowRight size={15}/></Link><Link href="/guides">All practical guides</Link><Link href="/contact-information">Ask the FahamPesa team</Link></div></article></main>;
+}

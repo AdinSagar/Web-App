@@ -1,27 +1,3 @@
-'use client'
-
-import { useState } from 'react'
-import { DownloadModal } from '@/components/DownloadModal'
-import Footer from '@/components/footer'
-import PublicHeader from '@/components/public-header'
-import PageHeader from '@/components/PageHeader'
-import { ContactInformationContent } from '@/components/contact/ContactInformationContent'
-
-export default function ContactInformationPage() {
-  const [downloadModalOpen, setDownloadModalOpen] = useState(false)
-
-  return (
-    <div className="min-h-screen bg-white font-dm-sans">
-      <DownloadModal open={downloadModalOpen} onOpenChange={setDownloadModalOpen} />
-
-      <PublicHeader onOpenDownload={() => setDownloadModalOpen(true)} />
-
-      <main>
-        <PageHeader title="Contact Information" />
-        <ContactInformationContent />
-      </main>
-
-      <Footer />
-    </div>
-  )
-}
+import PlatformFrame from '@/components/marketing/PlatformFrame';
+import { ContactInformationContent } from '@/components/contact/ContactInformationContent';
+export default function Page(){return <PlatformFrame><main id="main-content"><section className="fp-subhero fp-container"><span className="fp-eyebrow">LOCAL PEOPLE. PRACTICAL SUPPORT.</span><h1>Let’s find the right<br/>starting point for you.</h1><p>Talk to the FahamPesa team about your business, rental properties or online store. Visit us in Nairobi, call or start with a WhatsApp conversation.</p></section><ContactInformationContent/></main></PlatformFrame>;}

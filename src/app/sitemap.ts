@@ -1,17 +1,27 @@
 import type { MetadataRoute } from "next"
+import {platformPaths} from "@/lib/platform-content"
+import {kenyaGuides} from "@/lib/kenya-guides"
+import {growthPaths} from "@/lib/business-growth"
 import { industryLinks, industryHref } from "@/lib/industry-links"
+import {seoSolutionPaths} from "@/lib/seo-solution-content"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const origin = "https://fahampesa.com"
 
   return [
     { url: origin },
+    ...["/apps","/apps/seller","/apps/shopper"].map(path=>({url:origin+path})),
+    ...growthPaths.map(path=>({url:origin+path})),
+    ...seoSolutionPaths.map(path=>({url:origin+path})),
+    { url: `${origin}/pricingpage` },
     { url: `${origin}/pos-system-kenya` },
     { url: `${origin}/inventory-management-software-kenya` },
-    { url: `${origin}/pricingpage` },
+    ...platformPaths.map(path=>({url:origin+path})),
+    ...kenyaGuides.map(guide=>({url:origin+"/guides/"+guide.slug})),
     { url: `${origin}/about` },
     { url: `${origin}/contact-information` },
     { url: `${origin}/privacy` },
+    { url: `${origin}/terms` },
     { url: `${origin}/account-deletion` },
     { url: `${origin}/installation` },
     ...industryLinks.map(({ slug }) => ({ url: `${origin}${industryHref(slug)}` })),

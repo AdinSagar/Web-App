@@ -1,22 +1,33 @@
-"use client"
+import Link from 'next/link'
+import type {Metadata} from 'next'
+import {ArrowRight, Check, Smartphone, Store, Building2} from 'lucide-react'
+import PlatformFrame from '@/components/marketing/PlatformFrame'
+import {publicPageMetadata} from '@/lib/public-page-metadata'
+import {BUSINESS_SIGNUP_URL} from '@/lib/business-app'
+import {demoUrl} from '@/lib/marketing-contact'
 
-import { useState } from "react"
-import Header from "@/components/header"
-import PricingHero from "@/components/pricing-hero"
-import PricingCards from "@/components/pricing-cards"
-import ComparisonTable from "@/components/comparison-table"
-import Footer from "@/components/footer"
+export const metadata: Metadata = publicPageMetadata('/pricingpage', 'FahamPesa Pricing | Free Apps and Business Software', 'Compare FahamPesa Shop, Seller and business software pricing in Kenya. Browse and sell with the apps, or run business operations from KSh 2,000 monthly.')
 
-export default function Home() {
-  const [isYearly, setIsYearly] = useState(true)
+const plans = [
+  {icon: Smartphone, name: 'FahamPesa Shop', price: 'Free', note: 'For shoppers', intro: 'Browse published local businesses, products, food, stays and services.', features: ['Browse public stores and listings', 'Use supported orders and bookings', 'Keep shopper and seller roles separate'], href: '/apps/shopper', action: 'Get the Shopper app'},
+  {icon: Store, name: 'FahamPesa Seller', price: 'Free', note: 'For sellers', intro: 'Publish a business profile and eligible listings through the supported seller workflow.', features: ['Create a public store profile', 'Publish products or services', 'Share readable store and listing links'], href: '/apps/seller', action: 'Get the Seller app'},
+  {icon: Building2, name: 'Business software', price: 'KSh 2,000', suffix: 'per month', note: 'For business operations', intro: 'Run supported sales, inventory, expense, supplier, staff and reporting workflows.', features: ['Retail, restaurant and service modes', 'Sales, stock and expense records', 'Owner reports and staff access'], href: BUSINESS_SIGNUP_URL, action: 'Create a business account'},
+]
 
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <PricingHero isYearly={isYearly} setIsYearly={setIsYearly} />
-      <PricingCards isYearly={isYearly} />
-      <ComparisonTable />
-      <Footer />
-    </div>
-  )
+export default function PricingPage() {
+  const schema = {'@context': 'https://schema.org', '@type': 'WebPage', name: 'FahamPesa pricing', url: 'https://fahampesa.com/pricingpage', description: 'FahamPesa app and business software pricing in Kenya.'}
+  return <PlatformFrame>
+    <main id="main-content" className="bg-[#fcfcfb] text-[#101c30]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(schema).replace(/</g, '\\u003c')}}/>
+      <section className="border-b border-[#e4e3df] bg-[linear-gradient(135deg,#f7f5ef_0%,#ffffff_58%,#fff1e7_100%)]">
+        <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-[100px] lg:py-28"><p className="font-inter text-xs font-bold uppercase tracking-[0.18em] text-[#c74300]">Clear pricing</p><h1 className="mx-auto mt-5 max-w-4xl font-inter text-5xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-6xl">Start free. Add business software when your operation needs it.</h1><p className="mx-auto mt-7 max-w-2xl font-inter text-lg leading-8 text-[#626873]">The Shop and Seller apps are free to use. The business operations workspace has a separate plan for teams that need sales, stock and reporting tools.</p></div>
+      </section>
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-[100px] lg:py-24">
+        <div className="grid gap-5 lg:grid-cols-3">{plans.map((plan, index) => <article key={plan.name} className={`flex min-h-full flex-col rounded-[24px] border p-7 ${index === 2 ? 'border-[#c74300] bg-[#101c30] text-white shadow-[0_24px_70px_rgba(16,28,48,0.16)]' : 'border-[#e4e3df] bg-white'}`}><div className={`grid h-11 w-11 place-items-center rounded-xl ${index === 2 ? 'bg-[#c74300]' : 'bg-[#fff1e7] text-[#c74300]'}`}><plan.icon size={21}/></div><p className={`mt-7 font-inter text-xs font-bold uppercase tracking-[0.15em] ${index === 2 ? 'text-[#ffb780]' : 'text-[#c74300]'}`}>{plan.note}</p><h2 className="mt-3 font-inter text-2xl font-semibold">{plan.name}</h2><div className="mt-7 flex items-end gap-2"><strong className="font-inter text-4xl tracking-tight">{plan.price}</strong>{plan.suffix && <span className={`pb-1 font-inter text-sm ${index === 2 ? 'text-[#dbe0e8]' : 'text-[#626873]'}`}>{plan.suffix}</span>}</div><p className={`mt-5 font-inter text-sm leading-7 ${index === 2 ? 'text-[#dbe0e8]' : 'text-[#626873]'}`}>{plan.intro}</p><ul className="mt-7 space-y-4">{plan.features.map(feature => <li key={feature} className="flex gap-3 font-inter text-sm"><Check size={17} className="mt-0.5 shrink-0 text-[#c74300]"/>{feature}</li>)}</ul><Link href={plan.href} className={`mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-5 font-inter text-sm font-semibold ${index === 2 ? 'bg-[#c74300] text-white hover:bg-[#a83800]' : 'border border-[#c74300] text-[#c74300] hover:bg-[#fff1e7]'}`}>{plan.action}<ArrowRight size={16}/></Link></article>)}</div>
+        <div className="mt-6 rounded-[20px] border border-[#e4e3df] bg-[#f8f7f4] p-7 font-inter"><h2 className="text-xl font-semibold">Annual business plan</h2><p className="mt-3 leading-7 text-[#626873]">Pay KSh 20,000 for 12 months of the standard business software, equal to two months free compared with monthly billing. Confirm the selected workspace, start date and included features before payment.</p></div>
+      </section>
+      <section className="bg-[#f5f3ee]"><div className="mx-auto grid max-w-7xl gap-9 px-6 py-16 lg:grid-cols-2 lg:px-[100px]"><div><p className="font-inter text-xs font-bold uppercase tracking-[0.16em] text-[#c74300]">What pricing does not hide</p><h2 className="mt-4 font-inter text-3xl font-semibold tracking-tight">Software, hardware and payment services stay separate.</h2></div><div className="space-y-5 font-inter text-sm leading-7 text-[#626873]"><p>Computers, receipt printers, barcode scanners, cash drawers, internet access and installation work are separate unless a written quote includes them.</p><p>Recording cash, M-Pesa, card or bank payments creates a business record. It does not process or verify the source payment unless the enabled payment workflow says so.</p><p>Property management pricing depends on the active unit tier. Ask the team for the current unit-based quote before subscribing.</p></div></div></section>
+      <section className="mx-auto max-w-4xl px-6 py-20 text-center"><p className="font-inter text-xs font-bold uppercase tracking-[0.16em] text-[#c74300]">Choose with your workflow in view</p><h2 className="mt-4 font-inter text-4xl font-semibold tracking-tight">See the software with your own products or services.</h2><p className="mx-auto mt-5 max-w-2xl font-inter leading-8 text-[#626873]">Bring a short example. The team will show the relevant workflow and explain which costs apply before you decide.</p><a href={demoUrl('pricing and business software')} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-[10px] bg-[#c74300] px-6 font-inter text-sm font-semibold text-white">Arrange a demonstration<ArrowRight size={16}/></a></section>
+    </main>
+  </PlatformFrame>
 }
