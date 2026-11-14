@@ -132,7 +132,7 @@ export function TermsContent() {
             <div className="space-y-2">
               <p>Fahampesa aims to provide reliable access to the platform.</p>
               <p>Performance depends on device conditions and internet connectivity.</p>
-              <p>Offline functionality operates based on system configuration.</p>
+              <p>Current features require an internet connection and supported device configuration.</p>
             </div>
           </div>
 
