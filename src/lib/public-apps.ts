@@ -7,10 +7,10 @@ export const publicApps = {
   intro:'FahamPesa Business is the Seller app. Publish your store, add products or services and manage customer activity from your Android phone.',
   playUrl:'https://play.google.com/store/apps/details?id=com.fahampesa.seller',
   downloadLabel:'Check Seller app on Google Play',
-  status:'Google Play availability is pending approval. The store listing uses the name Fahampesa Business.',
-  available:false,
+  status:'Available on Google Play as Fahampesa Business, published by FahamPesa Limited.',
+  available:true,
   features:[['Publish your storefront','Add your business details, clear photos, prices and availability. Share your public store link on WhatsApp and social.'],['Manage customer activity','Review supported orders, booking requests and customer conversations from your seller workspace.'],['Choose the right business mode','Retail, restaurants, hotels, salons and services have different workflows. Confirm your setup with the FahamPesa team.']],
-  steps:['Open the Seller app listing on Google Play. If it is not available yet, contact our team for setup help.','Install Fahampesa Business when available, create your owner account and complete your business details.','Add your listings, confirm pickup or delivery arrangements and share your store link.'],
+  steps:['Open the Fahampesa Business listing on Google Play.','Install the Seller app, create your owner account and complete your business details.','Add your listings, confirm pickup or delivery arrangements and share your store link.'],
  },
  shopper: {
   name:'FahamPesa Shop', audience:'FOR BUYERS & SHOPPERS', label:'Shopper app', path:'/apps/shopper',

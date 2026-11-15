@@ -2,14 +2,24 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { activateSubscriptionAdmin, updateSubscriptionStatusAdmin } from '@/lib/subscription-service-admin'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-05-28.basil',
-})
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
+function getStripeClient() {
+  const secretKey = process.env.STRIPE_SECRET_KEY
+  if (!secretKey) {
+    throw new Error('Stripe webhook is not configured on this deployment')
+  }
+  return new Stripe(secretKey, { apiVersion: '2025-05-28.basil' })
+}
 
 export async function POST(request: NextRequest) {
   try {
+    const stripe = getStripeClient()
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
+    if (!webhookSecret) {
+      throw new Error('Stripe webhook secret is not configured on this deployment')
+    }
     const body = await request.text()
     const signature = request.headers.get('stripe-signature')
 

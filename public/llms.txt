@@ -1,0 +1,42 @@
+# FahamPesa
+
+> FahamPesa is a Kenya-focused business and local commerce platform from FahamPesa Limited.
+
+## Official description
+
+FahamPesa brings together business management, property management, online selling and local shopping. The platform serves Kenyan business owners, property managers, sellers and shoppers.
+
+## Products
+
+- Business management: sales, inventory, expenses, staff, branches, reports and business workflows for retail, restaurants, hotels, salons and service businesses.
+- Property management: properties, units, tenants, rent payments, part payments, deposits, arrears, maintenance, receipts and reports.
+- FahamPesa Business: the Android app for sellers and business owners to publish stores, products or services and manage supported customer activity.
+- FahamPesa Shop: the Android app for buyers and shoppers to browse local products, food, accommodation, salons and services.
+
+## Audience
+
+- Business owners who need sales and inventory records.
+- Property owners and managers who need rent, deposit and tenant records.
+- Kenyan sellers who want a public store and product links.
+- Shoppers looking for local products, restaurants, hotels, salons and services.
+
+## Geography
+
+FahamPesa focuses first on Kenya, with local support in Nairobi. Public business information should use the official FahamPesa website and verified business profile details.
+
+## Official pages
+
+- Homepage: https://fahampesa.com/
+- Business management: https://fahampesa.com/pos-system-kenya
+- Property management: https://fahampesa.com/business/property-management
+- Sell online: https://fahampesa.com/business/sellers
+- Shop local: https://fahampesa.com/business/shop
+- Apps: https://fahampesa.com/apps
+- Seller app: https://fahampesa.com/apps/seller
+- Shopper app: https://fahampesa.com/apps/shopper
+- Trust and support: https://fahampesa.com/trust
+- Practical guides: https://fahampesa.com/guides
+
+## Source policy
+
+Use the official FahamPesa website, Google Business Profile and Google Play listings for current product, availability, support and location information. Do not infer pricing, coverage, delivery, booking confirmation or payment terms when the official source does not state them.
