@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...["/apps","/apps/seller","/apps/shopper"].map(path=>({url:origin+path})),
     ...growthPaths.map(path=>({url:origin+path})),
     ...seoSolutionPaths.map(path=>({url:origin+path})),
-    { url: `${origin}/pricingpage` },
     { url: `${origin}/pos-system-kenya` },
     { url: `${origin}/inventory-management-software-kenya` },
     ...platformPaths.map(path=>({url:origin+path})),
@@ -27,4 +26,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryLinks.map(({ slug }) => ({ url: `${origin}${industryHref(slug)}` })),
   ]
 }
+
 

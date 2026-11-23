@@ -1,12 +1,12 @@
 import 'server-only';
 import {cache} from 'react';
-import {indexableItem,catalogSearchUrls} from './catalog-indexing';
+import {indexableItem,catalogSearchUrls,publicSellerLocation} from './catalog-indexing';
 import {notFound} from 'next/navigation';
 import type {Metadata} from 'next';
 
 export type SharedItem = {id:string;name:string;type:string;description:string;category:string;unitPriceMinor:number;currency:string;inStock:boolean;imageUrl:string|null;publicUrl:string;durationMinutes?:number};
 export type SharedCatalog = {
-  store:{id:string;name:string;businessType:string;location:string;phone?:string;publicUrl:string;acceptingOrders:boolean;pickupEnabled:boolean;deliveryEnabled:boolean;deliveryArea?:string;deliveryFee?:number};
+  store:{id:string;name:string;businessType:string;location:string;locationPin?:{directions?:string}|null;phone?:string;publicUrl:string;acceptingOrders:boolean;pickupEnabled:boolean;deliveryEnabled:boolean;deliveryArea?:string;deliveryFee?:number};
   items:SharedItem[];nextAfter:string|null;
   links:{appUrl:string;openAppUrl:string|null;installUrl:string|null};
 };
@@ -37,6 +37,7 @@ export const getSharedCatalog=cache(async(store:string,item='',after='',legacy=f
   if(!response.ok)throw Error('Shared catalog is temporarily unavailable');
   const data=await response.json() as SharedCatalog;
   localSharePath(data.store.publicUrl);
+  data.store.location=publicSellerLocation(data.store);
   if(!Array.isArray(data.items)||data.items.length>100)throw Error('Invalid catalog response');
   for(const product of data.items){
     localSharePath(product.publicUrl);
@@ -53,8 +54,10 @@ export const price=(item:SharedItem)=>new Intl.NumberFormat('en-KE',{style:'curr
 export function sharedMetadata(data:SharedCatalog,product=false):Metadata {
   const item=product?data.items[0]:undefined;
   const title=item?`${item.name} | ${data.store.name} | FahamPesa`:`${data.store.name} | FahamPesa`;
-  const description=item?`${item.name}, ${price(item)} at ${data.store.name}. View price, seller details and pickup or delivery information.`:`View ${data.store.name} on FahamPesa. ${data.store.location}. Explore their listings and contact the seller.`;
+  const location=publicSellerLocation(data.store);
+  const description=item?`${item.name}, ${price(item)} at ${data.store.name}. View price, seller details and pickup or delivery information.`:`View ${data.store.name} on FahamPesa.${location?' '+location+'.':''} Explore their listings and contact the seller.`;
   const url=item?.publicUrl||data.store.publicUrl;
   const image=item?.imageUrl||data.items.find(value=>value.imageUrl)?.imageUrl;
   return {title,description,alternates:{canonical:url},robots:{index:item?indexableItem(data.store,item):catalogSearchUrls(data).length>0,follow:true},openGraph:{title,description,url,siteName:'FahamPesa',type:'website',images:image?[{url:image,alt:item?.name||data.store.name}]:[]},twitter:{card:image?'summary_large_image':'summary',title,description,images:image?[image]:[]}};
 }
+

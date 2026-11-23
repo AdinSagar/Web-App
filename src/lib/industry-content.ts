@@ -78,8 +78,8 @@ export const industryPages: IndustryContent[] = [
     ],
   },
   {
-    slug: "hotel-management-software-kenya", name: "Hotels", title: "Hotel Management & POS Software in Kenya",
-    description: "Explore Fahampesa hotel software in Kenya for rooms, reservations, guest stays and business sales. Request a hotel workflow demonstration.",
+    slug: "hotel-management-software-kenya", name: "Hotels", title: "Hotel POS & Management Software in Kenya",
+    description: "Hotel POS software in Kenya for rooms, reservations, check-ins, check-outs and sales records. See the FahamPesa hotel workflow at our Parklands showroom.",
     intro: "Keep room and guest-stay records alongside the business tools your team uses each day. Fahampesa's hotel workspace supports reservations, check-ins, check-outs and hotel sales.",
     audience: "Hotels, lodges and guest houses looking for a business workspace for accommodation records and daily operations.",
     challenge: "A reservation, a guest arrival and a completed stay each need clear records. Reception staff and owners benefit from a shared view of the recorded room and guest activity.",
@@ -93,6 +93,8 @@ export const industryPages: IndustryContent[] = [
     questions: [
       { question: "Can Fahampesa record reservations and check-ins?", answer: "Yes. The hotel workspace includes reservation, check-in and check-out tools. A demonstration will show the supported workflow." },
       { question: "Does this include an online booking marketplace?", answer: "Do not assume a marketplace or external booking-channel integration is included. Ask our team to confirm any online-booking requirement separately." },
+      { question: "Does the hotel workspace require internet?", answer: "Yes. FahamPesa runs online. Reception staff and owners need an internet connection and the correct account access to use the hotel workspace." },
+      { question: "Where do I see a hotel POS demonstration in Nairobi?", answer: "Arrange a demonstration at Diamond Plaza 1, 4th floor, Parklands, Nairobi. Bring a sample reservation, room types and the sales workflow your team needs." },
     ],
   },
   {
@@ -212,3 +214,4 @@ export const industryPages: IndustryContent[] = [
 ]
 
 export { industryHref } from "./industry-links"
+

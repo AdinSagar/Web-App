@@ -21,15 +21,15 @@ export default function PlatformFrame({children}: {children: React.ReactNode}) {
     <a className="fp-skip" href="#main-content">Skip to content</a>
     <header className="fp-header">
       <Link className="fp-brand" href="/" aria-label="FahamPesa home"><img src={PUBLIC_BRAND.mark} width="34" height="34" alt=""/><span>FahamPesa<span className="fp-brand-dot">.</span></span></Link>
-      <nav className="fp-desktop-nav" aria-label="Main navigation"><details className="fp-nav-menu"><summary>Solutions</summary><div>{solutionLinks.map(([name, url]) => <Link key={url} href={url}>{name}<ArrowUpRight size={15}/></Link>)}</div></details><Link href="/business/shop">Browse shops</Link><Link href="/business">Business Growth</Link><Link href="/pricingpage">Pricing</Link><Link href="/apps">Get the apps</Link><Link href="/contact-information">Contact</Link></nav>
+      <nav className="fp-desktop-nav" aria-label="Main navigation"><details className="fp-nav-menu"><summary>Solutions</summary><div>{solutionLinks.map(([name, url]) => <Link key={url} href={url}>{name}<ArrowUpRight size={15}/></Link>)}</div></details><Link href="/business/shop">Browse shops</Link><Link href="/business">Business Growth</Link><Link href="/apps">Get the apps</Link><Link href="/contact-information">Contact</Link></nav>
       <div className="fp-header-actions"><Link className="fp-login" href={BUSINESS_LOGIN_URL}>Log in</Link><Link className="fp-button fp-small-button" href={BUSINESS_SIGNUP_URL}>For businesses <ArrowUpRight size={15}/></Link></div>
-      <details className="fp-mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation">{solutionLinks.map(([name, url]) => <Link key={url} href={url}>{name}</Link>)}<Link href="/pricingpage">Pricing</Link><Link href="/apps/seller">Seller app for Android</Link><Link href="/apps/shopper">Shopper app for Android</Link><Link href="/business">Business Growth & AI</Link><Link href="/business/seller-help">Help centre</Link><Link href="/contact-information">Contact</Link><Link href={BUSINESS_LOGIN_URL}>Log in</Link><Link href={BUSINESS_SIGNUP_URL}>Create business account</Link></nav></details>
+      <details className="fp-mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation">{solutionLinks.map(([name, url]) => <Link key={url} href={url}>{name}</Link>)}<Link href="/apps/seller">Seller app for Android</Link><Link href="/apps/shopper">Shopper app for Android</Link><Link href="/business">Business Growth & AI</Link><Link href="/business/seller-help">Help centre</Link><Link href="/contact-information">Contact</Link><Link href={BUSINESS_LOGIN_URL}>Log in</Link><Link href={BUSINESS_SIGNUP_URL}>Create business account</Link></nav></details>
     </header>
     {children}
     <footer className="fp-footer">
       <div className="fp-footer-top">
         <div><Link href="/" className="fp-brand" aria-label="FahamPesa home"><img src={PUBLIC_BRAND.mark} width="34" height="34" alt=""/><span>FahamPesa<span className="fp-brand-dot">.</span></span></Link><p>Businesses. Properties. Local commerce.<br/>Built around the way you work.</p><span className="fp-label">KENYA FIRST</span></div>
-        <nav aria-label="Solutions footer"><strong>Explore</strong>{solutionLinks.map(([name, url]) => <Link key={url} href={url}>{name}</Link>)}<Link href="/pricingpage">Pricing</Link></nav>
+        <nav aria-label="Solutions footer"><strong>Explore</strong>{solutionLinks.map(([name, url]) => <Link key={url} href={url}>{name}</Link>)}</nav>
         <nav aria-label="Resources footer"><strong>Apps & help</strong><Link href="/apps/seller">Seller app</Link><Link href="/apps/shopper">Shopper app</Link><Link href="/business/seller-help">Seller Help Centre</Link><Link href="/business/shopper-help">Shopper Help Centre</Link><Link href="/guides">Practical guides</Link></nav>
         <nav aria-label="Contact footer"><strong>Talk to our team</strong><Link href="/about">About FahamPesa</Link><Link href="/contact-information">Visit our Nairobi showroom</Link><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp FahamPesa <ArrowUpRight size={13}/></a><a href={CALL_URL}>{CALL_NUMBER}</a><a href="mailto:support@fahampesa.com">support@fahampesa.com</a><p>{SHOWROOM}</p></nav>
       </div>
@@ -37,3 +37,4 @@ export default function PlatformFrame({children}: {children: React.ReactNode}) {
     </footer>
   </div>
 }
+

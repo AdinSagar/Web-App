@@ -40,6 +40,7 @@ const nextConfig: NextConfig = {
       { source: "/business/guides/:path*", destination: "/guides/:path*", permanent: true },
       { source: "/subscription", destination: "/business/get-started", permanent: true },
       { source: "/pricing", destination: "/business/get-started", permanent: true },
+      { source: "/pricingpage", destination: "/business/get-started", permanent: true },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.fahampesa.com" }],
@@ -100,3 +101,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+

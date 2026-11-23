@@ -35,7 +35,8 @@ const cachedCatalogSitemap=unstable_cache(async(origin:string)=>{
   }));
  }
  return sitemapXml(urls);
-},['published-catalog-sitemap-v2'],{revalidate:900});
+},['published-catalog-sitemap-v3'],{revalidate:900});
 
 // Validate configuration on every request, including cache hits. The origin also scopes the cache key.
 export const publishedCatalogSitemap=()=>cachedCatalogSitemap(catalogOrigin());
+
