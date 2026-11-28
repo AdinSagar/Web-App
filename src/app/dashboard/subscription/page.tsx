@@ -11,7 +11,7 @@ import { DownloadModal } from '@/components/DownloadModal'
 import Footer from '@/components/footer'
 
 const assets = {
-  logo: '/assets/brand/fahampesa-logo-512.png',
+  logo: '/assets/brand/fahampesa-f-512.png',
   facebook: '/assets/figma/landing/facebook.svg',
   instagram: '/assets/figma/landing/instagram.svg',
   googlePlay: '/google_play.png',

@@ -1,5 +1,6 @@
 import { X } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 import { BUSINESS_INSTALL_URL } from "@/lib/business-app"
@@ -86,15 +87,15 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
           <div className="flex flex-col md:flex-row gap-[16px] w-full overflow-x-auto pb-2 md:pb-0">
             {/* Windows Card */}
             <div className="border border-[#001031] rounded-[16px] p-[14px] flex flex-col items-center justify-center gap-[19px] w-full md:w-[186px] h-[228px] shrink-0">
-              <div className="relative w-[100px] h-[100px]">
+              <Link href="/" onClick={() => onOpenChange(false)} aria-label="FahamPesa home" className="relative w-[100px] h-[100px]">
                 <Image
-                  src="/assets/brand/fahampesa-logo-512.png"
+                  src="/assets/brand/fahampesa-f-512.png"
                   alt="FahamPesa app icon"
                   fill
                   sizes="100px"
                   className="object-contain"
                 />
-              </div>
+              </Link>
               <div className="flex flex-col items-center gap-[10px] w-full">
                 <p className="font-inter font-medium text-[24px] text-[#001031] text-center leading-none">
                   Windows

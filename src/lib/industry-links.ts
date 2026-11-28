@@ -7,5 +7,8 @@ export const industryLinks = [
   { slug: "bar-pos-kenya", name: "Bars" },
   { slug: "salon-pos-kenya", name: "Salons & spas" },
   { slug: "service-business-software-kenya", name: "Service businesses" },
+  { slug: "duka-kiosk-pos-kenya", name: "Dukas & kiosks" },
+  { slug: "pharmacy-pos-kenya", name: "Pharmacies" },
+  { slug: "hardware-shop-pos-kenya", name: "Hardware shops" },
 ] as const
 export const industryHref = (slug: string) => `/industries/${slug}`

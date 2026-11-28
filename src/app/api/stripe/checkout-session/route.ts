@@ -3,12 +3,20 @@ import Stripe from 'stripe'
 import { createPendingSubscriptionAdmin } from '@/lib/subscription-service-admin'
 import { PLAN_PRICING, PlanType } from '@/lib/subscription-types'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-05-28.basil',
-})
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
+function getStripeClient() {
+  const secretKey = process.env.STRIPE_SECRET_KEY
+  if (!secretKey) {
+    throw new Error('Stripe checkout is not configured on this deployment')
+  }
+  return new Stripe(secretKey, { apiVersion: '2025-05-28.basil' })
+}
 
 export async function POST(request: NextRequest) {
   try {
+    const stripe = getStripeClient()
     const body = await request.json()
     const { planType, userId, email } = body as {
       planType: PlanType

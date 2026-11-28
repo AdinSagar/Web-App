@@ -1,0 +1,15 @@
+"use client";
+import {useId,useState} from 'react';
+import {ArrowUpRight,Building2} from 'lucide-react';
+import Link from 'next/link';
+import {rentalExample} from '@/lib/property-example';
+import {parseReportAmount,kes} from '@/lib/report-brief';
+const fields=[['rentDue','Rent due'],['rentReceived','Rent received'],['depositRequired','Deposit required'],['depositReceived','Deposit received']] as const;
+export default function PropertyExample(){
+ const id=useId();
+ const [values,setValues]=useState({rentDue:'15000',rentReceived:'10000',depositRequired:'30000',depositReceived:'20000'});
+ let result:ReturnType<typeof rentalExample>|null=null,error='';
+ const invalid=fields.filter(([key])=>{try{parseReportAmount(values[key]);return false;}catch{return true;}}).map(([key])=>key);
+ try{result=rentalExample({rentDue:parseReportAmount(values.rentDue),rentReceived:parseReportAmount(values.rentReceived),depositRequired:parseReportAmount(values.depositRequired),depositReceived:parseReportAmount(values.depositReceived)});}catch{error='Enter an amount from 0 to 1,000,000,000, with up to two decimal places.';}
+ return <section className="fp-workflow fp-container" aria-labelledby={id+'-title'}><div className="fp-workflow-intro"><span className="fp-eyebrow">TRY A WORKED EXAMPLE</span><h2 id={id+'-title'}>Every payment.<br/>A clearer balance.</h2><p>Try a part payment or an overpayment. Rent credit and deposit shortfalls stay separate.</p><p className="fp-example-label">Illustrative calculator. No tenant records are loaded or saved. This example starts with no earlier credit.</p><Link className="fp-text-link" href="/guides/rent-payments-and-deposits">Read the rent and deposit guide <ArrowUpRight size={15}/></Link></div><div className="fp-example-panel"><div className="fp-example-top"><Building2 size={19}/><div><strong>Example rental</strong><span>Unit A03 · Monthly rent · KES</span></div><span className="fp-label">SAMPLE</span></div><div className="fp-example-fields">{fields.map(([key,label])=><label key={key} htmlFor={id+key}>{label}<span className="fp-money-input"><span aria-hidden="true">KSh</span><input id={id+key} inputMode="decimal" value={values[key]} onChange={event=>setValues(previous=>({...previous,[key]:event.target.value}))} aria-invalid={invalid.includes(key)} aria-describedby={invalid.includes(key)?id+'-error':undefined}/></span></label>)}</div><div className="fp-example-result" aria-live="polite" aria-atomic="true">{result?<><div><span>Rent balance</span><strong>{kes(result.rentBalance)}</strong></div><div><span>Rent credit</span><strong>{kes(result.rentCredit)}</strong></div><div><span>Deposit shortfall</span><strong>{kes(result.depositShortfall)}</strong></div>{result.depositExcess>0&&<p>Deposit received exceeds the requirement by {kes(result.depositExcess)}. Review the deposit record separately.</p>}</>:<p id={id+'-error'} role="alert">{error}</p>}</div><p className="fp-example-foot">Changing this example does not record a payment or generate a receipt.</p></div></section>;
+}

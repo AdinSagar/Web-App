@@ -3,6 +3,7 @@ import React from 'react'
 export const PrivacyContent = () => {
   const sections = [
     { id: 'android-apps', title: 'Seller and Shop Android apps' },
+    { id: 'parking-app', title: 'FahamPesa Parking Android app' },
     { id: 'account-deletion', title: 'Delete your account and data' },
     { id: 'data-collected', title: 'Data collected' },
     { id: 'use-of-data', title: 'Use of data' },
@@ -35,6 +36,18 @@ export const PrivacyContent = () => {
               <p>Firebase Authentication supports sign-in. Firebase Cloud Messaging processes app installation identifiers and notification tokens. Firebase Analytics collects app interactions, device and app identifiers, approximate location and device information. Firebase Crashlytics collects crash reports, diagnostic information and installation identifiers to improve reliability. The Seller Android release enables analytics and crash collection. It does not display advertisements. Website analytics consent does not control Android SDK collection.</p>
               <p>We use Google Firebase, Railway and image hosting providers to authenticate users, store and deliver data, send notifications and operate the service. These providers process information needed to perform those services. Public listings and participant-directed messages are shared as part of the requested functionality. We do not sell your personal data.</p>
               <p>App data travels over encrypted HTTPS connections. Access is limited to authorized accounts and service providers. We retain operational information while needed for the account and requested services, with deletion and retention exceptions explained below. Cash orders and bookings are paid directly to the business under the options it offers.</p>
+            </section>
+
+
+            <section id="parking-app" className="pt-4 scroll-mt-24 space-y-4">
+              <h2 className="font-bold uppercase">FahamPesa Parking Android app</h2>
+              <p>FahamPesa Parking is operated by FahamPesa Limited for property managers, parking guards and attendants. It connects to a property account configured by your manager. This section explains the standalone Parking app. The Seller and Shop SDK disclosures above do not describe the Parking app.</p>
+              <p>Parking records include staff and property identifiers, assigned roles, workplace codes, vehicle number plates and types, arrival and departure times, tickets, parking fees, receipt numbers, payment methods, cash received and change, manually entered M-Pesa references, shift opening and closing cash, and cash differences. We process these records to authenticate guards, manage property parking, produce receipts, reconcile shifts and provide authorised managers with reports. Your manager supplies your staff profile and access permissions. The app requires an internet connection.</p>
+              <p>The optional camera scanner uses Google ML Kit text recognition on your device. Camera frames are processed locally. This release does not upload or store vehicle photos. The recognised number plate, after your confirmation, is sent to FahamPesa as part of the parking record. You may enter the plate manually without camera permission.</p>
+              <p>ML Kit sends Google diagnostic and usage metrics, including device model and operating system information, app package and version, installation identifiers, processing performance, feature events and error codes. Google uses these metrics to operate, maintain and improve ML Kit and detect misuse. ML Kit does not send the camera images or recognition output to Google. See <a href="https://developers.google.com/ml-kit/terms" className="underline">ML Kit privacy information</a> and <a href="https://developers.google.com/ml-kit/android-data-disclosure" className="underline">Android data disclosures</a>. These SDK metrics are separate from the website analytics choices below.</p>
+              <p>Parking records are stored through our hosted services, including Railway, and made available to accounts authorised for the relevant property. Receipt sharing opens the Android sharing options so you choose the recipient or app. Cash and M-Pesa entries record payments checked by the attendant. The Parking app does not collect card details or M-Pesa PINs and does not automatically confirm M-Pesa payments. It does not display ads or sell personal data.</p>
+              <p>Requests use encrypted HTTPS connections. Staff access is restricted by role and property assignment. The app remembers the workplace code on the device if you choose this option. It does not save your guard PIN. Service request metadata is used to operate and secure the service.</p>
+              <p>We retain parking and shift records while needed to provide the property service, reconcile transactions and meet applicable legal or security obligations. Ask your property manager or contact privacy@fahampesa.com to request access, correction or deletion of your personal data, including data linked to a staff account or vehicle plate. We verify your relationship to the data and explain any records retained for unresolved transactions or legal obligations. Removing staff access alone does not erase historical parking records. <a href="/account-deletion" className="underline">Account and data deletion instructions</a> are available without signing in or paying.</p>
             </section>
 
             <section id="account-deletion" className="rounded-xl border border-[#004aad] p-5 scroll-mt-24 space-y-3">
@@ -71,7 +84,7 @@ export const PrivacyContent = () => {
                 <li>• Fahampesa also counts daily page loads by page category and broad referral source without cookies or visitor identifiers. These are aggregate page counts, not unique visitor counts.</li>
                 <li>• First-party journey analytics and Meta advertising measurement are optional and controlled separately in Privacy choices.</li>
                 <li>• First-party analytics records page views, selected action categories, broad device/browser type, and safe campaign/referrer labels only after analytics consent. It does not record form contents, keystrokes, passwords, payment credentials, or session replays.</li>
-                <li>• Meta measurement uses ad and page activity only after ad measurement consent. A confirmed subscription payment may be reported with its amount and currency after consent; direct identifiers, M-Pesa receipts, and business records are excluded.</li>
+                <li>• Meta measurement uses ad and page activity only after ad measurement consent. A confirmed service payment may be reported with its amount and currency after consent; direct identifiers, M-Pesa receipts, and business records are excluded.</li>
                 <li>• Authorized Fahampesa administrators may review anonymized customer journey stages and verified payment outcomes for service improvement and conversion support.</li>
                 <li>• You can change or withdraw either optional choice through the Privacy choices control. First-party analytics events are automatically deleted within 180 days. If you withdraw analytics consent, Fahampesa requests deletion of the associated first-party journey events.</li>
               </ul>
@@ -82,7 +95,7 @@ export const PrivacyContent = () => {
               <ul className="list-none space-y-2 pl-0">
                 <li>• Data is stored on secure infrastructure.</li>
                 <li>• Access is restricted to authorized systems and personnel.</li>
-                <li>• Fahampesa does not sell customer contact or business records. Optional Meta advertising measurement is enabled only after a separate choice; limited ad identifiers and confirmed subscription value/currency may be sent to Meta. Contact details, passwords, payment credentials, M-Pesa receipts, and business records are not sent.</li>
+                <li>• Fahampesa does not sell customer contact or business records. Optional Meta advertising measurement is enabled only after a separate choice; limited ad identifiers and confirmed service payment value/currency may be sent to Meta. Contact details, passwords, payment credentials, M-Pesa receipts, and business records are not sent.</li>
                 <li>• Fahampesa follows applicable data protection laws in its operating regions.</li>
               </ul>
             </div>

@@ -85,7 +85,7 @@ export function AboutContent() {
                 <li>• Point of sale and transaction tracking.</li>
                 <li>• Inventory and stock control.</li>
                 <li>• Sales and profit visibility.</li>
-                <li>• Offline operation with secure data sync.</li>
+                <li>• Connected online operation with secure data sync.</li>
                 <li>• Tools built for long term scalability.</li>
               </ul>
               <br />

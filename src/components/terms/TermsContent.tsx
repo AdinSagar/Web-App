@@ -8,7 +8,7 @@ const navItems = [
   { id: 'account-registration', title: 'Account Registration' },
   { id: 'permitted-use', title: 'Permitted Use' },
   { id: 'prohibited-use', title: 'Prohibited Use' },
-  { id: 'subscriptions-and-payments', title: 'Subscriptions and Payments' },
+  { id: 'services-and-payments', title: 'Services and Payments' },
   { id: 'data-and-ownership', title: 'Data and Ownership' },
   { id: 'service-availability', title: 'Service Availability' },
   { id: 'support-and-communication', title: 'Support and Communication' },
@@ -72,7 +72,7 @@ export function TermsContent() {
               <p>Fahampesa provides business management software, including point of sale, inventory tracking,</p>
               <p>and reporting tools.</p>
               <br />
-              <p>Features and availability depend on the selected plan and supported devices.</p>
+              <p>Features and availability depend on the selected workspace and supported devices.</p>
             </div>
           </div>
 
@@ -108,10 +108,10 @@ export function TermsContent() {
             </div>
           </div>
 
-          <div id="subscriptions-and-payments" className="scroll-mt-[120px] mb-12">
-            <h3 className="font-bold text-[16px] mb-4 uppercase tracking-wide">SUBSCRIPTIONS AND PAYMENTS</h3>
+          <div id="services-and-payments" className="scroll-mt-[120px] mb-12">
+            <h3 className="font-bold text-[16px] mb-4 uppercase tracking-wide">SERVICES AND PAYMENTS</h3>
             <div className="space-y-2">
-              <p>Some features require a paid subscription.</p>
+              <p>Any applicable service charges and payment conditions must be confirmed before purchase.</p>
               <p>Pricing and billing details are presented before purchase.</p>
               <p>Payments are processed by authorized third party providers.</p>
               <p>Failure to complete payment may result in restricted access.</p>
@@ -132,7 +132,7 @@ export function TermsContent() {
             <div className="space-y-2">
               <p>Fahampesa aims to provide reliable access to the platform.</p>
               <p>Performance depends on device conditions and internet connectivity.</p>
-              <p>Offline functionality operates based on system configuration.</p>
+              <p>Current features require an internet connection and supported device configuration.</p>
             </div>
           </div>
 

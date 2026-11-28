@@ -1,27 +1,4 @@
-'use client'
-
-import { useState } from 'react'
-import { DownloadModal } from '@/components/DownloadModal'
-import Footer from '@/components/footer'
-import { AboutContent } from '@/components/about/AboutContent'
-import PageHeader from '@/components/PageHeader'
-import PublicHeader from '@/components/public-header'
-
-export default function AboutPage() {
-  const [downloadModalOpen, setDownloadModalOpen] = useState(false)
-
-  return (
-    <div className="min-h-screen bg-[#f8f8f9] font-dm-sans">
-      <DownloadModal open={downloadModalOpen} onOpenChange={setDownloadModalOpen} />
-
-      <PublicHeader onOpenDownload={() => setDownloadModalOpen(true)} />
-
-      <main>
-        <PageHeader title="About Us" />
-        <AboutContent />
-      </main>
-
-      <Footer />
-    </div>
-  )
-}
+import Link from 'next/link';
+import PlatformFrame from '@/components/marketing/PlatformFrame';
+import {solutionLinks} from '@/components/marketing/PlatformFrame';
+export default function Page(){return <PlatformFrame><main id="main-content"><section className="fp-subhero fp-container"><span className="fp-eyebrow">ABOUT FAHAMPESA</span><h1>Built around the work<br/>you do every day.</h1><p>FahamPesa brings business tools, property management and local online commerce into one platform, with separate paths for business owners, sellers and shoppers.</p></section><section className="fp-section fp-container"><div className="fp-content-grid fp-copy">{solutionLinks.map(([label,href])=><article key={href}><h2>{label}</h2><p>{href.includes('property')?'Keep rental records, tenant payments, deposits and receipts together.':href.includes('sellers')?'Publish your business and products, then share useful listing links with customers.':href.includes('shop')?'Explore published stores and services before choosing an order or booking route.':'Record sales, review stock, manage expenses and understand your business reports.'}</p><Link className="fp-text-link" href={href}>Explore {label.toLowerCase()} →</Link></article>)}</div></section><section className="fp-container fp-section"><span className="fp-eyebrow">NAIROBI TEAM. KENYAN WORKFLOWS.</span><h2>Start with a real workflow.</h2><p>Bring a product list, a rental example or the service you want to offer. Our Nairobi team will help you review the relevant workflow and your intended devices. Visit Diamond Plaza 1, 4th floor, Parklands, or speak to us on WhatsApp before your visit.</p><div className="fp-inline-links"><Link href="/business/get-started">Getting Started</Link><Link href="/contact-information">Contact our team</Link><Link href="/trust">Trust and support</Link></div></section><section className="fp-container fp-section fp-content-grid fp-copy"><div><span className="fp-eyebrow">TWO APPS, CLEAR ROLES</span><h2>Business for sellers.<br/>Shop for buyers.</h2><p>FahamPesa Business is the Seller app. It helps business owners manage their work and prepare published listings. FahamPesa Shop is the Shopper app for supported shopping and booking journeys.</p><p>Public store and product pages open in a browser. Review the seller and listing before choosing an app or starting a conversation.</p><div className="fp-inline-links"><Link href="/apps/seller">Seller app</Link><Link href="/apps/shopper">Shopper app</Link></div></div><div><span className="fp-eyebrow">CLEAR EXPECTATIONS</span><h2>Useful information<br/>before you sign up.</h2><p>Read the guides, browse published listings and try the report preview without an account. Each seller supplies their listing details and fulfils their own products or services. Check availability, delivery charges and terms with the seller.</p><p>The report preview calculates sample totals and prepares a prompt for your chosen AI tool. It does not read private business records or replace your accounts.</p><div className="fp-inline-links"><Link href="/guides">Practical guides</Link><Link href="/business/reports">Try the report preview</Link></div></div></section></main></PlatformFrame>;}
